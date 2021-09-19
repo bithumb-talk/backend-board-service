@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:5000/bithumb
+    username: root
+    password: root
+    sql-script-encoding: UTF-8
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    #    generate-ddl: true
+    #    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  port: 8080
