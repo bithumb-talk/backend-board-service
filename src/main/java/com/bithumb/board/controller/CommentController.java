@@ -44,14 +44,7 @@ public class CommentController {
     // board_no 인거 찾아서 pageing
     @GetMapping("/comments/{board_no}")
     public Page<?> retrieveComments(@PathVariable long board_no) {
-        //Optional<Comment> comment = commentRepository.findById(board_no);
-//        Specification<Board> joins = (board, query, cb)->{
-//            Join<Board, Comment> boards = board.join("board_no");
-//
-//            return cb.and(board.equals(board.get("??")))
-//
-//        }
-//        Sort.Order staffNameOrder = Sort.Order.desc("staffs.name");
+
         Board board = boardService.getById(board_no);
 
         Pageable paging = PageRequest.of(0, 2, Sort.Direction.DESC,"commentCreatedDate");
@@ -59,6 +52,7 @@ public class CommentController {
         System.out.println(comment);
         return comment;
     }
+    // 댓글 등록
     @PostMapping("/comments")
     public ResponseEntity createComment(@Valid @RequestBody Comment comment){
         Comment savedComment = commentService.save(comment);
@@ -72,7 +66,6 @@ public class CommentController {
     // 댓글 수정
     @PutMapping("/comments/{comment_no}")
     public ResponseEntity<?> changeBoard(@RequestBody Comment srcComment, @PathVariable long comment_no){
-        //조회수 증가, 추천수 증가 따로처리
         Optional<Comment> destComment = commentService.findById(comment_no);
         if(!destComment.isPresent()){
             //에러처리
@@ -81,7 +74,7 @@ public class CommentController {
         destComment.get().setCommentContent(srcComment.getCommentContent());
         destComment.get().setUserId(srcComment.getUserId());
 
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_UPDATE_SUCCESS.getMessage(),destComment);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_UPDATE_SUCCESS.getMessage(),destComment);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
@@ -90,7 +83,7 @@ public class CommentController {
     @DeleteMapping("/comments/{comment_no}")
     public ResponseEntity<?> deleteBoard(@PathVariable long comment_no) {
         commentService.deleteById(comment_no);
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_DELETE_SUCCESS.getMessage(),null);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_DELETE_SUCCESS.getMessage(),null);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
