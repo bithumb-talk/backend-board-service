@@ -32,7 +32,7 @@ public class Reply {
 
     @PrePersist     //insert 연산할때 같이실행
     public void prePersist(){
-        this.replyCreatedDate = LocalDateTime.now();
+        this.replyCreatedDate = LocalDateTime.now().withNano(0);
     }
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="comment_no")

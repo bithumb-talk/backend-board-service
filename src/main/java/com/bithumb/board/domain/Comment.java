@@ -32,7 +32,7 @@ public class Comment {
 
     @PrePersist     //insert 연산할때 같이실행
     public void prePersist(){
-        this.commentCreatedDate = LocalDateTime.now();
+        this.commentCreatedDate = LocalDateTime.now().withNano(0);
     }
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="board_no")
