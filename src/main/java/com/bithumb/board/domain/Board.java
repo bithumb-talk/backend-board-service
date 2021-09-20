@@ -46,7 +46,7 @@ public class Board {
 
     @PrePersist     //insert 연산할때 같이실행
     public void prePersist(){
-        this.boardCreatedDate = LocalDateTime.now();
+        this.boardCreatedDate = LocalDateTime.now().withNano(0);
         this.boardViews = this.boardViews == null ? 0 : this.boardViews;
         this.boardRecommend = this.boardRecommend == null ? 0 : this.boardRecommend;
     }
