@@ -2,7 +2,6 @@ package com.bithumb.board.controller;
 
 
 import com.bithumb.board.domain.Board;
-import com.bithumb.board.exception.BoardNotFoundException;
 import com.bithumb.board.response.ApiResponse;
 import com.bithumb.board.response.StatusCode;
 import com.bithumb.board.response.SuccessCode;
@@ -43,6 +42,7 @@ public class BoardController {
     @Autowired
     PagedResourcesAssembler<Board> pagedResourcesAssembler;
 
+    // 게시판 조회
     @GetMapping("/boards")
     public ResponseEntity retrieveBoards(@PageableDefault(sort="boardCreatedDate", direction =Sort.Direction.DESC ) final Pageable pageable) {
         Page<Board> board = boardService.findAll(pageable);
@@ -116,64 +116,63 @@ public class BoardController {
         return new ResponseEntity<>(board, HttpStatus.OK);
     }
 
-
-    @PostMapping("/boards")                          //글 등록
-    public ResponseEntity<Board> createBoard(@Valid @RequestBody Board board){
+    // 게시물 등록
+    @PostMapping("/boards")
+    public ResponseEntity<?> createBoard(@Valid @RequestBody Board board){
         Board savedBoard = boardService.save(board);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{board_no}")
-                .buildAndExpand(savedBoard.getBoardNo())
-                .toUri();//uri로 변경
-        return ResponseEntity.created(location).build();
+//        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+//                .path("/{board_no}")
+//                .buildAndExpand(savedBoard.getBoardNo())
+//                .toUri();//uri로 변경
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_REGISTER_SUCCESS.getMessage(),savedBoard);
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
+    // 게시물 조회
     @GetMapping("/boards/{board_no}")
-    public EntityModel retrieveBoard(@PathVariable long board_no){
+    public ResponseEntity<?> retrieveBoard(@PathVariable long board_no){
         Optional<Board> board = boardService.findById(board_no);
 
         if(!board.isPresent()){
-            throw new BoardNotFoundException(String.format("boardNo {%d} not found",board_no));
+            //에러처리
         }
-        //Map <String, Object> hs = new HashMap<>();
-        //List<Comment> comments = board.get().getComments();
-        //System.out.println(comments);
-        //hs.put("comments",comments);
+
         EntityModel model =EntityModel.of(board)
                 .add(linkTo(methodOn(CommentController.class)
                         .retrieveComments(board_no)).withRel("comments"));
 
-        return model;
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),model);
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
+
     }
 
+    // 게시물 수정
     @PutMapping("/boards/{board_no}")
-    public ResponseEntity<Map<String, Object>> changeBoard(@RequestBody Board board, @PathVariable long board_no){
+    public ResponseEntity<?> changeBoard(@RequestBody Board srcBoard, @PathVariable long board_no){
+        //조회수 증가, 추천수 증가 따로처리
+        Optional<Board> destBoard = boardService.findById(board_no);
+        if(!destBoard.isPresent()){
+            //에러처리
+        }
+        if(srcBoard.getBoardContent() != null){
+            destBoard.get().setBoardContent(srcBoard.getBoardContent());
+        }
+        if(srcBoard.getBoardCategory() != null ) {
+            destBoard.get().setBoardCategory(srcBoard.getBoardCategory());
+        }
+        if(srcBoard.getBoardTitle() != null) {
+            destBoard.get().setBoardTitle(srcBoard.getBoardTitle());
+        }
+        if(srcBoard.getBoardRecommend() != null) {
+            destBoard.get().setBoardRecommend( destBoard.get().getBoardRecommend()+1 );
+        }
+        destBoard.get().setBoardModifyDate(LocalDateTime.now().withNano(0));
 
-        Optional<Board> updateBoard = boardService.findById(board_no);
-        Map<String, Object> result = new HashMap<>();
-        updateBoard.ifPresent(selectBoard->{
-            result.put("status", new String("SUCCESS"));
-            result.put("message", new String("UPDATE SUCCESS"));
-            selectBoard.setBoardNo(updateBoard.get().getBoardNo());
-            if(board.getBoardContent() != null)
-                selectBoard.setBoardContent(board.getBoardContent());
-            if(board.getBoardCategory() != null)
-                selectBoard.setBoardCategory(board.getBoardCategory());
-            if(board.getBoardTitle() != null)
-                selectBoard.setBoardTitle(board.getBoardTitle());
-            if(board.getBoardViews() != null)
-                selectBoard.setBoardViews(board.getBoardViews());
-            if(board.getBoardRecommend() != null)
-                selectBoard.setBoardRecommend(board.getBoardRecommend());
-            if(board.getBoardCreatedDate()!= null)
-                selectBoard.setBoardCreatedDate(board.getBoardCreatedDate());
-
-//            selectBoard.setCreatedDate(updateBoard.get().getCreatedDate());
-            selectBoard.setBoardModifyDate(LocalDateTime.now());
-            result.put("data",boardService.save(selectBoard));
-        });
-
-        return ResponseEntity.ok().body(result);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_UPDATE_SUCCESS.getMessage(),destBoard);
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
+
+    //게시물 삭제
     @DeleteMapping("/boards/{board_no}")
     public ResponseEntity<?> deleteBoard(@PathVariable long board_no) {
         boardService.deleteById(board_no);
