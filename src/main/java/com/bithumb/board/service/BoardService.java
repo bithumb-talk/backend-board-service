@@ -14,7 +14,7 @@ public interface BoardService {
     Board getById(long board_no);
     Board save(Board board);
     Page<Board> findAll(Pageable pageable);
-
+    Page<Board> findBoardByBoardCategory(String boardCategory, Pageable pageable);
     boolean existsById(long id);
 //    long count();
     void deleteById(long board_no);

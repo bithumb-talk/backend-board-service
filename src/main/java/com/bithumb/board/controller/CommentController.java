@@ -42,10 +42,10 @@ public class CommentController {
     }
 
     // board_no 인거 찾아서 pageing
-    @GetMapping("/comments/{board_no}")
-    public Page<?> retrieveComments(@PathVariable long board_no) {
+    @GetMapping("/comments/{board-no}")
+    public Page<?> retrieveComments(@PathVariable("board-no") long boardNo) {
 
-        Board board = boardService.getById(board_no);
+        Board board = boardService.getById(boardNo);
 
         Pageable paging = PageRequest.of(0, 2, Sort.Direction.DESC,"commentCreatedDate");
             Page<Comment> comment = commentService.findCommentsByBoard(board, paging);
@@ -64,9 +64,9 @@ public class CommentController {
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
     // 댓글 수정
-    @PutMapping("/comments/{comment_no}")
-    public ResponseEntity<?> changeBoard(@RequestBody Comment srcComment, @PathVariable long comment_no){
-        Optional<Comment> destComment = commentService.findById(comment_no);
+    @PutMapping("/comments/{comment-no}")
+    public ResponseEntity<?> changeBoard(@RequestBody Comment srcComment, @PathVariable("comment-no") long commentNo){
+        Optional<Comment> destComment = commentService.findById(commentNo);
         if(!destComment.isPresent()){
             //에러처리
         }
@@ -80,9 +80,9 @@ public class CommentController {
 
 
     // 댓글 삭제
-    @DeleteMapping("/comments/{comment_no}")
-    public ResponseEntity<?> deleteBoard(@PathVariable long comment_no) {
-        commentService.deleteById(comment_no);
+    @DeleteMapping("/comments/{comment-no}")
+    public ResponseEntity<?> deleteBoard(@PathVariable("comment-no") long commentNo) {
+        commentService.deleteById(commentNo);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_DELETE_SUCCESS.getMessage(),null);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }

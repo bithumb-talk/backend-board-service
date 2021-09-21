@@ -47,6 +47,10 @@ public class BoardServiceImpl implements BoardService {
         boardRepository.deleteById(board_no);
     }
 
+    @Override
+    public Page<Board> findBoardByBoardCategory(String boardCategory, Pageable pageable){
+        return boardRepository.findBoardByBoardCategory(boardCategory, pageable);
+    }
 //
 //    @Override
 //    public long count() {

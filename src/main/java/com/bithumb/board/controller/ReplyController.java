@@ -33,9 +33,9 @@ public class ReplyController {
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
     //대댓글 수정
-    @PutMapping("/replies/{reply_no}")
-    public ResponseEntity updateReply (@PathVariable long reply_no ,@RequestBody Reply srcReply ){
-        Optional<Reply> destReply = replyService.findById(reply_no);
+    @PutMapping("/replies/{reply-no}")
+    public ResponseEntity updateReply (@PathVariable("reply-no") long replyNo ,@RequestBody Reply srcReply ){
+        Optional<Reply> destReply = replyService.findById(replyNo);
         if(!destReply.isPresent()){
             //에러처리
         }
@@ -48,9 +48,9 @@ public class ReplyController {
 
     }
     // 대댓글 삭제
-    @DeleteMapping("/replies/{reply_no}")
-    public ResponseEntity<?> deleteBoard(@PathVariable long reply_no) {
-        replyService.deleteById(reply_no);
+    @DeleteMapping("/replies/{reply-no}")
+    public ResponseEntity<?> deleteBoard(@PathVariable long replyNo) {
+        replyService.deleteById(replyNo);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.REPLY_DELETE_SUCCESS.getMessage(),null);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }

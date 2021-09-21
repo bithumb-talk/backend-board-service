@@ -5,13 +5,15 @@ import com.sun.istack.NotNull;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Data
 @Table(name="board")
-public class Board {
+public class Board implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue
     @Column(name="board_no")
