@@ -34,7 +34,7 @@ public class ReplyController {
     }
     //대댓글 수정
     @PutMapping("/replies/{reply-no}")
-    public ResponseEntity updateReply (@PathVariable("reply-no") long replyNo ,@RequestBody Reply srcReply ){
+    public ResponseEntity updateReply (@PathVariable(value ="reply-no") long replyNo ,@RequestBody Reply srcReply ){
         Optional<Reply> destReply = replyService.findById(replyNo);
         if(!destReply.isPresent()){
             //에러처리
@@ -49,7 +49,7 @@ public class ReplyController {
     }
     // 대댓글 삭제
     @DeleteMapping("/replies/{reply-no}")
-    public ResponseEntity<?> deleteBoard(@PathVariable long replyNo) {
+    public ResponseEntity<?> deleteBoard(@PathVariable(value ="reply-no") long replyNo) {
         replyService.deleteById(replyNo);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.REPLY_DELETE_SUCCESS.getMessage(),null);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);

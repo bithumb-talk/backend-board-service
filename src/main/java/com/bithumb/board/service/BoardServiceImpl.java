@@ -2,6 +2,7 @@ package com.bithumb.board.service;
 
 
 import com.bithumb.board.domain.Board;
+import com.bithumb.board.domain.User;
 import com.bithumb.board.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,10 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public Page<Board> findBoardByBoardCategory(String boardCategory, Pageable pageable){
         return boardRepository.findBoardByBoardCategory(boardCategory, pageable);
+    }
+    @Override
+    public Page<Board> findBoardByUser(User user, Pageable pageable){
+        return boardRepository.findBoardByUser(user,pageable);
     }
 //
 //    @Override

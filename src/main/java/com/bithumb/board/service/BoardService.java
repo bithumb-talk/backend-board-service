@@ -1,6 +1,7 @@
 package com.bithumb.board.service;
 
 import com.bithumb.board.domain.Board;
+import com.bithumb.board.domain.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
@@ -15,6 +16,7 @@ public interface BoardService {
     Board save(Board board);
     Page<Board> findAll(Pageable pageable);
     Page<Board> findBoardByBoardCategory(String boardCategory, Pageable pageable);
+    Page<Board> findBoardByUser(User user, Pageable pageable);
     boolean existsById(long id);
 //    long count();
     void deleteById(long board_no);
