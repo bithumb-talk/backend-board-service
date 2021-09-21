@@ -1,4 +1,4 @@
-package com.board.api.boardMs.board.controller;
+package com.bithumb.board.controller;
 
 import com.bithumb.board.domain.Board;
 import com.bithumb.board.domain.BoardModel;

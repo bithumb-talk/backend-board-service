@@ -2,6 +2,7 @@ package com.bithumb.board.controller;
 
 
 import com.bithumb.board.domain.Board;
+import com.bithumb.board.domain.BoardModel;
 import com.bithumb.board.response.ApiResponse;
 import com.bithumb.board.response.StatusCode;
 import com.bithumb.board.response.SuccessCode;
@@ -14,6 +15,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.PagedModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -40,80 +42,17 @@ public class BoardController {
     private final BoardService boardService;
 
     @Autowired
+    BoardAssembler boardAssembler;
+    @Autowired
     PagedResourcesAssembler<Board> pagedResourcesAssembler;
 
     // 게시판 조회
     @GetMapping("/boards")
     public ResponseEntity retrieveBoards(@PageableDefault(sort="boardCreatedDate", direction =Sort.Direction.DESC ) final Pageable pageable) {
         Page<Board> board = boardService.findAll(pageable);
-
-        Map<String,Object> responseHs = new HashMap<>();
-
-//        responseHs.put("content",board.getContent());
- //       responseHs.put("pageSize", board.getPageable().getPageSize()); //한 페이지에서 나타내는 게시물 수
-//        responseHs.put("pageNumber", board.getPageable().getPageNumber()); // 현재 페이지 번호
-//        responseHs.put("totalPages", board.getTotalPages()); //페이지로 제공되는 총 페이지의 수
-
-        UriComponents next = UriComponentsBuilder.newInstance()
-                .path("/boards")
-                .queryParam("page", 1)
-                .queryParam("size",board.getPageable().getPageSize())
-                .build();
-        URI locationNext = ServletUriComponentsBuilder.fromCurrentRequest()
-                //.path("/{id}")
-                .buildAndExpand(next)
-                .toUri();
-        System.out.println(ServletUriComponentsBuilder.fromCurrentRequest());
-        System.out.println(next);
-        System.out.println(locationNext);
-        responseHs.put("nextLink", locationNext);
-        System.out.println(responseHs.get("nextLink"));
-//        int cur = 0;
-//        if(board.getPageable().getPageNumber() != 0){
-//            cur = board.getPageable().getPageSize()-1;
-//        }
-//        UriComponents pre = UriComponentsBuilder.newInstance()
-//                .path("/boards")
-//                .queryParam("size",board.getSize())
-//                .queryParam("page", cur)
-//                .build();
-//
-//        URI locationPre = ServletUriComponentsBuilder.fromCurrentRequest()
-//                .buildAndExpand(pre)
-//                .toUri();
-//
-//        responseHs.put("preLink",locationPre);
-//
-//        UriComponents last = UriComponentsBuilder.newInstance()
-//                .path("/boards")
-//                .queryParam("size",board.getSize())
-//                .queryParam("page", board.getTotalPages()-1)
-//                .build();
-//        URI locationLast = ServletUriComponentsBuilder.fromCurrentRequest()
-//                .buildAndExpand(last)
-//                .toUri();
-//        responseHs.put("lastLink",locationLast);
-//
-//        UriComponents first = UriComponentsBuilder.newInstance()
-//                .path("/boards")
-//                .queryParam("size",board.getSize())
-//                .queryParam("page", 0)
-//                .build();
-//        URI locationFirst = ServletUriComponentsBuilder.fromCurrentRequest()
-//                .buildAndExpand(first)
-//                .toUri();
-//        responseHs.put("firstLink",locationFirst);
-//
-//        System.out.println(first);
-//        System.out.println(last);
-
-
-//        responseHs.put("totalElements", board.getTotalElements()); // 모든 페이지에 존재하는 총 원소 수
- //       responseHs.put("last",board.getPageable().getPageSize());
-
-
-
-        return new ResponseEntity<>(board, HttpStatus.OK);
+        PagedModel<BoardModel> collModel = pagedResourcesAssembler.toModel(board,boardAssembler);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),collModel);
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
     // 게시물 등록

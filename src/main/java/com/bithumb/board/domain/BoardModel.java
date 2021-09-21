@@ -1,4 +1,4 @@
-package com.board.api.boardMs.board.domain;
+package com.bithumb.board.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
