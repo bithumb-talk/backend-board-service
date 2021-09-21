@@ -1,4 +1,7 @@
+
 package com.bithumb.board.service;
+import com.bithumb.board.domain.Reply;
+
 
 import com.bithumb.board.domain.Comment;
 import com.bithumb.board.domain.Reply;

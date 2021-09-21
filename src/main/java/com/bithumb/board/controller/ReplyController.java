@@ -1,8 +1,9 @@
-package com.bithumb.board.controller;
 
+package com.bithumb.board.controller;
 
 import com.bithumb.board.domain.Board;
 import com.bithumb.board.domain.Comment;
+
 import com.bithumb.board.domain.Reply;
 import com.bithumb.board.response.ApiResponse;
 import com.bithumb.board.response.StatusCode;
