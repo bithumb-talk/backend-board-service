@@ -1,6 +1,11 @@
-package com.board.api.boardMs.board.service;
 
+package com.bithumb.board.service;
 import com.bithumb.board.domain.Reply;
+
+
+import com.bithumb.board.domain.Comment;
+import com.bithumb.board.domain.Reply;
+import com.bithumb.board.repository.BoardRepository;
 import com.bithumb.board.repository.ReplyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

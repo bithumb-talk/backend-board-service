@@ -41,6 +41,10 @@ public class CommentServiceImpl implements CommentService {
         return commentRepository.findCommentsByBoard(board,pageable);
 
     }
+    @Override
+    public void deleteById(long comment_no){
+        commentRepository.deleteById(comment_no);
+    }
 
 
 

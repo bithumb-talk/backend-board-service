@@ -1,4 +1,6 @@
-package com.board.api.boardMs.board.service;
+package com.bithumb.board.service;
+
+import com.bithumb.board.domain.Comment;
 
 import com.bithumb.board.domain.Reply;
 import org.springframework.stereotype.Component;
