@@ -1,8 +1,12 @@
 package com.bithumb.board.controller;
 
 
+import com.bithumb.board.Assembler.BoardAssembler;
+import com.bithumb.board.Assembler.CommentAssembler;
 import com.bithumb.board.domain.Board;
+import com.bithumb.board.domain.BoardModel;
 import com.bithumb.board.domain.Comment;
+import com.bithumb.board.domain.CommentModel;
 import com.bithumb.board.response.ApiResponse;
 import com.bithumb.board.response.StatusCode;
 import com.bithumb.board.response.SuccessCode;
@@ -15,6 +19,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.data.web.PagedResourcesAssembler;
+import org.springframework.hateoas.PagedModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +39,10 @@ public class CommentController {
     private final CommentService commentService;
     private final BoardService boardService;
 
+    @Autowired
+    CommentAssembler commentAssembler;
+    @Autowired
+    PagedResourcesAssembler<Comment> pagedResourcesAssembler;
 
     @GetMapping("/comments")
     public Page<Comment> retrieveComments(@PageableDefault final Pageable pageable) {
@@ -43,14 +53,20 @@ public class CommentController {
 
     // board_no 인거 찾아서 pageing
     @GetMapping("/comments/{board-no}")
-    public Page<?> retrieveComments(@PathVariable(value ="board-no") long boardNo) {
-
+    public ResponseEntity retrieveComments(@PathVariable(value ="board-no") long boardNo) {
         Board board = boardService.getById(boardNo);
-
+        if(board == null){
+            //에러 처리
+        }
         Pageable paging = PageRequest.of(0, 2, Sort.Direction.DESC,"commentCreatedDate");
-            Page<Comment> comment = commentService.findCommentsByBoard(board, paging);
-        System.out.println(comment);
-        return comment;
+
+        Page<Comment> comment = commentService.findCommentsByBoard(board,paging);
+
+        PagedModel<CommentModel> collModel = pagedResourcesAssembler.toModel(comment,commentAssembler);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),collModel);
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
+
+
     }
     // 댓글 등록
     @PostMapping("/comments")
