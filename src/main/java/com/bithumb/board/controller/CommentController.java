@@ -63,7 +63,7 @@ public class CommentController {
         Page<Comment> comment = commentService.findCommentsByBoard(board,paging);
 
         PagedModel<CommentModel> collModel = pagedResourcesAssembler.toModel(comment,commentAssembler);
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),collModel);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_FIND_SUCCESS.getMessage(),collModel);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
 
 
@@ -81,7 +81,7 @@ public class CommentController {
     }
     // 댓글 수정
     @PutMapping("/comments/{comment-no}")
-    public ResponseEntity<?> changeBoard(@RequestBody Comment srcComment, @PathVariable(value ="comment-no") long commentNo){
+    public ResponseEntity<?> changeComment(@RequestBody Comment srcComment, @PathVariable(value ="comment-no") long commentNo){
         Optional<Comment> destComment = commentService.findById(commentNo);
         if(!destComment.isPresent()){
             //에러처리
@@ -97,7 +97,7 @@ public class CommentController {
 
     // 댓글 삭제
     @DeleteMapping("/comments/{comment-no}")
-    public ResponseEntity<?> deleteBoard(@PathVariable(value ="comment-no") long commentNo) {
+    public ResponseEntity<?> deleteComment(@PathVariable(value ="comment-no") long commentNo) {
         commentService.deleteById(commentNo);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_DELETE_SUCCESS.getMessage(),null);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
