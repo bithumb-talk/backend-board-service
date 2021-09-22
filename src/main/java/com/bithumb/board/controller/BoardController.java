@@ -104,7 +104,12 @@ public class BoardController {
         if(!board.isPresent()){
             //에러처리
         }
-        LOGGER.info("게시물 조회 로그찍기");
+
+        //if(LOGGER.isDebugEnabled()) {
+            // 로그레벨 조정하기
+            //LOGGER.debug("조회한 게시물 넘버 {}.", boardNo);
+            LOGGER.info("조회한 게시물 넘버 {}.", boardNo);
+        //}
 
 
 

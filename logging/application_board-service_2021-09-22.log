@@ -1,0 +1,125 @@
+2021-09-22T17:50:32.987+0900  INFO 16580 --- [  restartedMain] com.bithumb.board.BoardApplication       [  55] : Starting BoardApplication using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 16580 (C:\projects\backend-board-service\build\classes\java\main started by minji in C:\projects\backend-board-service)
+2021-09-22T17:50:32.997+0900  INFO 16580 --- [  restartedMain] com.bithumb.board.BoardApplication       [ 663] : The following profiles are active: dev
+2021-09-22T17:50:33.165+0900  INFO 16580 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor [ 255] : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-09-22T17:50:33.167+0900  INFO 16580 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor [ 255] : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-09-22T17:50:36.998+0900  INFO 16580 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate [ 132] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-22T17:50:37.233+0900  INFO 16580 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate [ 201] : Finished Spring Data repository scanning in 211 ms. Found 4 JPA repository interfaces.
+2021-09-22T17:50:38.933+0900  INFO 16580 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  [ 108] : Tomcat initialized with port(s): 8080 (http)
+2021-09-22T17:50:38.953+0900  INFO 16580 --- [  restartedMain] o.apache.catalina.core.StandardService   [ 173] : Starting service [Tomcat]
+2021-09-22T17:50:38.954+0900  INFO 16580 --- [  restartedMain] org.apache.catalina.core.StandardEngine  [ 173] : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-22T17:50:39.303+0900  INFO 16580 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       [ 173] : Initializing Spring embedded WebApplicationContext
+2021-09-22T17:50:39.305+0900  INFO 16580 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext [ 290] : Root WebApplicationContext: initialization completed in 6136 ms
+2021-09-22T17:50:39.597+0900  INFO 16580 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-22T17:50:39.693+0900  INFO 16580 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       [ 123] : HikariPool-1 - Start completed.
+2021-09-22T17:50:39.968+0900  INFO 16580 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  [  31] : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-22T17:50:40.083+0900  INFO 16580 --- [  restartedMain] org.hibernate.Version                    [  44] : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-22T17:50:40.344+0900  INFO 16580 --- [  restartedMain] o.hibernate.annotations.common.Version   [  56] : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-22T17:50:40.563+0900  INFO 16580 --- [  restartedMain] org.hibernate.dialect.Dialect            [ 175] : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2021-09-22T17:50:42.160+0900  INFO 16580 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       [  52] : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-22T17:50:42.179+0900  INFO 16580 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean [ 437] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-22T17:50:44.431+0900  WARN 16580 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration [ 219] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-22T17:50:45.580+0900  INFO 16580 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       [  58] : LiveReload server is running on port 35729
+2021-09-22T17:50:46.826+0900  INFO 16580 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  [ 220] : Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-22T17:50:48.219+0900  INFO 16580 --- [  restartedMain] com.bithumb.board.BoardApplication       [  61] : Started BoardApplication in 17.014 seconds (JVM running for 26.799)
+2021-09-22T17:51:06.748+0900  INFO 16580 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       [ 173] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-22T17:51:06.751+0900  INFO 16580 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        [ 525] : Initializing Servlet 'dispatcherServlet'
+2021-09-22T17:51:06.756+0900  INFO 16580 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        [ 547] : Completed initialization in 4 ms
+2021-09-22T17:51:07.123+0900  INFO 16580 --- [nio-8080-exec-1] c.b.board.controller.BoardController     [ 107] : 게시물 조회 로그찍기
+2021-09-22T17:51:08.390+0900  INFO 16580 --- [nio-8080-exec-2] c.b.board.controller.BoardController     [ 107] : 게시물 조회 로그찍기
+2021-09-22T17:51:09.238+0900  INFO 16580 --- [nio-8080-exec-3] c.b.board.controller.BoardController     [ 107] : 게시물 조회 로그찍기
+2021-09-22T17:51:09.891+0900  INFO 16580 --- [nio-8080-exec-4] c.b.board.controller.BoardController     [ 107] : 게시물 조회 로그찍기
+2021-09-22T17:51:20.008+0900  INFO 16580 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean [ 651] : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-22T17:51:20.015+0900  INFO 16580 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       [ 350] : HikariPool-1 - Shutdown initiated...
+2021-09-22T17:51:20.058+0900  INFO 16580 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       [ 352] : HikariPool-1 - Shutdown completed.
+2021-09-22T17:54:53.890+0900  INFO 27668 --- [  restartedMain] com.bithumb.board.BoardApplication       [  55] : Starting BoardApplication using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 27668 (C:\projects\backend-board-service\build\classes\java\main started by minji in C:\projects\backend-board-service)
+2021-09-22T17:54:53.903+0900  INFO 27668 --- [  restartedMain] com.bithumb.board.BoardApplication       [ 663] : The following profiles are active: dev
+2021-09-22T17:54:54.088+0900  INFO 27668 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor [ 255] : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-09-22T17:54:54.090+0900  INFO 27668 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor [ 255] : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-09-22T17:55:00.312+0900  INFO 27668 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate [ 132] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-22T17:55:00.852+0900  INFO 27668 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate [ 201] : Finished Spring Data repository scanning in 466 ms. Found 4 JPA repository interfaces.
+2021-09-22T17:55:03.489+0900  INFO 27668 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  [ 108] : Tomcat initialized with port(s): 8080 (http)
+2021-09-22T17:55:03.520+0900  INFO 27668 --- [  restartedMain] o.apache.catalina.core.StandardService   [ 173] : Starting service [Tomcat]
+2021-09-22T17:55:03.522+0900  INFO 27668 --- [  restartedMain] org.apache.catalina.core.StandardEngine  [ 173] : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-22T17:55:03.872+0900  INFO 27668 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       [ 173] : Initializing Spring embedded WebApplicationContext
+2021-09-22T17:55:03.873+0900  INFO 27668 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext [ 290] : Root WebApplicationContext: initialization completed in 9780 ms
+2021-09-22T17:55:04.452+0900  INFO 27668 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-22T17:55:04.921+0900  INFO 27668 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       [ 123] : HikariPool-1 - Start completed.
+2021-09-22T17:55:06.585+0900  INFO 27668 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  [  31] : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-22T17:55:06.852+0900  INFO 27668 --- [  restartedMain] org.hibernate.Version                    [  44] : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-22T17:55:08.057+0900  INFO 27668 --- [  restartedMain] o.hibernate.annotations.common.Version   [  56] : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-22T17:55:09.439+0900  INFO 27668 --- [  restartedMain] org.hibernate.dialect.Dialect            [ 175] : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2021-09-22T17:55:14.810+0900  INFO 27668 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       [  52] : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-22T17:55:14.840+0900  INFO 27668 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean [ 437] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-22T17:55:28.311+0900  WARN 27668 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration [ 219] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-22T17:55:30.723+0900  INFO 27668 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       [  58] : LiveReload server is running on port 35729
+2021-09-22T17:55:31.954+0900  INFO 27668 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  [ 220] : Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-22T17:55:33.418+0900  INFO 27668 --- [  restartedMain] com.bithumb.board.BoardApplication       [  61] : Started BoardApplication in 41.191 seconds (JVM running for 49.49)
+2021-09-22T17:55:39.321+0900  INFO 27668 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       [ 173] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-22T17:55:39.323+0900  INFO 27668 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        [ 525] : Initializing Servlet 'dispatcherServlet'
+2021-09-22T17:55:39.328+0900  INFO 27668 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        [ 547] : Completed initialization in 3 ms
+2021-09-22T17:56:02.038+0900  INFO 27668 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean [ 651] : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-22T17:56:02.047+0900  INFO 27668 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       [ 350] : HikariPool-1 - Shutdown initiated...
+2021-09-22T17:56:02.085+0900  INFO 27668 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       [ 352] : HikariPool-1 - Shutdown completed.
+2021-09-22T17:57:29.910+0900  INFO 26800 --- [  restartedMain] com.bithumb.board.BoardApplication       [  55] : Starting BoardApplication using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 26800 (C:\projects\backend-board-service\build\classes\java\main started by minji in C:\projects\backend-board-service)
+2021-09-22T17:57:29.923+0900  INFO 26800 --- [  restartedMain] com.bithumb.board.BoardApplication       [ 663] : The following profiles are active: dev
+2021-09-22T17:57:30.048+0900  INFO 26800 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor [ 255] : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-09-22T17:57:30.051+0900  INFO 26800 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor [ 255] : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-09-22T17:57:33.250+0900  INFO 26800 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate [ 132] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-22T17:57:33.457+0900  INFO 26800 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate [ 201] : Finished Spring Data repository scanning in 178 ms. Found 4 JPA repository interfaces.
+2021-09-22T17:57:35.038+0900  INFO 26800 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  [ 108] : Tomcat initialized with port(s): 8080 (http)
+2021-09-22T17:57:35.057+0900  INFO 26800 --- [  restartedMain] o.apache.catalina.core.StandardService   [ 173] : Starting service [Tomcat]
+2021-09-22T17:57:35.059+0900  INFO 26800 --- [  restartedMain] org.apache.catalina.core.StandardEngine  [ 173] : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-22T17:57:35.353+0900  INFO 26800 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       [ 173] : Initializing Spring embedded WebApplicationContext
+2021-09-22T17:57:35.355+0900  INFO 26800 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext [ 290] : Root WebApplicationContext: initialization completed in 5302 ms
+2021-09-22T17:57:35.636+0900  INFO 26800 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-22T17:57:35.738+0900  INFO 26800 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       [ 123] : HikariPool-1 - Start completed.
+2021-09-22T17:57:36.052+0900  INFO 26800 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  [  31] : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-22T17:57:36.144+0900  INFO 26800 --- [  restartedMain] org.hibernate.Version                    [  44] : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-22T17:57:36.373+0900  INFO 26800 --- [  restartedMain] o.hibernate.annotations.common.Version   [  56] : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-22T17:57:36.581+0900  INFO 26800 --- [  restartedMain] org.hibernate.dialect.Dialect            [ 175] : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2021-09-22T17:57:37.895+0900  INFO 26800 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       [  52] : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-22T17:57:37.923+0900  INFO 26800 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean [ 437] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-22T17:57:39.962+0900  WARN 26800 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration [ 219] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-22T17:57:40.974+0900  INFO 26800 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       [  58] : LiveReload server is running on port 35729
+2021-09-22T17:57:42.090+0900  INFO 26800 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  [ 220] : Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-22T17:57:43.266+0900  INFO 26800 --- [  restartedMain] com.bithumb.board.BoardApplication       [  61] : Started BoardApplication in 15.041 seconds (JVM running for 35.007)
+2021-09-22T17:58:04.380+0900  INFO 26800 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       [ 173] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-22T17:58:04.383+0900  INFO 26800 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        [ 525] : Initializing Servlet 'dispatcherServlet'
+2021-09-22T17:58:04.390+0900  INFO 26800 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        [ 547] : Completed initialization in 6 ms
+2021-09-22T17:58:41.557+0900  INFO 26800 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean [ 651] : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-22T17:58:41.565+0900  INFO 26800 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       [ 350] : HikariPool-1 - Shutdown initiated...
+2021-09-22T17:58:41.601+0900  INFO 26800 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       [ 352] : HikariPool-1 - Shutdown completed.
+2021-09-22T17:59:15.156+0900  INFO 23408 --- [  restartedMain] com.bithumb.board.BoardApplication       [  55] : Starting BoardApplication using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 23408 (C:\projects\backend-board-service\build\classes\java\main started by minji in C:\projects\backend-board-service)
+2021-09-22T17:59:15.169+0900  INFO 23408 --- [  restartedMain] com.bithumb.board.BoardApplication       [ 663] : The following profiles are active: dev
+2021-09-22T17:59:15.305+0900  INFO 23408 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor [ 255] : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-09-22T17:59:15.306+0900  INFO 23408 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor [ 255] : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-09-22T17:59:19.007+0900  INFO 23408 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate [ 132] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-22T17:59:19.299+0900  INFO 23408 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate [ 201] : Finished Spring Data repository scanning in 258 ms. Found 4 JPA repository interfaces.
+2021-09-22T17:59:21.423+0900  INFO 23408 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  [ 108] : Tomcat initialized with port(s): 8080 (http)
+2021-09-22T17:59:21.446+0900  INFO 23408 --- [  restartedMain] o.apache.catalina.core.StandardService   [ 173] : Starting service [Tomcat]
+2021-09-22T17:59:21.447+0900  INFO 23408 --- [  restartedMain] org.apache.catalina.core.StandardEngine  [ 173] : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-22T17:59:21.737+0900  INFO 23408 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       [ 173] : Initializing Spring embedded WebApplicationContext
+2021-09-22T17:59:21.739+0900  INFO 23408 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext [ 290] : Root WebApplicationContext: initialization completed in 6429 ms
+2021-09-22T17:59:22.077+0900  INFO 23408 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-22T17:59:22.203+0900  INFO 23408 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       [ 123] : HikariPool-1 - Start completed.
+2021-09-22T17:59:22.539+0900  INFO 23408 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  [  31] : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-22T17:59:22.673+0900  INFO 23408 --- [  restartedMain] org.hibernate.Version                    [  44] : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-22T17:59:22.940+0900  INFO 23408 --- [  restartedMain] o.hibernate.annotations.common.Version   [  56] : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-22T17:59:23.267+0900  INFO 23408 --- [  restartedMain] org.hibernate.dialect.Dialect            [ 175] : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2021-09-22T17:59:25.050+0900  INFO 23408 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       [  52] : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-22T17:59:25.079+0900  INFO 23408 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean [ 437] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-22T17:59:32.373+0900  WARN 23408 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration [ 219] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-22T17:59:38.288+0900  INFO 23408 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       [  58] : LiveReload server is running on port 35729
+2021-09-22T17:59:40.232+0900  INFO 23408 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  [ 220] : Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-22T17:59:42.021+0900  INFO 23408 --- [  restartedMain] com.bithumb.board.BoardApplication       [  61] : Started BoardApplication in 28.144 seconds (JVM running for 45.147)
+2021-09-22T17:59:49.059+0900  INFO 23408 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       [ 173] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-22T17:59:49.066+0900  INFO 23408 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        [ 525] : Initializing Servlet 'dispatcherServlet'
+2021-09-22T17:59:49.082+0900  INFO 23408 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        [ 547] : Completed initialization in 12 ms
+2021-09-22T17:59:50.427+0900  INFO 23408 --- [nio-8080-exec-1] c.b.board.controller.BoardController     [ 111] : 조회한 게시물 넘버 3.
+2021-09-22T17:59:55.372+0900  INFO 23408 --- [nio-8080-exec-2] c.b.board.controller.BoardController     [ 111] : 조회한 게시물 넘버 2.
+2021-09-22T17:59:57.892+0900  INFO 23408 --- [nio-8080-exec-4] c.b.board.controller.BoardController     [ 111] : 조회한 게시물 넘버 1.
+2021-09-22T17:59:59.118+0900  INFO 23408 --- [nio-8080-exec-5] c.b.board.controller.BoardController     [ 111] : 조회한 게시물 넘버 3.
+2021-09-22T18:00:00.081+0900  INFO 23408 --- [nio-8080-exec-6] c.b.board.controller.BoardController     [ 111] : 조회한 게시물 넘버 2.
+2021-09-22T18:00:12.458+0900  INFO 23408 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean [ 651] : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-22T18:00:12.467+0900  INFO 23408 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       [ 350] : HikariPool-1 - Shutdown initiated...
+2021-09-22T18:00:12.506+0900  INFO 23408 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       [ 352] : HikariPool-1 - Shutdown completed.

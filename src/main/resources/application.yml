@@ -6,6 +6,11 @@ spring:
     password: root
     sql-script-encoding: UTF-8
 
+  profiles:
+    active: dev
+  application:
+    name: "board-service"
+
   jpa:
     show-sql: true
     hibernate:
