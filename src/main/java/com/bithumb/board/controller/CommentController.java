@@ -66,7 +66,6 @@ public class CommentController {
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_FIND_SUCCESS.getMessage(),collModel);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
 
-
     }
     // 댓글 등록
     @PostMapping("/comments")

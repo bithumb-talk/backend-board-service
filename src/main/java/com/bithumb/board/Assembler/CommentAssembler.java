@@ -27,7 +27,7 @@ public class CommentAssembler extends RepresentationModelAssemblerSupport<Commen
         model.setCommentContent(entity.getCommentContent());
         model.setCommentCreatedDate(entity.getCommentCreatedDate());
         model.setCommentModifyDate(entity.getCommentModifyDate());
-        model.add(linkTo(methodOn(BoardController.class).retrieveBoard(entity.getCommentNo())).withSelfRel());
+        model.add(linkTo(methodOn(BoardController.class).retrieveBoard(entity.getBoard().getBoardNo())).withRel("board"));
 
         return model;
     }
