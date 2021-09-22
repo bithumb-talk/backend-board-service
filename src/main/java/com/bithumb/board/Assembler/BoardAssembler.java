@@ -1,5 +1,6 @@
-package com.bithumb.board.controller;
+package com.bithumb.board.Assembler;
 
+import com.bithumb.board.controller.BoardController;
 import com.bithumb.board.domain.Board;
 import com.bithumb.board.domain.BoardModel;
 import org.springframework.hateoas.server.mvc.RepresentationModelAssemblerSupport;
