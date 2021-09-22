@@ -2,6 +2,7 @@ package com.bithumb.board.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name="comment")
+
 public class Comment implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

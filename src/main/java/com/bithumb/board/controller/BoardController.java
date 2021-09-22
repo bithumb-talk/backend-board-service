@@ -2,6 +2,7 @@ package com.bithumb.board.controller;
 
 
 import com.bithumb.board.Assembler.BoardAssembler;
+import com.bithumb.board.controller.CommentController;
 import com.bithumb.board.domain.Board;
 import com.bithumb.board.domain.BoardModel;
 import com.bithumb.board.domain.User;
@@ -10,7 +11,12 @@ import com.bithumb.board.response.StatusCode;
 import com.bithumb.board.response.SuccessCode;
 import com.bithumb.board.service.BoardService;
 import com.bithumb.board.service.UserService;
+import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
+
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,6 +25,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.PagedModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,11 +37,12 @@ import java.util.Optional;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
-
+@Api(tags = {"Board"})
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin(origins="*", allowCredentials = "false")
-//@Slf4j
+@Slf4j
+
 public class BoardController {
     private final BoardService boardService;
     private final UserService userService;
@@ -43,6 +51,7 @@ public class BoardController {
     @Autowired
     PagedResourcesAssembler<Board> pagedResourcesAssembler;
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(BoardController.class);
     // 게시판 조회
     @GetMapping("/boards")
     public ResponseEntity retrieveBoards(@RequestParam(value="category", required = false) String boardCategory
@@ -95,9 +104,12 @@ public class BoardController {
         if(!board.isPresent()){
             //에러처리
         }
+        LOGGER.info("게시물 조회 로그찍기");
+
+
 
         EntityModel model =EntityModel.of(board)
-                .add(linkTo(methodOn(CommentController.class)
+                .add(WebMvcLinkBuilder.linkTo(methodOn(CommentController.class)
                         .retrieveComments(boardNo)).withRel("comments"));
 
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),model);

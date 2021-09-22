@@ -24,13 +24,13 @@ management:
 
 server:
   port: 8080
-  servlet:
-    encoding:
-      charset: UTF-8
-      enabled: true
-      force: true
-  tomcat:
-    uri-encoding: UTF-8
+#  servlet:
+#    encoding:
+#      charset: UTF-8
+#      enabled: true
+#      force: true
+#  tomcat:
+#    uri-encoding: UTF-8
 
 
 

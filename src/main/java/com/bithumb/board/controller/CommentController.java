@@ -12,6 +12,7 @@ import com.bithumb.board.response.StatusCode;
 import com.bithumb.board.response.SuccessCode;
 import com.bithumb.board.service.BoardService;
 import com.bithumb.board.service.CommentService;
+import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -32,6 +33,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+@Api(tags = {"Comment"})
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin(origins="*", allowCredentials = "false")

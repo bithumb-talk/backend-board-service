@@ -3,8 +3,6 @@ package com.bithumb.board.Assembler;
 
 import com.bithumb.board.controller.BoardController;
 import com.bithumb.board.controller.CommentController;
-import com.bithumb.board.domain.Board;
-import com.bithumb.board.domain.BoardModel;
 import com.bithumb.board.domain.Comment;
 import com.bithumb.board.domain.CommentModel;
 import org.springframework.hateoas.server.mvc.RepresentationModelAssemblerSupport;

@@ -2,6 +2,7 @@ package com.bithumb.board.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 import javax.persistence.*;

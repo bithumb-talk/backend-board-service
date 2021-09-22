@@ -9,6 +9,7 @@ import com.bithumb.board.response.ApiResponse;
 import com.bithumb.board.response.StatusCode;
 import com.bithumb.board.response.SuccessCode;
 import com.bithumb.board.service.ReplyService;
+import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+@Api(tags = {"Reply"})
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*", allowCredentials = "false")
