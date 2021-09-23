@@ -1,10 +1,15 @@
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:5000/bithumb
+    url: jdbc:mariadb://172.17.0.1:5000/bithumb
     username: root
     password: root
     sql-script-encoding: UTF-8
+
+  profiles:
+    active: dev
+  application:
+    name: "board-service"
 
   jpa:
     show-sql: true

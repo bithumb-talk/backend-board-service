@@ -54,7 +54,7 @@ public class BoardController {
     private static final Logger LOGGER = LoggerFactory.getLogger(BoardController.class);
     // 게시판 조회
     @GetMapping("/boards")
-    public ResponseEntity retrieveBoards(@RequestParam(value="category", required = false) String boardCategory
+    public ResponseEntity retrieveBoards(@Valid @RequestParam(value="category", required = false) String boardCategory
             ,@RequestParam(value="user",required = false) Long userNo
             ,final Pageable pageable) {
 
@@ -104,7 +104,12 @@ public class BoardController {
         if(!board.isPresent()){
             //에러처리
         }
-        LOGGER.info("게시물 조회 로그찍기");
+
+        //if(LOGGER.isDebugEnabled()) {
+            // 로그레벨 조정하기
+            //LOGGER.debug("조회한 게시물 넘버 {}.", boardNo);
+            LOGGER.info("조회한 게시물 넘버 {}.", boardNo);
+        //}
 
 
 

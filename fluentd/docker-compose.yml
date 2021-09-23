@@ -1,0 +1,50 @@
+version: '2'
+services:
+  fluentd-client:
+    build: ./fluentd-client
+    volumes:
+      - ./fluentd-client/conf:/fluentd/etc    # fluentd.conf 파일을 컨테이너로 마운트  
+      - /home/ubuntu/log:/var/log  # 쌓인 서비스의 로그파일을 컨테이너로 마운트
+    links:
+      - "fluentd-aggregator"
+    ports:
+      - "25000:25000"
+
+  fluentd-aggregator:
+    build: ./fluentd-aggregator
+    volumes:
+      - ./fluentd-aggregator/conf:/fluentd/etc # 로컬의 fluentd.conf 파일을 컨테이너로 마운트
+    links:
+      - "elasticsearch"
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+
+  elasticsearch:
+    image: elasticsearch:5.5
+#    mem_limit: 1536m
+    networks:
+      - default
+      - internal
+    expose:
+      - 9200
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - "ES_JAVA_OPTS=-Xms4g -Xmx4g"
+ 
+  kibana:
+    image: kibana:5.5
+    mem_limit: 128m
+    networks:
+      - default
+      - internal
+    links:
+      - "elasticsearch"
+    ports:
+      - "5601:5601"
+ 
+networks:
+  internal:
+    driver: bridge
