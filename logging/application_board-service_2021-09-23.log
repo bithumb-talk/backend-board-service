@@ -1,26 +1,26 @@
-2021-09-23 09:12:39.864  INFO 27452 --- [Test worker] com.bithumb.board.BoardApplicationTests  : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 27452 (started by minji in C:\projects\backend-board-service)
-2021-09-23 09:12:39.884  INFO 27452 --- [Test worker] com.bithumb.board.BoardApplicationTests  : The following profiles are active: dev
-2021-09-23 09:12:44.060  INFO 27452 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-09-23 09:12:44.310  INFO 27452 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 226 ms. Found 4 JPA repository interfaces.
-2021-09-23 09:12:46.225  INFO 27452 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 09:12:46.710  INFO 27452 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-09-23 09:12:47.333  INFO 27452 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-09-23 09:12:47.591  INFO 27452 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-09-23 09:12:48.118  INFO 27452 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-09-23 09:12:48.649  INFO 27452 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
-2021-09-23 09:12:51.010  INFO 27452 --- [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-09-23 09:12:51.036  INFO 27452 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-09-23 09:12:54.793  WARN 27452 --- [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-09-23 09:13:01.317  INFO 27452 --- [Test worker] com.bithumb.board.BoardApplicationTests  : Started BoardApplicationTests in 22.971 seconds (JVM running for 32.169)
-2021-09-23 09:13:01.839  INFO 27452 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-09-23 09:13:01.878  INFO 27452 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-09-23 09:13:01.996  INFO 27452 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-09-23 10:00:27.020  INFO 23260 --- [Test worker] com.bithumb.board.BoardApplicationTests  : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 23260 (started by minji in C:\projects\backend-board-service)
-2021-09-23 10:00:27.029  INFO 23260 --- [Test worker] com.bithumb.board.BoardApplicationTests  : The following profiles are active: dev
-2021-09-23 10:00:32.456  INFO 23260 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-09-23 10:00:32.793  INFO 23260 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 301 ms. Found 4 JPA repository interfaces.
-2021-09-23 10:00:35.981  INFO 23260 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:00:39.841 ERROR 23260 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T09:12:39.864+0900  INFO 27452 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [  55] : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 27452 (started by minji in C:\projects\backend-board-service)
+2021-09-23T09:12:39.884+0900  INFO 27452 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [ 663] : The following profiles are active: dev
+2021-09-23T09:12:44.060+0900  INFO 27452 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 132] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-23T09:12:44.310+0900  INFO 27452 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 201] : Finished Spring Data repository scanning in 226 ms. Found 4 JPA repository interfaces.
+2021-09-23T09:12:46.225+0900  INFO 27452 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T09:12:46.710+0900  INFO 27452 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 123] : HikariPool-1 - Start completed.
+2021-09-23T09:12:47.333+0900  INFO 27452 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  [  31] : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-23T09:12:47.591+0900  INFO 27452 --- [    Test worker] org.hibernate.Version                    [  44] : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-23T09:12:48.118+0900  INFO 27452 --- [    Test worker] o.hibernate.annotations.common.Version   [  56] : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-23T09:12:48.649+0900  INFO 27452 --- [    Test worker] org.hibernate.dialect.Dialect            [ 175] : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2021-09-23T09:12:51.010+0900  INFO 27452 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       [  52] : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-23T09:12:51.036+0900  INFO 27452 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean [ 437] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-23T09:12:54.793+0900  WARN 27452 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration [ 219] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-23T09:13:01.317+0900  INFO 27452 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [  61] : Started BoardApplicationTests in 22.971 seconds (JVM running for 32.169)
+2021-09-23T09:13:01.839+0900  INFO 27452 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean [ 651] : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-23T09:13:01.878+0900  INFO 27452 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       [ 350] : HikariPool-1 - Shutdown initiated...
+2021-09-23T09:13:01.996+0900  INFO 27452 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       [ 352] : HikariPool-1 - Shutdown completed.
+2021-09-23T10:00:27.020+0900  INFO 23260 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [  55] : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 23260 (started by minji in C:\projects\backend-board-service)
+2021-09-23T10:00:27.029+0900  INFO 23260 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [ 663] : The following profiles are active: dev
+2021-09-23T10:00:32.456+0900  INFO 23260 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 132] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-23T10:00:32.793+0900  INFO 23260 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 201] : Finished Spring Data repository scanning in 301 ms. Found 4 JPA repository interfaces.
+2021-09-23T10:00:35.981+0900  INFO 23260 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:00:39.841+0900 ERROR 23260 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -176,11 +176,11 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 134 common frames omitted
 
-2021-09-23 10:00:40.767  INFO 23260 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-09-23 10:00:41.043  INFO 23260 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-09-23 10:00:42.137  INFO 23260 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-09-23 10:00:42.719  INFO 23260 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:00:46.073 ERROR 23260 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:00:40.767+0900  INFO 23260 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  [  31] : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-23T10:00:41.043+0900  INFO 23260 --- [    Test worker] org.hibernate.Version                    [  44] : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-23T10:00:42.137+0900  INFO 23260 --- [    Test worker] o.hibernate.annotations.common.Version   [  56] : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-23T10:00:42.719+0900  INFO 23260 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:00:46.073+0900 ERROR 23260 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -344,7 +344,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 142 common frames omitted
 
-2021-09-23 10:00:46.117  WARN 23260 --- [Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2021-09-23T10:00:46.117+0900  WARN 23260 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     [ 132] : HHH000342: Could not obtain connection to query metadata
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -508,9 +508,9 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 142 common frames omitted
 
-2021-09-23 10:00:46.204  INFO 23260 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
-2021-09-23 10:00:50.251  INFO 23260 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:00:53.301 ERROR 23260 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:00:46.204+0900  INFO 23260 --- [    Test worker] org.hibernate.dialect.Dialect            [ 175] : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2021-09-23T10:00:50.251+0900  INFO 23260 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:00:53.301+0900 ERROR 23260 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -673,14 +673,14 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:00:53.330  WARN 23260 --- [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: -1, SQLState: 08000
-2021-09-23 10:00:53.340 ERROR 23260 --- [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
-2021-09-23 10:00:53.361 ERROR 23260 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-09-23 10:00:53.364  WARN 23260 --- [Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-09-23 10:00:53.395  INFO 23260 --- [Test worker] ConditionEvaluationReportLoggingListener : 
+2021-09-23T10:00:53.330+0900  WARN 23260 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 137] : SQL Error: -1, SQLState: 08000
+2021-09-23T10:00:53.340+0900 ERROR 23260 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 142] : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
+2021-09-23T10:00:53.361+0900 ERROR 23260 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean [ 426] : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:00:53.364+0900  WARN 23260 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   [ 591] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:00:53.395+0900  INFO 23260 --- [    Test worker] ConditionEvaluationReportLoggingListener [ 136] : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-09-23 10:00:53.495 ERROR 23260 --- [Test worker] o.s.boot.SpringApplication               : Application run failed
+2021-09-23T10:00:53.495+0900 ERROR 23260 --- [    Test worker] o.s.boot.SpringApplication               [ 843] : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
@@ -856,7 +856,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:00:53.502 ERROR 23260 --- [Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@5825d0e0] to prepare test instance [com.bithumb.board.BoardApplicationTests@4a6b3624]
+2021-09-23T10:00:53.502+0900 ERROR 23260 --- [    Test worker] o.s.test.context.TestContextManager      [ 248] : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@5825d0e0] to prepare test instance [com.bithumb.board.BoardApplicationTests@4a6b3624]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
@@ -1035,12 +1035,12 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:03:07.200  INFO 19664 --- [Test worker] com.bithumb.board.BoardApplicationTests  : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 19664 (started by minji in C:\projects\backend-board-service)
-2021-09-23 10:03:07.210  INFO 19664 --- [Test worker] com.bithumb.board.BoardApplicationTests  : The following profiles are active: dev
-2021-09-23 10:03:11.244  INFO 19664 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-09-23 10:03:11.552  INFO 19664 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 266 ms. Found 4 JPA repository interfaces.
-2021-09-23 10:03:14.500  INFO 19664 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:03:17.911 ERROR 19664 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:03:07.200+0900  INFO 19664 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [  55] : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 19664 (started by minji in C:\projects\backend-board-service)
+2021-09-23T10:03:07.210+0900  INFO 19664 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [ 663] : The following profiles are active: dev
+2021-09-23T10:03:11.244+0900  INFO 19664 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 132] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-23T10:03:11.552+0900  INFO 19664 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 201] : Finished Spring Data repository scanning in 266 ms. Found 4 JPA repository interfaces.
+2021-09-23T10:03:14.500+0900  INFO 19664 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:03:17.911+0900 ERROR 19664 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -1196,11 +1196,11 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 134 common frames omitted
 
-2021-09-23 10:03:18.479  INFO 19664 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-09-23 10:03:18.706  INFO 19664 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-09-23 10:03:19.292  INFO 19664 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-09-23 10:03:19.707  INFO 19664 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:03:22.753 ERROR 19664 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:03:18.479+0900  INFO 19664 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  [  31] : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-23T10:03:18.706+0900  INFO 19664 --- [    Test worker] org.hibernate.Version                    [  44] : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-23T10:03:19.292+0900  INFO 19664 --- [    Test worker] o.hibernate.annotations.common.Version   [  56] : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-23T10:03:19.707+0900  INFO 19664 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:03:22.753+0900 ERROR 19664 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -1364,7 +1364,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 142 common frames omitted
 
-2021-09-23 10:03:22.832  WARN 19664 --- [Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2021-09-23T10:03:22.832+0900  WARN 19664 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     [ 132] : HHH000342: Could not obtain connection to query metadata
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -1528,9 +1528,9 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 142 common frames omitted
 
-2021-09-23 10:03:22.938  INFO 19664 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
-2021-09-23 10:03:25.249  INFO 19664 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:03:28.314 ERROR 19664 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:03:22.938+0900  INFO 19664 --- [    Test worker] org.hibernate.dialect.Dialect            [ 175] : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2021-09-23T10:03:25.249+0900  INFO 19664 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:03:28.314+0900 ERROR 19664 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -1693,14 +1693,14 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:03:28.328  WARN 19664 --- [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: -1, SQLState: 08000
-2021-09-23 10:03:28.332 ERROR 19664 --- [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
-2021-09-23 10:03:28.359 ERROR 19664 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-09-23 10:03:28.364  WARN 19664 --- [Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-09-23 10:03:28.395  INFO 19664 --- [Test worker] ConditionEvaluationReportLoggingListener : 
+2021-09-23T10:03:28.328+0900  WARN 19664 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 137] : SQL Error: -1, SQLState: 08000
+2021-09-23T10:03:28.332+0900 ERROR 19664 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 142] : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
+2021-09-23T10:03:28.359+0900 ERROR 19664 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean [ 426] : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:03:28.364+0900  WARN 19664 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   [ 591] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:03:28.395+0900  INFO 19664 --- [    Test worker] ConditionEvaluationReportLoggingListener [ 136] : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-09-23 10:03:28.470 ERROR 19664 --- [Test worker] o.s.boot.SpringApplication               : Application run failed
+2021-09-23T10:03:28.470+0900 ERROR 19664 --- [    Test worker] o.s.boot.SpringApplication               [ 843] : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
@@ -1876,7 +1876,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:03:28.478 ERROR 19664 --- [Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@15111ec2] to prepare test instance [com.bithumb.board.BoardApplicationTests@795bc32b]
+2021-09-23T10:03:28.478+0900 ERROR 19664 --- [    Test worker] o.s.test.context.TestContextManager      [ 248] : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@15111ec2] to prepare test instance [com.bithumb.board.BoardApplicationTests@795bc32b]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
@@ -2055,12 +2055,12 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:05:46.360  INFO 15836 --- [Test worker] com.bithumb.board.BoardApplicationTests  : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 15836 (started by minji in C:\projects\backend-board-service)
-2021-09-23 10:05:46.372  INFO 15836 --- [Test worker] com.bithumb.board.BoardApplicationTests  : The following profiles are active: dev
-2021-09-23 10:05:50.034  INFO 15836 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-09-23 10:05:50.299  INFO 15836 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 239 ms. Found 4 JPA repository interfaces.
-2021-09-23 10:05:52.239  INFO 15836 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:05:55.725 ERROR 15836 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:05:46.360+0900  INFO 15836 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [  55] : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 15836 (started by minji in C:\projects\backend-board-service)
+2021-09-23T10:05:46.372+0900  INFO 15836 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [ 663] : The following profiles are active: dev
+2021-09-23T10:05:50.034+0900  INFO 15836 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 132] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-23T10:05:50.299+0900  INFO 15836 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 201] : Finished Spring Data repository scanning in 239 ms. Found 4 JPA repository interfaces.
+2021-09-23T10:05:52.239+0900  INFO 15836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:05:55.725+0900 ERROR 15836 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -2216,11 +2216,11 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 134 common frames omitted
 
-2021-09-23 10:05:56.082  INFO 15836 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-09-23 10:05:56.319  INFO 15836 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-09-23 10:05:56.861  INFO 15836 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-09-23 10:05:57.334  INFO 15836 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:06:00.402 ERROR 15836 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:05:56.082+0900  INFO 15836 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  [  31] : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-23T10:05:56.319+0900  INFO 15836 --- [    Test worker] org.hibernate.Version                    [  44] : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-23T10:05:56.861+0900  INFO 15836 --- [    Test worker] o.hibernate.annotations.common.Version   [  56] : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-23T10:05:57.334+0900  INFO 15836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:06:00.402+0900 ERROR 15836 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -2384,7 +2384,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 142 common frames omitted
 
-2021-09-23 10:06:00.452  WARN 15836 --- [Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2021-09-23T10:06:00.452+0900  WARN 15836 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     [ 132] : HHH000342: Could not obtain connection to query metadata
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -2548,9 +2548,9 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 142 common frames omitted
 
-2021-09-23 10:06:00.509  INFO 15836 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
-2021-09-23 10:06:02.250  INFO 15836 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:06:05.300 ERROR 15836 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:06:00.509+0900  INFO 15836 --- [    Test worker] org.hibernate.dialect.Dialect            [ 175] : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2021-09-23T10:06:02.250+0900  INFO 15836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:06:05.300+0900 ERROR 15836 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -2713,14 +2713,14 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:06:05.309  WARN 15836 --- [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: -1, SQLState: 08000
-2021-09-23 10:06:05.311 ERROR 15836 --- [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
-2021-09-23 10:06:05.325 ERROR 15836 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-09-23 10:06:05.327  WARN 15836 --- [Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-09-23 10:06:05.345  INFO 15836 --- [Test worker] ConditionEvaluationReportLoggingListener : 
+2021-09-23T10:06:05.309+0900  WARN 15836 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 137] : SQL Error: -1, SQLState: 08000
+2021-09-23T10:06:05.311+0900 ERROR 15836 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 142] : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
+2021-09-23T10:06:05.325+0900 ERROR 15836 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean [ 426] : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:06:05.327+0900  WARN 15836 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   [ 591] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:06:05.345+0900  INFO 15836 --- [    Test worker] ConditionEvaluationReportLoggingListener [ 136] : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-09-23 10:06:05.408 ERROR 15836 --- [Test worker] o.s.boot.SpringApplication               : Application run failed
+2021-09-23T10:06:05.408+0900 ERROR 15836 --- [    Test worker] o.s.boot.SpringApplication               [ 843] : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
@@ -2896,7 +2896,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:06:05.423 ERROR 15836 --- [Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1eb3cf29] to prepare test instance [com.bithumb.board.BoardApplicationTests@26019c47]
+2021-09-23T10:06:05.423+0900 ERROR 15836 --- [    Test worker] o.s.test.context.TestContextManager      [ 248] : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1eb3cf29] to prepare test instance [com.bithumb.board.BoardApplicationTests@26019c47]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
@@ -3075,12 +3075,12 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:06:44.494  INFO 36096 --- [Test worker] com.bithumb.board.BoardApplicationTests  : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 36096 (started by minji in C:\projects\backend-board-service)
-2021-09-23 10:06:44.500  INFO 36096 --- [Test worker] com.bithumb.board.BoardApplicationTests  : The following profiles are active: dev
-2021-09-23 10:06:49.132  INFO 36096 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-09-23 10:06:50.008  INFO 36096 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 831 ms. Found 4 JPA repository interfaces.
-2021-09-23 10:06:54.831  INFO 36096 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:06:58.362 ERROR 36096 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:06:44.494+0900  INFO 36096 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [  55] : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 36096 (started by minji in C:\projects\backend-board-service)
+2021-09-23T10:06:44.500+0900  INFO 36096 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [ 663] : The following profiles are active: dev
+2021-09-23T10:06:49.132+0900  INFO 36096 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 132] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-23T10:06:50.008+0900  INFO 36096 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 201] : Finished Spring Data repository scanning in 831 ms. Found 4 JPA repository interfaces.
+2021-09-23T10:06:54.831+0900  INFO 36096 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:06:58.362+0900 ERROR 36096 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -3236,11 +3236,11 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 134 common frames omitted
 
-2021-09-23 10:06:59.125  INFO 36096 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-09-23 10:06:59.513  INFO 36096 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-09-23 10:07:00.530  INFO 36096 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-09-23 10:07:01.671  INFO 36096 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:07:05.354 ERROR 36096 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:06:59.125+0900  INFO 36096 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  [  31] : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-23T10:06:59.513+0900  INFO 36096 --- [    Test worker] org.hibernate.Version                    [  44] : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-23T10:07:00.530+0900  INFO 36096 --- [    Test worker] o.hibernate.annotations.common.Version   [  56] : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-23T10:07:01.671+0900  INFO 36096 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:07:05.354+0900 ERROR 36096 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -3404,7 +3404,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 142 common frames omitted
 
-2021-09-23 10:07:05.479  WARN 36096 --- [Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2021-09-23T10:07:05.479+0900  WARN 36096 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     [ 132] : HHH000342: Could not obtain connection to query metadata
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -3568,9 +3568,9 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 142 common frames omitted
 
-2021-09-23 10:07:05.669  INFO 36096 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
-2021-09-23 10:07:08.133  INFO 36096 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:07:11.180 ERROR 36096 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:07:05.669+0900  INFO 36096 --- [    Test worker] org.hibernate.dialect.Dialect            [ 175] : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2021-09-23T10:07:08.133+0900  INFO 36096 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:07:11.180+0900 ERROR 36096 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -3733,14 +3733,14 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:07:11.196  WARN 36096 --- [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: -1, SQLState: 08000
-2021-09-23 10:07:11.199 ERROR 36096 --- [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
-2021-09-23 10:07:11.209 ERROR 36096 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-09-23 10:07:11.212  WARN 36096 --- [Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-09-23 10:07:11.236  INFO 36096 --- [Test worker] ConditionEvaluationReportLoggingListener : 
+2021-09-23T10:07:11.196+0900  WARN 36096 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 137] : SQL Error: -1, SQLState: 08000
+2021-09-23T10:07:11.199+0900 ERROR 36096 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 142] : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
+2021-09-23T10:07:11.209+0900 ERROR 36096 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean [ 426] : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:07:11.212+0900  WARN 36096 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   [ 591] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:07:11.236+0900  INFO 36096 --- [    Test worker] ConditionEvaluationReportLoggingListener [ 136] : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-09-23 10:07:11.293 ERROR 36096 --- [Test worker] o.s.boot.SpringApplication               : Application run failed
+2021-09-23T10:07:11.293+0900 ERROR 36096 --- [    Test worker] o.s.boot.SpringApplication               [ 843] : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
@@ -3916,7 +3916,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:07:11.299 ERROR 36096 --- [Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@2161230f] to prepare test instance [com.bithumb.board.BoardApplicationTests@6686dbcd]
+2021-09-23T10:07:11.299+0900 ERROR 36096 --- [    Test worker] o.s.test.context.TestContextManager      [ 248] : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@2161230f] to prepare test instance [com.bithumb.board.BoardApplicationTests@6686dbcd]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
@@ -4095,12 +4095,12 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:13:57.718  INFO 13284 --- [Test worker] com.bithumb.board.BoardApplicationTests  : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 13284 (started by minji in C:\projects\backend-board-service)
-2021-09-23 10:13:57.735  INFO 13284 --- [Test worker] com.bithumb.board.BoardApplicationTests  : The following profiles are active: dev
-2021-09-23 10:14:14.201  INFO 13284 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-09-23 10:14:16.143  INFO 13284 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1511 ms. Found 4 JPA repository interfaces.
-2021-09-23 10:14:30.241  INFO 13284 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:14:34.874 ERROR 13284 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:13:57.718+0900  INFO 13284 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [  55] : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 13284 (started by minji in C:\projects\backend-board-service)
+2021-09-23T10:13:57.735+0900  INFO 13284 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [ 663] : The following profiles are active: dev
+2021-09-23T10:14:14.201+0900  INFO 13284 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 132] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-23T10:14:16.143+0900  INFO 13284 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 201] : Finished Spring Data repository scanning in 1511 ms. Found 4 JPA repository interfaces.
+2021-09-23T10:14:30.241+0900  INFO 13284 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:14:34.874+0900 ERROR 13284 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -4256,11 +4256,11 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 134 common frames omitted
 
-2021-09-23 10:14:37.441  INFO 13284 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-09-23 10:14:38.211  INFO 13284 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-09-23 10:14:39.933  INFO 13284 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-09-23 10:14:41.287  INFO 13284 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:14:44.667 ERROR 13284 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:14:37.441+0900  INFO 13284 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  [  31] : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-23T10:14:38.211+0900  INFO 13284 --- [    Test worker] org.hibernate.Version                    [  44] : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-23T10:14:39.933+0900  INFO 13284 --- [    Test worker] o.hibernate.annotations.common.Version   [  56] : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-23T10:14:41.287+0900  INFO 13284 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:14:44.667+0900 ERROR 13284 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -4424,7 +4424,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 142 common frames omitted
 
-2021-09-23 10:14:44.774  WARN 13284 --- [Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2021-09-23T10:14:44.774+0900  WARN 13284 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     [ 132] : HHH000342: Could not obtain connection to query metadata
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -4588,9 +4588,9 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 142 common frames omitted
 
-2021-09-23 10:14:44.877  INFO 13284 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
-2021-09-23 10:14:49.435  INFO 13284 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:14:52.978 ERROR 13284 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:14:44.877+0900  INFO 13284 --- [    Test worker] org.hibernate.dialect.Dialect            [ 175] : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2021-09-23T10:14:49.435+0900  INFO 13284 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:14:52.978+0900 ERROR 13284 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -4753,14 +4753,14 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:14:52.990  WARN 13284 --- [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: -1, SQLState: 08000
-2021-09-23 10:14:52.992 ERROR 13284 --- [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
-2021-09-23 10:14:53.022 ERROR 13284 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-09-23 10:14:53.026  WARN 13284 --- [Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-09-23 10:14:53.092  INFO 13284 --- [Test worker] ConditionEvaluationReportLoggingListener : 
+2021-09-23T10:14:52.990+0900  WARN 13284 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 137] : SQL Error: -1, SQLState: 08000
+2021-09-23T10:14:52.992+0900 ERROR 13284 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 142] : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
+2021-09-23T10:14:53.022+0900 ERROR 13284 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean [ 426] : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:14:53.026+0900  WARN 13284 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   [ 591] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:14:53.092+0900  INFO 13284 --- [    Test worker] ConditionEvaluationReportLoggingListener [ 136] : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-09-23 10:14:53.199 ERROR 13284 --- [Test worker] o.s.boot.SpringApplication               : Application run failed
+2021-09-23T10:14:53.199+0900 ERROR 13284 --- [    Test worker] o.s.boot.SpringApplication               [ 843] : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
@@ -4936,7 +4936,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:14:53.234 ERROR 13284 --- [Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@5f15dba6] to prepare test instance [com.bithumb.board.BoardApplicationTests@3633d484]
+2021-09-23T10:14:53.234+0900 ERROR 13284 --- [    Test worker] o.s.test.context.TestContextManager      [ 248] : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@5f15dba6] to prepare test instance [com.bithumb.board.BoardApplicationTests@3633d484]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
@@ -5115,12 +5115,12 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:16:26.108  INFO 16404 --- [Test worker] com.bithumb.board.BoardApplicationTests  : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 16404 (started by minji in C:\projects\backend-board-service)
-2021-09-23 10:16:26.131  INFO 16404 --- [Test worker] com.bithumb.board.BoardApplicationTests  : The following profiles are active: dev
-2021-09-23 10:16:37.727  INFO 16404 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-09-23 10:16:38.690  INFO 16404 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 922 ms. Found 4 JPA repository interfaces.
-2021-09-23 10:16:42.775  INFO 16404 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:16:46.381 ERROR 16404 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:16:26.108+0900  INFO 16404 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [  55] : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 16404 (started by minji in C:\projects\backend-board-service)
+2021-09-23T10:16:26.131+0900  INFO 16404 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [ 663] : The following profiles are active: dev
+2021-09-23T10:16:37.727+0900  INFO 16404 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 132] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-23T10:16:38.690+0900  INFO 16404 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 201] : Finished Spring Data repository scanning in 922 ms. Found 4 JPA repository interfaces.
+2021-09-23T10:16:42.775+0900  INFO 16404 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:16:46.381+0900 ERROR 16404 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -5276,11 +5276,11 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 134 common frames omitted
 
-2021-09-23 10:16:46.993  INFO 16404 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-09-23 10:16:47.356  INFO 16404 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-09-23 10:16:48.344  INFO 16404 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-09-23 10:16:49.087  INFO 16404 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:16:52.252 ERROR 16404 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:16:46.993+0900  INFO 16404 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  [  31] : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-23T10:16:47.356+0900  INFO 16404 --- [    Test worker] org.hibernate.Version                    [  44] : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-23T10:16:48.344+0900  INFO 16404 --- [    Test worker] o.hibernate.annotations.common.Version   [  56] : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-23T10:16:49.087+0900  INFO 16404 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:16:52.252+0900 ERROR 16404 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -5444,7 +5444,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 142 common frames omitted
 
-2021-09-23 10:16:52.384  WARN 16404 --- [Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2021-09-23T10:16:52.384+0900  WARN 16404 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     [ 132] : HHH000342: Could not obtain connection to query metadata
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -5608,9 +5608,9 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 142 common frames omitted
 
-2021-09-23 10:16:52.509  INFO 16404 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
-2021-09-23 10:17:04.762  INFO 16404 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:17:08.263 ERROR 16404 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:16:52.509+0900  INFO 16404 --- [    Test worker] org.hibernate.dialect.Dialect            [ 175] : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2021-09-23T10:17:04.762+0900  INFO 16404 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:17:08.263+0900 ERROR 16404 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -5773,14 +5773,14 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:17:08.271  WARN 16404 --- [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: -1, SQLState: 08000
-2021-09-23 10:17:08.273 ERROR 16404 --- [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
-2021-09-23 10:17:08.836 ERROR 16404 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-09-23 10:17:08.842  WARN 16404 --- [Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-09-23 10:17:08.869  INFO 16404 --- [Test worker] ConditionEvaluationReportLoggingListener : 
+2021-09-23T10:17:08.271+0900  WARN 16404 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 137] : SQL Error: -1, SQLState: 08000
+2021-09-23T10:17:08.273+0900 ERROR 16404 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 142] : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
+2021-09-23T10:17:08.836+0900 ERROR 16404 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean [ 426] : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:17:08.842+0900  WARN 16404 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   [ 591] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:17:08.869+0900  INFO 16404 --- [    Test worker] ConditionEvaluationReportLoggingListener [ 136] : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-09-23 10:17:08.961 ERROR 16404 --- [Test worker] o.s.boot.SpringApplication               : Application run failed
+2021-09-23T10:17:08.961+0900 ERROR 16404 --- [    Test worker] o.s.boot.SpringApplication               [ 843] : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
@@ -5956,7 +5956,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:17:08.968 ERROR 16404 --- [Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@2161230f] to prepare test instance [com.bithumb.board.BoardApplicationTests@67499a60]
+2021-09-23T10:17:08.968+0900 ERROR 16404 --- [    Test worker] o.s.test.context.TestContextManager      [ 248] : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@2161230f] to prepare test instance [com.bithumb.board.BoardApplicationTests@67499a60]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
@@ -6135,12 +6135,12 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:19:23.232  INFO 5572 --- [Test worker] com.bithumb.board.BoardApplicationTests  : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 5572 (started by minji in C:\projects\backend-board-service)
-2021-09-23 10:19:23.238  INFO 5572 --- [Test worker] com.bithumb.board.BoardApplicationTests  : The following profiles are active: dev
-2021-09-23 10:19:26.887  INFO 5572 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-09-23 10:19:27.134  INFO 5572 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 220 ms. Found 4 JPA repository interfaces.
-2021-09-23 10:19:29.086  INFO 5572 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:19:32.287 ERROR 5572 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:19:23.232+0900  INFO 5572 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [  55] : Starting BoardApplicationTests using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 5572 (started by minji in C:\projects\backend-board-service)
+2021-09-23T10:19:23.238+0900  INFO 5572 --- [    Test worker] com.bithumb.board.BoardApplicationTests  [ 663] : The following profiles are active: dev
+2021-09-23T10:19:26.887+0900  INFO 5572 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 132] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-23T10:19:27.134+0900  INFO 5572 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate [ 201] : Finished Spring Data repository scanning in 220 ms. Found 4 JPA repository interfaces.
+2021-09-23T10:19:29.086+0900  INFO 5572 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:19:32.287+0900 ERROR 5572 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -6296,11 +6296,11 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 134 common frames omitted
 
-2021-09-23 10:19:32.666  INFO 5572 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-09-23 10:19:32.922  INFO 5572 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-09-23 10:19:33.365  INFO 5572 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-09-23 10:19:33.844  INFO 5572 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:19:36.890 ERROR 5572 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:19:32.666+0900  INFO 5572 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  [  31] : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-23T10:19:32.922+0900  INFO 5572 --- [    Test worker] org.hibernate.Version                    [  44] : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-23T10:19:33.365+0900  INFO 5572 --- [    Test worker] o.hibernate.annotations.common.Version   [  56] : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-23T10:19:33.844+0900  INFO 5572 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:19:36.890+0900 ERROR 5572 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -6464,7 +6464,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 142 common frames omitted
 
-2021-09-23 10:19:36.938  WARN 5572 --- [Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2021-09-23T10:19:36.938+0900  WARN 5572 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     [ 132] : HHH000342: Could not obtain connection to query metadata
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -6628,9 +6628,9 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 142 common frames omitted
 
-2021-09-23 10:19:36.992  INFO 5572 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
-2021-09-23 10:19:38.945  INFO 5572 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:19:41.998 ERROR 5572 --- [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:19:36.992+0900  INFO 5572 --- [    Test worker] org.hibernate.dialect.Dialect            [ 175] : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2021-09-23T10:19:38.945+0900  INFO 5572 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:19:41.998+0900 ERROR 5572 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -6793,14 +6793,14 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:19:42.028  WARN 5572 --- [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: -1, SQLState: 08000
-2021-09-23 10:19:42.030 ERROR 5572 --- [Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
-2021-09-23 10:19:42.039 ERROR 5572 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-09-23 10:19:42.042  WARN 5572 --- [Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-09-23 10:19:42.063  INFO 5572 --- [Test worker] ConditionEvaluationReportLoggingListener : 
+2021-09-23T10:19:42.028+0900  WARN 5572 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 137] : SQL Error: -1, SQLState: 08000
+2021-09-23T10:19:42.030+0900 ERROR 5572 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 142] : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
+2021-09-23T10:19:42.039+0900 ERROR 5572 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean [ 426] : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:19:42.042+0900  WARN 5572 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   [ 591] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:19:42.063+0900  INFO 5572 --- [    Test worker] ConditionEvaluationReportLoggingListener [ 136] : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-09-23 10:19:42.110 ERROR 5572 --- [Test worker] o.s.boot.SpringApplication               : Application run failed
+2021-09-23T10:19:42.110+0900 ERROR 5572 --- [    Test worker] o.s.boot.SpringApplication               [ 843] : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
@@ -6976,7 +6976,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:19:42.115 ERROR 5572 --- [Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@7272801b] to prepare test instance [com.bithumb.board.BoardApplicationTests@21f4b87b]
+2021-09-23T10:19:42.115+0900 ERROR 5572 --- [    Test worker] o.s.test.context.TestContextManager      [ 248] : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@7272801b] to prepare test instance [com.bithumb.board.BoardApplicationTests@21f4b87b]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
@@ -7155,19 +7155,19 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 141 common frames omitted
 
-2021-09-23 10:24:20.694  INFO 3836 --- [restartedMain] com.bithumb.board.BoardApplication       : Starting BoardApplication using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 3836 (C:\projects\backend-board-service\out\production\classes started by minji in C:\projects\backend-board-service)
-2021-09-23 10:24:20.748  INFO 3836 --- [restartedMain] com.bithumb.board.BoardApplication       : The following profiles are active: dev
-2021-09-23 10:24:21.224  INFO 3836 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-09-23 10:24:21.226  INFO 3836 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-09-23 10:24:26.977  INFO 3836 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-09-23 10:24:27.198  INFO 3836 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 192 ms. Found 4 JPA repository interfaces.
-2021-09-23 10:24:35.465  INFO 3836 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-09-23 10:24:35.491  INFO 3836 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-09-23 10:24:35.494  INFO 3836 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
-2021-09-23 10:24:35.874  INFO 3836 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-09-23 10:24:35.876  INFO 3836 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 14645 ms
-2021-09-23 10:24:36.195  INFO 3836 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:24:39.318 ERROR 3836 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:24:20.694+0900  INFO 3836 --- [  restartedMain] com.bithumb.board.BoardApplication       [  55] : Starting BoardApplication using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 3836 (C:\projects\backend-board-service\out\production\classes started by minji in C:\projects\backend-board-service)
+2021-09-23T10:24:20.748+0900  INFO 3836 --- [  restartedMain] com.bithumb.board.BoardApplication       [ 663] : The following profiles are active: dev
+2021-09-23T10:24:21.224+0900  INFO 3836 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor [ 255] : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-09-23T10:24:21.226+0900  INFO 3836 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor [ 255] : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-09-23T10:24:26.977+0900  INFO 3836 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate [ 132] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-23T10:24:27.198+0900  INFO 3836 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate [ 201] : Finished Spring Data repository scanning in 192 ms. Found 4 JPA repository interfaces.
+2021-09-23T10:24:35.465+0900  INFO 3836 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  [ 108] : Tomcat initialized with port(s): 8080 (http)
+2021-09-23T10:24:35.491+0900  INFO 3836 --- [  restartedMain] o.apache.catalina.core.StandardService   [ 173] : Starting service [Tomcat]
+2021-09-23T10:24:35.494+0900  INFO 3836 --- [  restartedMain] org.apache.catalina.core.StandardEngine  [ 173] : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-23T10:24:35.874+0900  INFO 3836 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       [ 173] : Initializing Spring embedded WebApplicationContext
+2021-09-23T10:24:35.876+0900  INFO 3836 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext [ 290] : Root WebApplicationContext: initialization completed in 14645 ms
+2021-09-23T10:24:36.195+0900  INFO 3836 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:24:39.318+0900 ERROR 3836 --- [  restartedMain] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -7237,11 +7237,11 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 48 common frames omitted
 
-2021-09-23 10:24:40.122  INFO 3836 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-09-23 10:24:40.495  INFO 3836 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-09-23 10:24:40.968  INFO 3836 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-09-23 10:24:41.233  INFO 3836 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:24:44.268 ERROR 3836 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:24:40.122+0900  INFO 3836 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  [  31] : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-23T10:24:40.495+0900  INFO 3836 --- [  restartedMain] org.hibernate.Version                    [  44] : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-23T10:24:40.968+0900  INFO 3836 --- [  restartedMain] o.hibernate.annotations.common.Version   [  56] : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-23T10:24:41.233+0900  INFO 3836 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:24:44.268+0900 ERROR 3836 --- [  restartedMain] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -7319,7 +7319,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 56 common frames omitted
 
-2021-09-23 10:24:44.275  WARN 3836 --- [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2021-09-23T10:24:44.275+0900  WARN 3836 --- [  restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     [ 132] : HHH000342: Could not obtain connection to query metadata
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -7397,9 +7397,9 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 56 common frames omitted
 
-2021-09-23 10:24:44.317  INFO 3836 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
-2021-09-23 10:24:47.038  INFO 3836 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-23 10:24:50.067 ERROR 3836 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-09-23T10:24:44.317+0900  INFO 3836 --- [  restartedMain] org.hibernate.dialect.Dialect            [ 175] : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2021-09-23T10:24:47.038+0900  INFO 3836 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-09-23T10:24:50.067+0900 ERROR 3836 --- [  restartedMain] com.zaxxer.hikari.pool.HikariPool        [ 594] : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73)
@@ -7476,7 +7476,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createSocket(AbstractConnectProtocol.java:252)
 	... 55 common frames omitted
 
-2021-09-23 10:24:50.076  WARN 3836 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: -1, SQLState: 08000
-2021-09-23 10:24:50.077 ERROR 3836 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
-2021-09-23 10:24:50.094 ERROR 3836 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-09-23 10:24:50.100  WARN 3836 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:24:50.076+0900  WARN 3836 --- [  restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 137] : SQL Error: -1, SQLState: 08000
+2021-09-23T10:24:50.077+0900 ERROR 3836 --- [  restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   [ 142] : Could not connect to address=(host=host.docker.internal)(port=3306)(type=master) : Socket fail to connect to host:host.docker.internal, port:3306. Connection refused: connect
+2021-09-23T10:24:50.094+0900 ERROR 3836 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean [ 426] : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-09-23T10:24:50.100+0900  WARN 3836 --- [  restartedMain] ConfigServletWebServerApplicationContext [ 591] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution

@@ -54,7 +54,7 @@ public class BoardController {
     private static final Logger LOGGER = LoggerFactory.getLogger(BoardController.class);
     // 게시판 조회
     @GetMapping("/boards")
-    public ResponseEntity retrieveBoards(@RequestParam(value="category", required = false) String boardCategory
+    public ResponseEntity retrieveBoards(@Valid @RequestParam(value="category", required = false) String boardCategory
             ,@RequestParam(value="user",required = false) Long userNo
             ,final Pageable pageable) {
 

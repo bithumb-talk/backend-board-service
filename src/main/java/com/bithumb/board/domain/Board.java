@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -24,6 +25,7 @@ public class Board implements Serializable {
 
     @NotNull
     @Column(name="board_title", length=100)
+    //@NotBlank() //입ㅂ력이나 스페이스바 같은거 오류발생
     private String boardTitle;
 
     @Column(name="board_views")
