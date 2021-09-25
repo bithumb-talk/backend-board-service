@@ -5,6 +5,7 @@ import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Builder
@@ -19,13 +20,15 @@ public class CommentModel extends RepresentationModel<CommentModel> {
     private LocalDateTime commentCreatedDate;
     private LocalDateTime commentModifyDate;
     private String userId;
+    private List<Reply> replyList;
 
     public CommentModel(Comment entity) {
         this.commentNo = entity.getCommentNo();
         this.commentContent = entity.getCommentContent();
         this.commentCreatedDate = entity.getCommentCreatedDate();
         this.commentModifyDate = entity.getCommentModifyDate();
-        this.userId = entity.getUserId();
+        this.userId = entity.getNickname();
+        this.replyList = entity.getReply();
     }
 
 }

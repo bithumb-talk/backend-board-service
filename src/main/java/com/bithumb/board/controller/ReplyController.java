@@ -43,7 +43,8 @@ public class ReplyController {
         }
         destReply.get().setReplyModifyDate(LocalDateTime.now().withNano(0));
         destReply.get().setReplyContent(srcReply.getReplyContent());
-        destReply.get().setUserId(srcReply.getUserId());
+        //destReply.get().setUserId(srcReply.getUserId());
+        destReply.get().setNickname(srcReply.getNickname());
 
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.REPLY_UPDATE_SUCCESS.getMessage(),destReply);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);

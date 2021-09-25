@@ -14,14 +14,15 @@ import java.util.List;
 @Entity
 @Data
 @Table(name="board")
-public class Board implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Board {
+
     @Id
     @GeneratedValue
     @Column(name="board_no")
     private Long boardNo;
 
-    //user id 나중에
+    @Column(name = "user_nickname")
+    private String nickname;
 
     @NotNull
     @Column(name="board_title", length=100)

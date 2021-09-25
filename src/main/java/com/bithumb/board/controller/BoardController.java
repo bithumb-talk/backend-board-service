@@ -39,7 +39,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @Api(tags = {"Board"})
 @RestController
-@RequiredArgsConstructor
+    @RequiredArgsConstructor
 @CrossOrigin(origins="*", allowCredentials = "false")
 @Slf4j
 
@@ -54,20 +54,12 @@ public class BoardController {
     private static final Logger LOGGER = LoggerFactory.getLogger(BoardController.class);
     // 게시판 조회
     @GetMapping("/boards")
-    public ResponseEntity retrieveBoards(@Valid @RequestParam(value="category", required = false) String boardCategory
-            ,@RequestParam(value="user",required = false) Long userNo
-            ,final Pageable pageable) {
+    public ResponseEntity retrieveBoardsList(@RequestParam(value="user",required = false) Long userNo ,final Pageable pageable) {
 
-        Pageable paging = PageRequest.of(0, 2, Sort.Direction.DESC,"boardCreatedDate");
+        Pageable paging = PageRequest.of(0, 16, Sort.Direction.DESC,"boardCreatedDate");
 
-        if(boardCategory != null){
-            Page<Board> board = boardService.findBoardByBoardCategory(boardCategory,pageable);
-            PagedModel<BoardModel> collModel = pagedResourcesAssembler.toModel(board,boardAssembler);
-            ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),collModel);
-            return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
-        }else if(userNo != null){
+        if(userNo != null){        //유저 정보 확인 필요 o
             User user = userService.getById(userNo);
-            System.out.println("유저");
             if(user == null){
                 //에러 처리
             }
@@ -76,28 +68,29 @@ public class BoardController {
             ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),collModel);
             return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
         }
-        Page<Board> board = boardService.findAll(pageable);
+        Page<Board> board = boardService.findAll(pageable);         //유저 정보 확인 필요 x
         PagedModel<BoardModel> collModel = pagedResourcesAssembler.toModel(board,boardAssembler);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),collModel);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
-
-
     // 게시물 등록
-    @PostMapping("/boards")
+    @PostMapping("/boards")                                      // 유저 정보 확인 o
     public ResponseEntity<?> createBoard(@Valid @RequestBody Board board){
         Board savedBoard = boardService.save(board);
+        EntityModel model =EntityModel.of(savedBoard)
+                .add(WebMvcLinkBuilder.linkTo(methodOn(BoardController.class)
+                        .retrieveBoard(savedBoard.getBoardNo())).withRel("board"));
 //        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
 //                .path("/{board_no}")
 //                .buildAndExpand(savedBoard.getBoardNo())
 //                .toUri();//uri로 변경
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_REGISTER_SUCCESS.getMessage(),savedBoard);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_REGISTER_SUCCESS.getMessage(),model);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
     // 게시물 조회
-    @GetMapping("/boards/{board-no}")
+    @GetMapping("/boards/{board-no}")                            // 유저 정보 확인 x
     public ResponseEntity<?> retrieveBoard(@PathVariable(value ="board-no") long boardNo){
         Optional<Board> board = boardService.findById(boardNo);
 
@@ -108,7 +101,7 @@ public class BoardController {
         //if(LOGGER.isDebugEnabled()) {
             // 로그레벨 조정하기
             //LOGGER.debug("조회한 게시물 넘버 {}.", boardNo);
-            LOGGER.info("조회한 게시물 넘버 {}.", boardNo);
+        //    LOGGER.info("조회한 게시물 넘버 {}.", boardNo);
         //}
 
 
@@ -123,7 +116,7 @@ public class BoardController {
     }
 
     // 게시물 수정
-    @PutMapping("/boards/{board-no}")
+    @PutMapping("/boards/{board-no}")                           // 유저 정보 확인 o
     public ResponseEntity<?> changeBoard(@RequestBody Board srcBoard, @PathVariable(value ="board-no") long boardNo){
         //조회수 증가, 추천수 증가 따로처리
         Optional<Board> destBoard = boardService.findById(boardNo);
@@ -149,7 +142,7 @@ public class BoardController {
     }
 
     //게시물 삭제
-    @DeleteMapping("/boards/{board-no}")
+    @DeleteMapping("/boards/{board-no}")                                // 유저 정보 확인 o
     public ResponseEntity<?> deleteBoard(@PathVariable(value ="board-no") long boardNo) {
         boardService.deleteById(boardNo);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_DELETE_SUCCESS.getMessage(),null);

@@ -56,40 +56,49 @@ public class CommentController {
     // board_no 인거 찾아서 pageing
     @GetMapping("/comments/{board-no}")
     public ResponseEntity retrieveComments(@PathVariable(value ="board-no") long boardNo) {
-        Board board = boardService.getById(boardNo);
-        if(board == null){
-            //에러 처리
+        Optional<Board> board = boardService.findById(boardNo);
+        if (!board.isPresent()) {
+            //return null;
+            //에러처리 => 리팩토링하면서 바꾸기
+            //Optional<Board> board = ...;
+            //return board.orElseThrow(() -> new NoSuchElementException());
         }
-        Pageable paging = PageRequest.of(0, 2, Sort.Direction.DESC,"commentCreatedDate");
 
-        Page<Comment> comment = commentService.findCommentsByBoard(board,paging);
 
+
+        Pageable paging = PageRequest.of(0, 16, Sort.Direction.DESC,"commentCreatedDate");
+        Page<Comment> comment = commentService.findCommentsByBoard(board.get(),paging);
         PagedModel<CommentModel> collModel = pagedResourcesAssembler.toModel(comment,commentAssembler);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_FIND_SUCCESS.getMessage(),collModel);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
 
     }
     // 댓글 등록
-    @PostMapping("/comments")
-    public ResponseEntity createComment(@Valid @RequestBody Comment comment){
+    // 댓글 post 테스트 x => 보드넘버 추가안됨
+    @PostMapping("/boards/{board-no}/comments")
+    public ResponseEntity createComment(@Valid @RequestBody Comment comment, @PathVariable(value ="board-no") long boardNo){
+        // 게시글 있는지 확인하고
+        Optional<Board> board = boardService.findById(boardNo);
+        if(board.isPresent()){
+            comment.setBoard(board.get());
+        }else{
+            //에러처리
+        }
         Comment savedComment = commentService.save(comment);
-//        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-//                .path("/{board_no}")
-//                .buildAndExpand(savedComment.getCommentNo())
-//                .toUri();//uri로 변경
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_REGISTER_SUCCESS.getMessage(),savedComment);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
     // 댓글 수정
-    @PutMapping("/comments/{comment-no}")
-    public ResponseEntity<?> changeComment(@RequestBody Comment srcComment, @PathVariable(value ="comment-no") long commentNo){
+
+    @PutMapping("/boards/{board-no}/comments/{comment-no}")
+    public ResponseEntity<?> changeComment(@RequestBody Comment srcComment,@PathVariable(value= "board-no") long boardNo ,@PathVariable(value ="comment-no") long commentNo){
         Optional<Comment> destComment = commentService.findById(commentNo);
         if(!destComment.isPresent()){
             //에러처리
         }
         destComment.get().setCommentModifyDate(LocalDateTime.now().withNano(0));
         destComment.get().setCommentContent(srcComment.getCommentContent());
-        destComment.get().setUserId(srcComment.getUserId());
+        destComment.get().setNickname(srcComment.getNickname());
 
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_UPDATE_SUCCESS.getMessage(),destComment);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
@@ -97,8 +106,8 @@ public class CommentController {
 
 
     // 댓글 삭제
-    @DeleteMapping("/comments/{comment-no}")
-    public ResponseEntity<?> deleteComment(@PathVariable(value ="comment-no") long commentNo) {
+    @DeleteMapping("/boards/{board-no}/comments/{comment-no}")
+    public ResponseEntity<?> deleteComment(@PathVariable(value = "board-no") long boardNo,@PathVariable(value ="comment-no") long commentNo) {
         commentService.deleteById(commentNo);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_DELETE_SUCCESS.getMessage(),null);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);

@@ -14,8 +14,7 @@ import java.util.List;
 @Data
 @Table(name="comment")
 
-public class Comment implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Comment {
     @Id
     @GeneratedValue
     @Column(name="comment_no")
@@ -31,8 +30,8 @@ public class Comment implements Serializable {
     @Column(name="comment_modify_date")
     private LocalDateTime commentModifyDate;
 
-    @Column(name="user_id")
-    private String userId;
+    @Column(name = "user_nickname")
+    private String nickname;
 
     @PrePersist     //insert 연산할때 같이실행
     public void prePersist(){

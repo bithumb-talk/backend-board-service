@@ -17,7 +17,6 @@ import java.util.Map;
 @RestControllerAdvice
 public class ErrorAdvice {
 
-
     @ExceptionHandler
     public ResponseEntity<ApiResponse> illegalExHandler(IllegalArgumentException e) {
         ApiResponse apiResponse = ApiResponse.responseMessage(StatusCode.FAIL, e.getMessage());
