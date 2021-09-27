@@ -63,7 +63,7 @@ POST http://IP:8083/connectors
         "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
         "connection.url": "jdbc:mysql://board-service.cprq7tgal4rf.us-east-1.rds.amazonaws.com/bithumb",
         "connection.user": "admin",
-        "connection.password": "adminrds",
+        "connection.password": "",
         "auto.create": "true",
         "auto.evolve": "true",
         "delete.enabled": "false",
