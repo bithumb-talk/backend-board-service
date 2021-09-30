@@ -1,8 +1,7 @@
 package com.bithumb.board.common;
 
-import com.bithumb.board.response.ApiResponse;
-import com.bithumb.board.response.StatusCode;
-import lombok.extern.slf4j.Slf4j;
+import com.bithumb.board.common.response.ApiResponse;
+import com.bithumb.board.common.response.StatusCode;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

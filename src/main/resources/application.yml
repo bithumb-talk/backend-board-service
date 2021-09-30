@@ -1,10 +1,10 @@
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    #url: jdbc:mariadb://localhost:5000/bithumb
-    url: jdbc:mariadb://board-service.cprq7tgal4rf.us-east-1.rds.amazonaws.com:3306/bithumb
+    #url: jdbc:mariadb://localhost:5001/bithumb
+    url: jdbc:mariadb://youngcha-board.crtppt0lvgk7.ap-northeast-2.rds.amazonaws.com:3306/bithumb
     username: admin
-    password: adminrds
+    password: youngcha1008
     sql-script-encoding: UTF-8
 #
   profiles:
@@ -15,7 +15,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     #    generate-ddl: true
     #    defer-datasource-initialization: true
     properties:
