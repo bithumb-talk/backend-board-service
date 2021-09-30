@@ -1,4 +1,4 @@
-package com.bithumb.board.board.controller.dto;
+package com.bithumb.board.board.api.dto;
 
 import com.bithumb.board.board.domain.Board;
 import com.fasterxml.jackson.annotation.JsonInclude;

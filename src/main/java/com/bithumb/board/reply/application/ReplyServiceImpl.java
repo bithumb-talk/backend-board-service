@@ -1,10 +1,9 @@
 
-package com.bithumb.board.reply.service;
+package com.bithumb.board.reply.application;
 import com.bithumb.board.reply.domain.Reply;
 
 
 import com.bithumb.board.reply.repository.ReplyRepository;
-import com.bithumb.board.reply.service.ReplyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

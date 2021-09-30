@@ -1,10 +1,8 @@
-package com.bithumb.board.comment.service;
+package com.bithumb.board.comment.application;
 
 
-import com.bithumb.board.board.domain.Board;
 import com.bithumb.board.comment.domain.Comment;
 import com.bithumb.board.comment.repository.CommentRepository;
-import com.bithumb.board.comment.service.CommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

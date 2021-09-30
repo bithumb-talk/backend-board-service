@@ -1,9 +1,7 @@
-package com.bithumb.board.board.controller.dto;
+package com.bithumb.board.board.api.dto;
 
 
 import com.bithumb.board.board.domain.Board;
-import com.bithumb.board.user.domain.User;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

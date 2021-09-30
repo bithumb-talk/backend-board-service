@@ -1,4 +1,4 @@
-package com.bithumb.board.board.controller.exception;
+package com.bithumb.board.board.api.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

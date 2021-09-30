@@ -1,8 +1,8 @@
-package com.bithumb.board.board.service;
+package com.bithumb.board.board.application;
 
-import com.bithumb.board.board.controller.dto.CountDto;
-import com.bithumb.board.board.controller.dto.RequestBoardDto;
-import com.bithumb.board.board.controller.dto.ResponseBoardDto;
+import com.bithumb.board.board.api.dto.CountDto;
+import com.bithumb.board.board.api.dto.RequestBoardDto;
+import com.bithumb.board.board.api.dto.ResponseBoardDto;
 import com.bithumb.board.board.domain.Board;
 import com.bithumb.board.user.domain.User;
 import org.springframework.data.domain.Page;

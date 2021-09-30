@@ -1,5 +1,4 @@
-package com.bithumb.board.comment.service;
-import com.bithumb.board.board.domain.Board;
+package com.bithumb.board.comment.application;
 import com.bithumb.board.comment.domain.Comment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

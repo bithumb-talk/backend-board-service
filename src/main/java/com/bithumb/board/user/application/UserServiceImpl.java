@@ -1,9 +1,8 @@
-package com.bithumb.board.user.service;
+package com.bithumb.board.user.application;
 
 import com.bithumb.board.common.response.ErrorCode;
 import com.bithumb.board.user.domain.User;
 import com.bithumb.board.user.repository.UserRepository;
-import com.bithumb.board.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

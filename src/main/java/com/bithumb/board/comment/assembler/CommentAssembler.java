@@ -1,8 +1,8 @@
 package com.bithumb.board.comment.assembler;
 
 
-import com.bithumb.board.board.controller.BoardController;
-import com.bithumb.board.comment.controller.CommentController;
+import com.bithumb.board.board.api.BoardController;
+import com.bithumb.board.comment.api.CommentController;
 import com.bithumb.board.comment.domain.Comment;
 import com.bithumb.board.comment.domain.CommentModel;
 import org.springframework.hateoas.server.mvc.RepresentationModelAssemblerSupport;

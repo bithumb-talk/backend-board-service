@@ -1,4 +1,4 @@
-package com.bithumb.board.user.service;
+package com.bithumb.board.user.application;
 
 import com.bithumb.board.user.domain.User;
 import org.springframework.stereotype.Component;

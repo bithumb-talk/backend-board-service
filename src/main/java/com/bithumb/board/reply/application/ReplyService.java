@@ -1,4 +1,4 @@
-package com.bithumb.board.reply.service;
+package com.bithumb.board.reply.application;
 
 import com.bithumb.board.reply.domain.Reply;
 import org.springframework.stereotype.Component;

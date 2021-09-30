@@ -1,11 +1,11 @@
 
-package com.bithumb.board.reply.controller;
+package com.bithumb.board.reply.api;
 
 import com.bithumb.board.reply.domain.Reply;
 import com.bithumb.board.common.response.ApiResponse;
 import com.bithumb.board.common.response.StatusCode;
 import com.bithumb.board.common.response.SuccessCode;
-import com.bithumb.board.reply.service.ReplyService;
+import com.bithumb.board.reply.application.ReplyService;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

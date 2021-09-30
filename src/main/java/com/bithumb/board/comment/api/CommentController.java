@@ -1,4 +1,4 @@
-package com.bithumb.board.comment.controller;
+package com.bithumb.board.comment.api;
 
 
 import com.bithumb.board.comment.assembler.CommentAssembler;
@@ -6,8 +6,8 @@ import com.bithumb.board.comment.domain.Comment;
 import com.bithumb.board.common.response.ApiResponse;
 import com.bithumb.board.common.response.StatusCode;
 import com.bithumb.board.common.response.SuccessCode;
-import com.bithumb.board.board.service.BoardService;
-import com.bithumb.board.comment.service.CommentService;
+import com.bithumb.board.board.application.BoardService;
+import com.bithumb.board.comment.application.CommentService;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

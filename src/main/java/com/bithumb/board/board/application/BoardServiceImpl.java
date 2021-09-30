@@ -1,15 +1,15 @@
-package com.bithumb.board.board.service;
+package com.bithumb.board.board.application;
 
 
-import com.bithumb.board.board.controller.dto.CountDto;
-import com.bithumb.board.board.controller.dto.RequestBoardDto;
-import com.bithumb.board.board.controller.dto.ResponseBoardDto;
+import com.bithumb.board.board.api.dto.CountDto;
+import com.bithumb.board.board.api.dto.RequestBoardDto;
+import com.bithumb.board.board.api.dto.ResponseBoardDto;
 import com.bithumb.board.board.domain.Board;
 import com.bithumb.board.common.response.ErrorCode;
 import com.bithumb.board.user.domain.User;
 import com.bithumb.board.board.repository.BoardRepository;
 import com.bithumb.board.user.repository.UserRepository;
-import com.bithumb.board.user.service.UserService;
+import com.bithumb.board.user.application.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor

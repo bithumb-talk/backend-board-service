@@ -1,19 +1,18 @@
-package com.bithumb.board.board.controller;
+package com.bithumb.board.board.api;
 
 
 import com.bithumb.board.board.assembler.BoardAssembler;
-import com.bithumb.board.board.controller.dto.CountDto;
-import com.bithumb.board.board.controller.dto.RequestBoardDto;
-import com.bithumb.board.board.controller.dto.ResponseBoardDto;
+import com.bithumb.board.board.api.dto.CountDto;
+import com.bithumb.board.board.api.dto.RequestBoardDto;
+import com.bithumb.board.board.api.dto.ResponseBoardDto;
 import com.bithumb.board.board.domain.Board;
 import com.bithumb.board.board.domain.BoardModel;
 import com.bithumb.board.common.response.ApiResponse;
-import com.bithumb.board.common.response.ErrorCode;
 import com.bithumb.board.common.response.StatusCode;
 import com.bithumb.board.common.response.SuccessCode;
-import com.bithumb.board.board.service.BoardService;
+import com.bithumb.board.board.application.BoardService;
 import com.bithumb.board.user.domain.User;
-import com.bithumb.board.user.service.UserService;
+import com.bithumb.board.user.application.UserService;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 
@@ -43,6 +42,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @RequiredArgsConstructor
 @CrossOrigin(origins="*", allowCredentials = "false")
 @Slf4j
+
 
 
 public class BoardController {
