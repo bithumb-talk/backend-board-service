@@ -4,41 +4,42 @@ import com.bithumb.board.comment.domain.Comment;
 import com.bithumb.board.user.domain.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
+import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
 @Table(name="board")
+@NoArgsConstructor
 public class Board {
 
     @Id
     @GeneratedValue
     @Column(name="board_no")
-    private Long boardNo;
+    private long boardNo;
 
     @Column(name = "user_nickname")
     private String nickname;
 
     @NotNull
-    @Column(name="board_title", length=100)
-    //@NotBlank() //입ㅂ력이나 스페이스바 같은거 오류발생
+    @Column(name="board_title")
     private String boardTitle;
 
     @Column(name="board_views")
-    private Long boardViews;
+    private long boardViews;
 
-    @Column(name="board_category", length=20)
+    @Column(name="board_category")
     private String boardCategory;
 
     @NotNull
     @Column(columnDefinition = "LONGTEXT")
     private String boardContent;
-
-    //board img는 나중에
 
     @Column(name="board_created_date")
     private LocalDateTime boardCreatedDate;
@@ -47,21 +48,58 @@ public class Board {
     private LocalDateTime boardModifyDate;
 
     @Column(name="board_recommend")
-    private Long boardRecommend;
+    private long boardRecommend;
 
-    @PrePersist     //insert 연산할때 같이실행
-    public void prePersist(){
-        this.boardCreatedDate = LocalDateTime.now().withNano(0);
-        this.boardViews = this.boardViews == null ? 0 : this.boardViews;
-        this.boardRecommend = this.boardRecommend == null ? 0 : this.boardRecommend;
+    //String parsing
+    @Column(name= "board_img")
+    private String boardImg;
+
+//    @PrePersist     //insert 연산할때 같이실행
+//    public void prePersist(){
+//        this.boardCreatedDate = LocalDateTime.now().withNano(0);
+//        this.boardViews = this.boardViews == null ? 0 : this.boardViews;
+//        this.boardRecommend = this.boardRecommend == null ? 0 : this.boardRecommend;
+//    }
+
+    @Builder
+    public Board(String nickname,String boardTitle,Long boardViews, String boardCategory,String boardContent,
+                 LocalDateTime boardCreatedDate,LocalDateTime boardModifyDate,Long boardRecommend, String boardImg ){
+        this.nickname = nickname;
+        this.boardTitle =boardTitle;
+        this.boardViews = boardViews;
+        this.boardContent = boardContent;
+        this.boardCreatedDate = boardCreatedDate;
+        this.boardRecommend = boardRecommend;
+        this.boardImg = boardImg;
     }
+
+    public void updateBoardContent(String nickname, String boardTitle, String boardContent, String boardImg, LocalDateTime boardModifyDate ){
+        this.nickname = nickname;
+        this.boardTitle = boardTitle;
+        this.boardContent = boardContent;
+        this.boardImg = boardImg;
+        this.boardModifyDate = boardModifyDate;
+    }
+
+
+    public void changeBoardViews(long boardViews) {
+        this.boardViews = boardViews;
+    }
+    public void changeBoardRecommend(long boardRecommend){
+        this.boardRecommend = boardRecommend;
+    }
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_no")
-    @JsonIgnore
     private User user;
+
+    public void changeUser(User user) {
+        this.user = user;
+    }
 
     @OneToMany(mappedBy="board", cascade = CascadeType.REMOVE)
     @JsonIgnore
     private List<Comment> comments;
+
 
 }

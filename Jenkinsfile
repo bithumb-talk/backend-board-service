@@ -5,7 +5,7 @@ pipeline {
     }
     environment {
         SOURCECODE_JENKINS_CREDENTIAL_ID = 'jenkins-github-wh'
-        SOURCE_CODE_URL = 'https://github.com/MinjiY/Springboot-jenkins.git'
+        SOURCE_CODE_URL = 'https://github.com/bithumb-talk/backend-board-service.git'
         RELEASE_BRANCH = 'master'
     }
     stages {
@@ -37,7 +37,7 @@ pipeline {
                     //sh "gradle wrapper --stacktrace"
                     //sh "gradle bootJar"
 
-                    sh "docker build -t upi907/testdeploy ."
+                    sh "docker build -t board-service ."
                 //}
             }
         }
@@ -45,7 +45,7 @@ pipeline {
             steps {
                 sh '''
                 
-                  docker run -d -p 9090:8080 --name board upi907/testdeploy
+                  docker run -d -p 7000:8080 --name board board-service
                 '''
             }
         }

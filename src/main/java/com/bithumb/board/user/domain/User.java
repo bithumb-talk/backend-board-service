@@ -1,13 +1,15 @@
 package com.bithumb.board.user.domain;
 
 import com.bithumb.board.board.domain.Board;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@NoArgsConstructor
 @Table(name = "user")
 public class User {
     @Id
@@ -28,8 +30,9 @@ public class User {
     @Column(name = "user_authority")
     private Authority authority;
 
+    @Column(name = "user_profile_url")
+    private String profileUrl;
 
     @OneToMany(mappedBy="user")
     private List<Board> boards;
-
 }

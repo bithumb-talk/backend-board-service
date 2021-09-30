@@ -14,15 +14,15 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BoardModel extends RepresentationModel<BoardModel> {
-    private Long boardNo;
+    private long boardNo;
     private String boardTitle;
-    private Long boardViews;
+    private long boardViews;
     private String boardCategory;
     private String boardContent;
     private String nickname;
     private LocalDateTime boardCreatedDate;
     private LocalDateTime boardModifyDate;
-    private Long boardRecommend;
+    private long boardRecommend;
 
     public BoardModel(Board entity) {
         this.boardNo = entity.getBoardNo();

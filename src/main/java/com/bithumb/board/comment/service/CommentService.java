@@ -14,7 +14,8 @@ public interface CommentService {
 //    Page<Comment> findByBoard(Pageable pageable, long board_no);
 
 //    Page<Comment> findCommentsByBoard(long board_no, Pageable pageable);
-    Page<Comment> findCommentsByBoard(Board board, Pageable pageable );
+    //Page<Comment> findCommentsByBoard(Board board, Pageable pageable );
+
     Comment save(Comment comment);
     void deleteById(long comment_no);
 

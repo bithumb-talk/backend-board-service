@@ -37,11 +37,11 @@ public class CommentServiceImpl implements CommentService {
         return commentRepository.save(comment);
     }
 
-    @Override
-    public Page<Comment> findCommentsByBoard(Board board, Pageable pageable){
-        return commentRepository.findCommentsByBoard(board,pageable);
-
-    }
+//    @Override
+//    public Page<Comment> findCommentsByBoard(Board board, Pageable pageable){
+//        return commentRepository.findCommentsByBoard(board,pageable);
+//
+//    }
     @Override
     public void deleteById(long comment_no){
         commentRepository.deleteById(comment_no);

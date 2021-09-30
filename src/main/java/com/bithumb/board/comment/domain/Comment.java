@@ -30,6 +30,9 @@ public class Comment {
     @Column(name="comment_modify_date")
     private LocalDateTime commentModifyDate;
 
+    @Column(name="comment_recommend")
+    private Long commentRecommend;
+
     @Column(name = "user_nickname")
     private String nickname;
 

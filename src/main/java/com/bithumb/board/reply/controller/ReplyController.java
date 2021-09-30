@@ -2,9 +2,9 @@
 package com.bithumb.board.reply.controller;
 
 import com.bithumb.board.reply.domain.Reply;
-import com.bithumb.board.response.ApiResponse;
-import com.bithumb.board.response.StatusCode;
-import com.bithumb.board.response.SuccessCode;
+import com.bithumb.board.common.response.ApiResponse;
+import com.bithumb.board.common.response.StatusCode;
+import com.bithumb.board.common.response.SuccessCode;
 import com.bithumb.board.reply.service.ReplyService;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;

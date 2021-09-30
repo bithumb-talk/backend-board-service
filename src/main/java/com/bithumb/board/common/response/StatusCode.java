@@ -1,4 +1,4 @@
-package com.bithumb.board.response;
+package com.bithumb.board.common.response;
 
 public enum StatusCode {
 //    OK(200, "OK"),
