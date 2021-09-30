@@ -1,10 +1,10 @@
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    #url: jdbc:mariadb://localhost:5001/bithumb
-    url: jdbc:mariadb://youngcha-board.crtppt0lvgk7.ap-northeast-2.rds.amazonaws.com:3306/bithumb
-    username: admin
-    password: youngcha1008
+    url: jdbc:mariadb://localhost:5001/bithumb
+    #url: jdbc:mariadb://youngcha-board.crtppt0lvgk7.ap-northeast-2.rds.amazonaws.com:3306/bithumb
+    username: root
+    password: root
     sql-script-encoding: UTF-8
 #
   profiles:

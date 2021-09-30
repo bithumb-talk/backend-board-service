@@ -14,8 +14,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override
-    public User getById(long user_no){
-        User user = userRepository.findById(user_no).orElseThrow(()-> new NullPointerException(ErrorCode.ID_NOT_EXIST.getMessage()));
-        return user;
+    public User findUser(long user_no){
+        return userRepository.findById(user_no).orElseThrow(()-> new NullPointerException(ErrorCode.ID_NOT_EXIST.getMessage()));
     }
 }
