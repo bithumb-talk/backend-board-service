@@ -47,37 +47,11 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 public class BoardController {
     private final BoardService boardService;
-    private final UserService userService;
-    @Autowired
-    BoardAssembler boardAssembler;
-    @Autowired
-    PagedResourcesAssembler<Board> pagedResourcesAssembler;
-
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BoardController.class);
-    // 게시글 리스트 조회, 유저 기반 게시글 리스트 조회
-    // 전체조회, 유저기반 전체조회 분리하기
-    @GetMapping("/all-boards")
-    public ResponseEntity retrieveBoardsList(final Pageable pageable) {
-        Pageable paging = PageRequest.of(0, 16, Sort.Direction.DESC,"boardCreatedDate");
-        Page<Board> board = boardService.findAll(paging);         //유저 정보 확인 필요 x
-        PagedModel<BoardModel> collModel = pagedResourcesAssembler.toModel(board,boardAssembler);
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),collModel);
-        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
-    }
-
-    @GetMapping("/all-boards/{user-no}")
-    public ResponseEntity retrieveBoardsList(@PathVariable(value="user-no",required = false) long userNo ,final Pageable pageable) {
-        Pageable paging = PageRequest.of(0, 16, Sort.Direction.DESC,"boardCreatedDate");
-        User user = userService.getById(userNo);
-        Page<Board> board = boardService.findBoardByUser(user,paging);
-        PagedModel<BoardModel> collModel = pagedResourcesAssembler.toModel(board,boardAssembler);
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),collModel);
-        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
-    }
 
     /* 게시글 조회 */
-    @GetMapping("/boards/{board-no}")                            // 유저 정보 확인 x
+    @GetMapping("/boards/{board-no}")
     public ResponseEntity retrieveBoard(@PathVariable(value ="board-no") long boardNo){
         ResponseBoardDto responseBoardDto = boardService.retrieveBoard(boardNo);
 
@@ -108,7 +82,6 @@ public class BoardController {
     /* 게시글 등록 */
     @PostMapping("/boards/{user-no}")                                      // 유저 정보 확인 o
     public ResponseEntity createBoard(@Valid @RequestBody RequestBoardDto dto, @PathVariable(value ="user-no") long userNo){
-        System.out.println(dto.getBoardImg());
         ResponseBoardDto responseBoardDto = boardService.createBoard(dto, userNo);
 
         EntityModel model =EntityModel.of(responseBoardDto)
@@ -129,12 +102,9 @@ public class BoardController {
     }
 
     /* 게시물 삭제 */
-    @DeleteMapping("/boards/{board-no}")                                // 유저 정보 확인 o
-    public ResponseEntity deleteBoard(@PathVariable(value ="board-no") long boardNo) {
-        boardService.deleteById(boardNo);
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_DELETE_SUCCESS.getMessage(),null);
+    @DeleteMapping("/boards/{board-no}/{user-no}")                        // 유저 정보 확인 o
+    public ResponseEntity deleteBoard(@PathVariable(value ="board-no") long boardNo, @PathVariable(value ="user-no") long userNo) {
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_DELETE_SUCCESS.getMessage(),boardService.deleteBoard(boardNo,userNo));
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
-
-
 }

@@ -36,12 +36,8 @@ public class BoardServiceImpl implements BoardService {
 //        this.userService = userService;
 //    }
 
-    //    @Override
-//    public List<Board> findAll() {
-//        return boardRepository.findAll();
-//    }
     @Override
-    public Page<Board> findAll(Pageable pageable){
+    public Page<Board> BoardsListAll(Pageable pageable){
         return boardRepository.findAll(pageable);
     }
 
@@ -101,7 +97,10 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public Board getById(long board_no){ return boardRepository.getById(board_no); }
+    public long deleteBoard(long boardNo, long userNo){
+        User user = userRepository.findById(userNo).orElseThrow(()-> new NullPointerException(ErrorCode.ID_NOT_EXIST.getMessage()));
+        return boardRepository.deleteBoardByBoardNoAndUser(boardNo, user);
+    }
 
 
     @Override
