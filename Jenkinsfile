@@ -4,9 +4,9 @@ pipeline {
         timeout(time: 1, unit: 'HOURS')
     }
     environment {
-        SOURCECODE_JENKINS_CREDENTIAL_ID = 'jenkins-github-wh'
+        SOURCECODE_JENKINS_CREDENTIAL_ID = 'jenkins-github-board-dev'
         SOURCE_CODE_URL = 'https://github.com/bithumb-talk/backend-board-service.git'
-        RELEASE_BRANCH = 'master'
+        RELEASE_BRANCH = 'develop'
     }
     stages {
         stage('Init') {
@@ -45,7 +45,7 @@ pipeline {
             steps {
                 sh '''
                 
-                  docker run -d -p 7000:8080 --name board board-service
+                  docker run -d -p 7000:7000 --name board board-service
                 '''
             }
         }
