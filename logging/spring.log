@@ -2428,3 +2428,32 @@ Current charset is UTF-8. If password has been set using other charset, consider
 2021-10-01 15:42:44.801  INFO 16800 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-10-01 15:42:44.807  INFO 16800 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-10-01 15:42:44.839  INFO 16800 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-10-01 15:44:15.367  INFO 39848 --- [restartedMain] com.bithumb.board.BoardApplication       : Starting BoardApplication using Java 11.0.12 on DESKTOP-TEDBVB0 with PID 39848 (C:\projects\backend-board-service\out\production\classes started by minji in C:\projects\backend-board-service)
+2021-10-01 15:44:15.378  INFO 39848 --- [restartedMain] com.bithumb.board.BoardApplication       : The following profiles are active: dev
+2021-10-01 15:44:15.498  INFO 39848 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-01 15:44:15.500  INFO 39848 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-01 15:44:20.051  INFO 39848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-10-01 15:44:20.335  INFO 39848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 261 ms. Found 4 JPA repository interfaces.
+2021-10-01 15:44:22.270  INFO 39848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2021-10-01 15:44:22.338  INFO 39848 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-01 15:44:22.353  INFO 39848 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-10-01 15:44:23.288  INFO 39848 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-01 15:44:23.289  INFO 39848 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7786 ms
+2021-10-01 15:44:24.044  INFO 39848 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-01 15:44:24.435  INFO 39848 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-01 15:44:25.048  INFO 39848 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-01 15:44:25.414  INFO 39848 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-10-01 15:44:25.966  INFO 39848 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-01 15:44:26.319  INFO 39848 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2021-10-01 15:44:27.995  INFO 39848 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-01 15:44:28.013  INFO 39848 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-01 15:44:32.079  WARN 39848 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-01 15:44:33.374  INFO 39848 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-10-01 15:44:34.905  INFO 39848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2021-10-01 15:44:35.341  INFO 39848 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-01 15:44:35.350  INFO 39848 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-01 15:44:35.361  INFO 39848 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2021-10-01 15:44:37.316  INFO 39848 --- [restartedMain] com.bithumb.board.BoardApplication       : Started BoardApplication in 23.488 seconds (JVM running for 31.879)
+2021-10-01 15:44:49.722  INFO 39848 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-01 15:44:49.739  INFO 39848 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-01 15:44:49.814  INFO 39848 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
