@@ -1,6 +1,8 @@
 
 package com.bithumb.board.reply.api;
 
+import com.bithumb.board.reply.api.dto.RequestReplyDto;
+import com.bithumb.board.reply.api.dto.ResponseReplyDto;
 import com.bithumb.board.reply.domain.Reply;
 import com.bithumb.board.common.response.ApiResponse;
 import com.bithumb.board.common.response.StatusCode;
@@ -21,36 +23,30 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*", allowCredentials = "false")
 public class ReplyController {
-    private ReplyService replyService;
 
-    //대댓글 등록
-    @PostMapping("/replies")
-    public ResponseEntity createReply(@Valid @RequestBody Reply reply) {
-        Reply savedReply = replyService.save(reply);
+    private final ReplyService replyService;
 
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.REPLY_REGISTER_SUCCESS.getMessage(),savedReply);
+    /* 대댓글 등록 */
+    @PostMapping("/boards/{board-no}/comments/{comment-no}/replies")
+    public ResponseEntity createReply(@Valid @RequestBody RequestReplyDto requestReplyDto, @PathVariable(value ="board-no") long boardNo
+            ,@PathVariable(value= "comment-no") long commentNo ) {
+        ResponseReplyDto responseReplyDto = replyService.createReply(requestReplyDto, commentNo);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.REPLY_REGISTER_SUCCESS.getMessage(),responseReplyDto);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
-    //대댓글 수정
-    @PutMapping("/replies/{reply-no}")
-    public ResponseEntity updateReply (@PathVariable(value ="reply-no") long replyNo ,@RequestBody Reply srcReply ){
-        Optional<Reply> destReply = replyService.findById(replyNo);
-        if(!destReply.isPresent()){
-            //에러처리
-        }
-        destReply.get().setReplyModifyDate(LocalDateTime.now().withNano(0));
-        destReply.get().setReplyContent(srcReply.getReplyContent());
-        //destReply.get().setUserId(srcReply.getUserId());
-        destReply.get().setNickname(srcReply.getNickname());
 
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.REPLY_UPDATE_SUCCESS.getMessage(),destReply);
+    /* 대댓글 수정 */
+    @PutMapping("/boards/{board-no}/comments/{comment-no}/replies/{reply-no}")
+    public ResponseEntity updateReply (@Valid @RequestBody RequestReplyDto requestReplyDto, @PathVariable(value="board-no") long boardNo , @PathVariable (value="comment-no") long commentNo, @PathVariable(value ="reply-no") long replyNo){
+        ResponseReplyDto responseReplyDto = replyService.updateReply(requestReplyDto, replyNo);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.REPLY_UPDATE_SUCCESS.getMessage(),responseReplyDto);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
-
     }
-    // 대댓글 삭제
-    @DeleteMapping("/replies/{reply-no}")
-    public ResponseEntity<?> deleteReply(@PathVariable(value ="reply-no") long replyNo) {
-        replyService.deleteById(replyNo);
+
+    /* 대댓글 삭제 */
+    @DeleteMapping("/boards/{board-no}/comments/{comment-no}/replies/{reply-no}")
+    public ResponseEntity deleteReply(@PathVariable(value ="reply-no") long replyNo) {
+        replyService.deleteReply(replyNo);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.REPLY_DELETE_SUCCESS.getMessage(),null);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }

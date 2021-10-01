@@ -56,6 +56,7 @@ public class CommentServiceImpl implements CommentService {
     public ResponseCommentDto updateComment(RequestCommentDto requestCommentDto , long boardNo, long commentNo){
         Board board = boardRepository.findById(boardNo).orElseThrow(() -> new NullPointerException(ErrorCode.BOARD_NOT_EXIST.getMessage()));
         Comment comment = commentRepository.findCommentByBoardAndCommentNo(board, commentNo);
+        //수정일
         comment.changeComment(requestCommentDto.getNickname(), requestCommentDto.getCommentContent(),LocalDateTime.now().withNano(0));
         comment.changeBoard(board);
         return ResponseCommentDto.of(commentRepository.save(comment));
