@@ -15,6 +15,9 @@ import com.bithumb.board.board.application.BoardService;
 import com.bithumb.board.user.domain.User;
 import com.bithumb.board.user.application.UserService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 
 import lombok.extern.slf4j.Slf4j;
@@ -38,7 +41,7 @@ import javax.validation.Valid;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
-@Api(tags = {"Board"})
+@Api(tags = {"Board API"})
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin(origins="*", allowCredentials = "false")
@@ -49,8 +52,11 @@ public class BoardController {
     private static final Logger LOGGER = LoggerFactory.getLogger(BoardController.class);
 
     /* 게시글 조회 */
+    @ApiOperation(value=" 게시글 조회", notes=" 단일 게시글 조회, comments로 응답되는 링크는 해당 게시글에 작성된 댓글리스트를 조회합니다. ")
     @GetMapping("/boards/{board-no}")
-    public ResponseEntity retrieveBoard(@PathVariable(value ="board-no") long boardNo){
+    public ResponseEntity retrieveBoard(
+            @ApiParam(value = "boardNo", required = true, example = "12")
+            @PathVariable(value ="board-no") long boardNo){
         ResponseBoardDto responseBoardDto = boardService.retrieveBoard(boardNo);
 
 
@@ -68,16 +74,29 @@ public class BoardController {
     }
 
     /* 게시글 추천 */
+    @ApiOperation(value=" 게시글 추천", notes=" 게시글 추천 버튼")
     @GetMapping("/boards/{board-no}/recommend")
-    public ResponseEntity countingBoardRecommend(@PathVariable(value="board-no") long boardNo) {
+    public ResponseEntity countingBoardRecommend(
+            @ApiParam(value = "boardNo", required = true, example = "1")
+            @PathVariable(value="board-no") long boardNo) {
         CountDto countDto = boardService.updateRecommend(boardNo);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_RECOMMEND_SUCCESS.getMessage(),countDto);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
     /* 게시글 등록 */
+    @ApiOperation(value=" 게시글 등록", notes=" 게시글 추천 버튼")
+    @ApiImplicitParam(
+            name = "user-no"
+            , value = "유저 넘버"
+            , required = true
+            , dataType = "long"
+            , defaultValue = "None")
     @PostMapping("/boards/{user-no}")                                      // 유저 정보 확인 o
-    public ResponseEntity createBoard(@Valid @RequestBody RequestBoardDto dto, @PathVariable(value ="user-no") long userNo){
+    public ResponseEntity createBoard(
+            @Valid @RequestBody RequestBoardDto dto,
+            @ApiParam(value = "userNo", required = true, example = "1")
+            @PathVariable(value ="user-no") long userNo){
         ResponseBoardDto responseBoardDto = boardService.createBoard(dto, userNo);
 
         EntityModel model =EntityModel.of(responseBoardDto)
@@ -90,16 +109,26 @@ public class BoardController {
     }
 
     /* 게시물 수정 */
+    @ApiOperation(value=" 게시글 수정", notes="게시글 수정")
     @PutMapping("/boards/{board-no}/{user-no}")                           // 유저 정보 확인 o
-    public ResponseEntity updateBoard(@Valid @RequestBody RequestBoardDto dto, @PathVariable(value ="board-no") long boardNo, @PathVariable(value ="user-no") long userNo){
+    public ResponseEntity updateBoard(@Valid @RequestBody RequestBoardDto dto,
+                                      @ApiParam(value = "boardNo", required = true, example = "1")
+                                      @PathVariable(value ="board-no") long boardNo,
+                                      @ApiParam(value = "userNo", required = true, example = "1")
+                                      @PathVariable(value ="user-no") long userNo){
         ResponseBoardDto responseBoardDto = boardService.updateBoard(dto, boardNo,userNo);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_UPDATE_SUCCESS.getMessage(),responseBoardDto);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
     /* 게시물 삭제 */
+    @ApiOperation(value=" 게시글 삭제 ", notes="게시글 삭제")
     @DeleteMapping("/boards/{board-no}/{user-no}")                        // 유저 정보 확인 o
-    public ResponseEntity deleteBoard(@PathVariable(value ="board-no") long boardNo, @PathVariable(value ="user-no") long userNo) {
+    public ResponseEntity deleteBoard(
+            @ApiParam(value = "boardNo", required = true, example = "1")
+            @PathVariable(value ="board-no") long boardNo,
+            @ApiParam(value = "userNo", required = true, example = "1")
+                                      @PathVariable(value ="user-no") long userNo) {
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_DELETE_SUCCESS.getMessage(),boardService.deleteBoard(boardNo,userNo));
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
