@@ -27,14 +27,9 @@ public interface BoardService {
     long deleteBoard(long boardNo, long userNo);
 
 
-//    Board getById(long board_no);
     Page<Board> BoardsListAll(Pageable pageable);
     Page<Board> findBoardByBoardCategory(String boardCategory, Pageable pageable);
     Page<Board> findBoardByUser(User user, Pageable pageable);
     boolean existsById(long id);
-//    long count();
     void deleteById(long board_no);
-
-//    void deleteAll();
-
 }
