@@ -12,6 +12,5 @@ import org.springframework.stereotype.Repository;
 public interface CommentRepository extends JpaRepository<Comment, Long > {
 
     Page<Comment> findCommentsByBoard(Board board, Pageable pageable);
-    //Page<Comment> findCommentByBoardAndCommentNo(Board board, long commentNo, Pageable pageable);
     Comment findCommentByBoardAndCommentNo(Board board, long commentNo);
 }

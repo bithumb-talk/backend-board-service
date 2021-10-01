@@ -6,7 +6,7 @@ public enum ErrorCode {
     //PUT
     //DELETE
     BOARD_NOT_EXIST("BOARD NOT EXIST"),
-
+    COMMENT_NOT_EXIST("COMMENT NOT EXIST"),
     ID_NOT_EXIST("ID NOT EXIST");
 
 

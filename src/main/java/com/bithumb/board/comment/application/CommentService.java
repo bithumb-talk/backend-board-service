@@ -1,5 +1,6 @@
 package com.bithumb.board.comment.application;
 import com.bithumb.board.board.domain.Board;
+import com.bithumb.board.comment.api.dto.CountDto;
 import com.bithumb.board.comment.api.dto.RequestCommentDto;
 import com.bithumb.board.comment.api.dto.ResponseCommentDto;
 import com.bithumb.board.comment.domain.Comment;
@@ -23,12 +24,11 @@ public interface CommentService {
     /* 댓글 삭제 */
     void deleteComment(long comment_no);
 
+    /* 댓글 추천 */
+    CountDto updateRecommend(long boardNo, long commentNo);
+
+
+
     Page<Comment> commentsListAll(Pageable pageable);
-    Optional<Comment> findById(long comment_no);
-//    Page<Comment> findByBoard(Pageable pageable, long board_no);
-//
-//    Page<Comment> findCommentByBoardAndCommentNo(Board board, long commentNo, Pageable pageable);
-
-
 
 }

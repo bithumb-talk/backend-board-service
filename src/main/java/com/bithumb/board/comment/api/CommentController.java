@@ -2,6 +2,7 @@ package com.bithumb.board.comment.api;
 
 
 import com.bithumb.board.board.api.dto.ResponseBoardDto;
+import com.bithumb.board.comment.api.dto.CountDto;
 import com.bithumb.board.comment.api.dto.RequestCommentDto;
 import com.bithumb.board.comment.api.dto.ResponseCommentDto;
 import com.bithumb.board.comment.assembler.CommentAssembler;
@@ -44,11 +45,6 @@ public class CommentController {
     @Autowired
     PagedResourcesAssembler<Comment> pagedResourcesAssembler;
 
-    @GetMapping("/comments")
-    public Page<Comment> commentsListAll(@PageableDefault final Pageable pageable) {
-        Page<Comment> comment = commentService.commentsListAll(pageable);
-        return comment;
-    }
 
     /* 게시글 기반 댓글 리스트 조회 */
     @GetMapping("/boards/{board-no}/comments")
@@ -83,4 +79,13 @@ public class CommentController {
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_DELETE_SUCCESS.getMessage(),null);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
+
+    /* 댓글 추천 */
+    @GetMapping("/boards/{board-no}/comments/{comment-no}/recommend")
+    public ResponseEntity commentRecommend(@PathVariable(value= "board-no") long boardNo ,@PathVariable(value ="comment-no") long commentNo){
+        CountDto countDto = commentService.updateRecommend(boardNo, commentNo);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_UPDATE_SUCCESS.getMessage(),countDto);
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
+    }
+
 }

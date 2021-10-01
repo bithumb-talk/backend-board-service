@@ -71,7 +71,7 @@ public class RequestCommentDto {
     @NotBlank(message = "Content empty")
     private String commentContent;
 
-    private long commentRecommend;
+    private long commentRecommend=0;
 
     private LocalDateTime commentCreateDate;
     private LocalDateTime commentModifyDate;

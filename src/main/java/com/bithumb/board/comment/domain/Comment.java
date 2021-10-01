@@ -54,8 +54,9 @@ public class Comment {
         this.commentModifyDate = commentModifyDate;
         this.nickname = nickname;
     }
-    public void changeBoard(Board board) {
-        this.board = board;
+    public void changeBoard(Board board) { this.board = board; }
+    public void changeRecommend(){
+        this.commentRecommend += 1;
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
