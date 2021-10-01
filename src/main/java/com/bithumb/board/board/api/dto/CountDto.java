@@ -12,10 +12,7 @@ public class CountDto {
     public CountDto(long boardRecommend) {
         this.boardRecommend = boardRecommend;
     }
-
-    //setter
     public static CountDto from(Board board) {
         return new CountDto(board.getBoardRecommend());
     }
-
 }

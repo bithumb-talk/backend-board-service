@@ -54,13 +54,6 @@ public class Board {
     @Column(name= "board_img")
     private String boardImg;
 
-//    @PrePersist     //insert 연산할때 같이실행
-//    public void prePersist(){
-//        this.boardCreatedDate = LocalDateTime.now().withNano(0);
-//        this.boardViews = this.boardViews == null ? 0 : this.boardViews;
-//        this.boardRecommend = this.boardRecommend == null ? 0 : this.boardRecommend;
-//    }
-
     @Builder
     public Board(String nickname,String boardTitle,Long boardViews, String boardCategory,String boardContent,
                  LocalDateTime boardCreatedDate,LocalDateTime boardModifyDate,Long boardRecommend, String boardImg ){
@@ -100,6 +93,4 @@ public class Board {
     @OneToMany(mappedBy="board", cascade = CascadeType.REMOVE)
     @JsonIgnore
     private List<Comment> comments;
-
-
 }
