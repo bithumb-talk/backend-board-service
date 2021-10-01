@@ -25,7 +25,7 @@ public class RequestBoardDto {
     @NotBlank(message = "Content empty")
     private String boardContent;
 
-    private LocalDateTime boardCreatedDate = LocalDateTime.now().withNano(0);
+    private LocalDateTime boardCreatedDate;
     private long boardViews = 0;
     private long boardRecommend = 0;
     private List<String> boardImg;
@@ -47,10 +47,11 @@ public class RequestBoardDto {
         }
         return url;
     }
+
     public String setListToStringUrl(){
         return listToString();
     }
-    public Board toEntity(){
+    public Board toEntity() {
         return Board.builder()
                 .nickname(this.nickname)
                 .boardRecommend(this.boardRecommend)
@@ -61,6 +62,4 @@ public class RequestBoardDto {
                 .boardImg(listToString())
                 .build();
     }
-
-
 }

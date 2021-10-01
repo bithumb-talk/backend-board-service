@@ -7,6 +7,7 @@ import com.bithumb.board.board.api.dto.RequestBoardDto;
 import com.bithumb.board.board.api.dto.ResponseBoardDto;
 import com.bithumb.board.board.domain.Board;
 import com.bithumb.board.board.domain.BoardModel;
+import com.bithumb.board.comment.api.CommentController;
 import com.bithumb.board.common.response.ApiResponse;
 import com.bithumb.board.common.response.StatusCode;
 import com.bithumb.board.common.response.SuccessCode;
@@ -63,9 +64,9 @@ public class BoardController {
         //}
 
         // 링크추가
-//        EntityModel model =EntityModel.of(boardRetrieveResponseDto)
-//                .add(WebMvcLinkBuilder.linkTo(methodOn(CommentController.class)
-//                        .retrieveCommentsList(boardNo)).withRel("comments"));
+        EntityModel model =EntityModel.of(responseBoardDto)
+                .add(WebMvcLinkBuilder.linkTo(methodOn(CommentController.class)
+                        .retrieveCommentsList(boardNo)).withRel("comments"));
         //응답
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),responseBoardDto);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);

@@ -58,8 +58,6 @@ public class BoardServiceImpl implements BoardService {
         Board board = requestBoardDto.toEntity();
         User user = userRepository.findById(userNo).orElseThrow(()-> new NullPointerException(ErrorCode.ID_NOT_EXIST.getMessage()));
         board.changeUser(user);
-
-        //Board savedBoard = boardRepository.save(board);
         return ResponseBoardDto.of(boardRepository.save(board));
     }
 

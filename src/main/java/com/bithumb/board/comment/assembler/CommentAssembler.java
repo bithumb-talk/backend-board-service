@@ -21,7 +21,6 @@ public class CommentAssembler extends RepresentationModelAssemblerSupport<Commen
     public CommentModel toModel(Comment entity) {
         CommentModel model = instantiateModel(entity);
         model.setCommentNo(entity.getCommentNo());
-
         model.setCommentContent(entity.getCommentContent());
         model.setCommentCreatedDate(entity.getCommentCreatedDate());
         model.setCommentModifyDate(entity.getCommentModifyDate());

@@ -2,9 +2,12 @@ package com.bithumb.board.comment.domain;
 
 import com.bithumb.board.board.domain.Board;
 import com.bithumb.board.reply.domain.Reply;
+import com.bithumb.board.user.domain.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -13,12 +16,12 @@ import java.util.List;
 @Entity
 @Data
 @Table(name="comment")
-
+@NoArgsConstructor
 public class Comment {
     @Id
     @GeneratedValue
     @Column(name="comment_no")
-    private Long commentNo;
+    private long commentNo;
 
     @NotNull
     @Column(name="comment_content")
@@ -31,15 +34,30 @@ public class Comment {
     private LocalDateTime commentModifyDate;
 
     @Column(name="comment_recommend")
-    private Long commentRecommend;
+    private long commentRecommend;
 
     @Column(name = "user_nickname")
     private String nickname;
 
-    @PrePersist     //insert 연산할때 같이실행
-    public void prePersist(){
-        this.commentCreatedDate = LocalDateTime.now().withNano(0);
+    @Builder
+    public Comment(String commentContent, LocalDateTime commentCreatedDate, LocalDateTime commentModifyDate
+        ,long commentRecommend, String nickname){
+        this.commentContent = commentContent;
+        this.commentCreatedDate = commentCreatedDate;
+        this.commentModifyDate = commentModifyDate;
+        this.commentRecommend = commentRecommend;
+        this.nickname = nickname;
     }
+
+    public void changeComment(String nickname, String commentContent,  LocalDateTime commentModifyDate){
+        this.commentContent = commentContent;
+        this.commentModifyDate = commentModifyDate;
+        this.nickname = nickname;
+    }
+    public void changeBoard(Board board) {
+        this.board = board;
+    }
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="board_no")
     @JsonIgnore
