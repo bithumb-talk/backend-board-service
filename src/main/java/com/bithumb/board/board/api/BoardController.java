@@ -43,9 +43,6 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @RequiredArgsConstructor
 @CrossOrigin(origins="*", allowCredentials = "false")
 @Slf4j
-
-
-
 public class BoardController {
     private final BoardService boardService;
 
@@ -63,12 +60,10 @@ public class BoardController {
         //    LOGGER.info("조회한 게시물 넘버 {}.", boardNo);
         //}
 
-        // 링크추가
         EntityModel model =EntityModel.of(responseBoardDto)
                 .add(WebMvcLinkBuilder.linkTo(methodOn(CommentController.class)
                         .retrieveCommentsList(boardNo)).withRel("comments"));
-        //응답
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),responseBoardDto);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),model);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
@@ -90,7 +85,7 @@ public class BoardController {
                         .retrieveBoard(responseBoardDto.getBoardNo())).withRel("board"));
 
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS,
-                SuccessCode.BOARD_REGISTER_SUCCESS.getMessage(),responseBoardDto);
+                SuccessCode.BOARD_REGISTER_SUCCESS.getMessage(),model);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 

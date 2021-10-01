@@ -15,55 +15,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-/*
-public class RequestBoardDto {
-    @NotBlank(message = "Input Your Nickname")
-    private String nickname;
-
-    @NotBlank(message = "Title empty")
-    private String boardTitle;
-
-    @NotBlank(message = "Content empty")
-    private String boardContent;
-
-    private LocalDateTime boardCreatedDate;
-    private long boardViews = 0;
-    private long boardRecommend = 0;
-    private List<String> boardImg;
-
-    public void setBoardCreateDate(){
-        this.boardCreatedDate = LocalDateTime.now().withNano(0);
-    }
-    public String listToString(){
-        if(this.boardImg == null){
-        return "";
-        }
-        List<String> boardImg = this.boardImg;
-        String url = "";
-        for(String imgUrl : boardImg){
-        url += imgUrl;
-        url += "\n";
-        }
-        return url;
-        }
-
-public String setListToStringUrl(){
-        return listToString();
-        }
-public Board toEntity() {
-        return Board.builder()
-        .nickname(this.nickname)
-        .boardRecommend(this.boardRecommend)
-        .boardTitle(this.boardTitle)
-        .boardContent(this.boardContent)
-        .boardCreatedDate(this.boardCreatedDate)
-        .boardViews(this.boardViews)
-        .boardImg(listToString())
-        .build();
-        }
-        }
- */
-
 public class RequestCommentDto {
     @NotBlank(message = "Nickname empty")
     private String nickname;

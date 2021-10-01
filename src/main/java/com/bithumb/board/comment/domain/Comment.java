@@ -49,10 +49,10 @@ public class Comment {
         this.nickname = nickname;
     }
 
-    public void changeComment(String nickname, String commentContent,  LocalDateTime commentModifyDate){
+    public void changeComment(String nickname, String commentContent, LocalDateTime commentModifyDate){
+        this.nickname = nickname;
         this.commentContent = commentContent;
         this.commentModifyDate = commentModifyDate;
-        this.nickname = nickname;
     }
     public void changeBoard(Board board) { this.board = board; }
     public void changeRecommend(){

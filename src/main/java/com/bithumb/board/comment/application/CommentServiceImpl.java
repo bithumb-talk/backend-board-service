@@ -22,11 +22,8 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
-
 public class CommentServiceImpl implements CommentService {
-    @Autowired
     private final CommentRepository commentRepository;
-    @Autowired
     private final BoardRepository boardRepository;
 
     @Override
@@ -56,8 +53,8 @@ public class CommentServiceImpl implements CommentService {
     public ResponseCommentDto updateComment(RequestCommentDto requestCommentDto , long boardNo, long commentNo){
         Board board = boardRepository.findById(boardNo).orElseThrow(() -> new NullPointerException(ErrorCode.BOARD_NOT_EXIST.getMessage()));
         Comment comment = commentRepository.findCommentByBoardAndCommentNo(board, commentNo);
-        //수정일
-        comment.changeComment(requestCommentDto.getNickname(), requestCommentDto.getCommentContent(),LocalDateTime.now().withNano(0));
+        requestCommentDto.setCommentModifyDate();
+        comment.changeComment(requestCommentDto.getNickname(), requestCommentDto.getCommentContent(), requestCommentDto.getCommentModifyDate());
         comment.changeBoard(board);
         return ResponseCommentDto.of(commentRepository.save(comment));
     }
