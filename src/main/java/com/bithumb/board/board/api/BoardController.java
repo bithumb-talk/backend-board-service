@@ -116,7 +116,8 @@ public class BoardController {
     /* 게시물 수정 */
     @ApiOperation(value=" 게시글 수정", notes="게시글 수정" +
             "\n /boards/{board-no}/{user-no}" +
-            "\n 보드넘버, 현재 로그인된 유저넘버")
+            "\n 보드넘버, 현재 로그인된 유저넘버" +
+            "\n 수정할때 이미지는 추가된이미지만 들어오는게 아니라 게시글에 있는 이미지 url 전부 들어와야합니다!")
     @PutMapping("/boards/{board-no}/{user-no}")                           // 유저 정보 확인 o
     public ResponseEntity updateBoard(@Valid @RequestBody RequestBoardDto dto,
                                       @ApiParam(value = "boardNo", required = true, example = "1")
