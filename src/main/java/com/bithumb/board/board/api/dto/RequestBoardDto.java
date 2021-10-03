@@ -25,6 +25,7 @@ public class RequestBoardDto {
     @NotBlank(message = "Content empty")
     private String boardContent;
 
+
     private LocalDateTime boardCreatedDate;
     private long boardViews = 0;
     private long boardRecommend = 0;

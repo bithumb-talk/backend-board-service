@@ -1,8 +1,10 @@
 package com.bithumb.board.board.assembler;
 
+import com.bithumb.board.board.api.AllBoardController;
 import com.bithumb.board.board.api.BoardController;
 import com.bithumb.board.board.domain.Board;
 import com.bithumb.board.board.domain.BoardModel;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.hateoas.server.mvc.RepresentationModelAssemblerSupport;
 import org.springframework.stereotype.Component;
 
@@ -12,9 +14,13 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @Component
 public class BoardAssembler extends RepresentationModelAssemblerSupport<Board, BoardModel> {
     public BoardAssembler(){
-        super(BoardController.class, BoardModel.class);
+        super(AllBoardController.class, BoardModel.class);
     }
     @Override
+    /*
+
+
+     */
     public BoardModel toModel(Board entity) {
         BoardModel model = instantiateModel(entity);
         model.setBoardNo(entity.getBoardNo());
@@ -25,6 +31,8 @@ public class BoardAssembler extends RepresentationModelAssemblerSupport<Board, B
         model.setBoardRecommend(entity.getBoardRecommend());
         model.setBoardCreatedDate(entity.getBoardCreatedDate());
         model.setBoardModifyDate(entity.getBoardModifyDate());
+        model.setNickname(entity.getNickname());
+        model.setBoardImg(entity.getBoardImg());
         model.add(linkTo(methodOn(BoardController.class).retrieveBoard(entity.getBoardNo())).withSelfRel());
 
         return model;

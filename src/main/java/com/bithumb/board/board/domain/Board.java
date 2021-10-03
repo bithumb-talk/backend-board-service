@@ -56,9 +56,10 @@ public class Board {
 
     @Builder
     public Board(String nickname,String boardTitle,Long boardViews, String boardCategory,String boardContent,
-                 LocalDateTime boardCreatedDate,LocalDateTime boardModifyDate,Long boardRecommend, String boardImg ){
+                 LocalDateTime boardCreatedDate,Long boardRecommend, String boardImg ){
         this.nickname = nickname;
         this.boardTitle =boardTitle;
+        this.boardCategory = boardCategory;
         this.boardViews = boardViews;
         this.boardContent = boardContent;
         this.boardCreatedDate = boardCreatedDate;

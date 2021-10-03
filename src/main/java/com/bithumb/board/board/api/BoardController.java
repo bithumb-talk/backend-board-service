@@ -69,7 +69,7 @@ public class BoardController {
         EntityModel model =EntityModel.of(responseBoardDto)
                 .add(WebMvcLinkBuilder.linkTo(methodOn(CommentController.class)
                         .retrieveCommentsList(boardNo)).withRel("comments"));
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),model);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),responseBoardDto);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
