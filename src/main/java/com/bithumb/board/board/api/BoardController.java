@@ -1,19 +1,15 @@
 package com.bithumb.board.board.api;
 
 
-import com.bithumb.board.board.assembler.BoardAssembler;
-import com.bithumb.board.board.api.dto.CountDto;
+import com.bithumb.board.board.api.dto.RequestCountDto;
+import com.bithumb.board.board.api.dto.ResponseCountDto;
 import com.bithumb.board.board.api.dto.RequestBoardDto;
 import com.bithumb.board.board.api.dto.ResponseBoardDto;
-import com.bithumb.board.board.domain.Board;
-import com.bithumb.board.board.domain.BoardModel;
 import com.bithumb.board.comment.api.CommentController;
 import com.bithumb.board.common.response.ApiResponse;
 import com.bithumb.board.common.response.StatusCode;
 import com.bithumb.board.common.response.SuccessCode;
 import com.bithumb.board.board.application.BoardService;
-import com.bithumb.board.user.domain.User;
-import com.bithumb.board.user.application.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -23,14 +19,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.EntityModel;
-import org.springframework.hateoas.PagedModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -76,13 +65,14 @@ public class BoardController {
     }
 
     /* 게시글 추천 */
-    @ApiOperation(value=" 게시글 추천", notes=" 게시글 추천 버튼" +
-            "\n추천버튼 유저쪽이랑 협의 필요")
-    @GetMapping("/boards/{board-no}/recommend")
+    @ApiOperation(value="게시글 좋아요", notes="게시글 좋아요 버튼" +
+            "\n 게시글id(게시글 넘버), 현재 좋아요 갯수 응답")
+    @PutMapping("/boards/{board-no}/recommend")
     public ResponseEntity countingBoardRecommend(
             @ApiParam(value = "boardNo", required = true, example = "1")
-            @PathVariable(value="board-no") long boardNo) {
-        CountDto countDto = boardService.updateRecommend(boardNo);
+            @PathVariable(value="board-no") long boardNo,
+            @Valid @RequestBody RequestCountDto recommend) {
+        ResponseCountDto countDto = boardService.updateRecommend(boardNo, recommend);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_RECOMMEND_SUCCESS.getMessage(),countDto);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }

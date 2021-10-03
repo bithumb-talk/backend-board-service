@@ -1,7 +1,8 @@
 package com.bithumb.board.board.application;
 
 
-import com.bithumb.board.board.api.dto.CountDto;
+import com.bithumb.board.board.api.dto.RequestCountDto;
+import com.bithumb.board.board.api.dto.ResponseCountDto;
 import com.bithumb.board.board.api.dto.RequestBoardDto;
 import com.bithumb.board.board.api.dto.ResponseBoardDto;
 import com.bithumb.board.board.domain.Board;
@@ -63,11 +64,15 @@ public class BoardServiceImpl implements BoardService {
 
     /* 게시글 추천 */
     @Override
-    public CountDto updateRecommend(long boardNo){
+    public ResponseCountDto updateRecommend(long boardNo, RequestCountDto recommend){
         Board board = boardRepository.findById(boardNo).orElseThrow(() -> new NullPointerException(ErrorCode.BOARD_NOT_EXIST.getMessage()));
-        long boardRecommend = board.getBoardRecommend();
-        board.changeBoardRecommend(boardRecommend+1);
-        return CountDto.from(boardRepository.save(board));
+        long countingRecommend = board.getBoardRecommend();
+        if(recommend.getBoardRecommend().equals("true")) {
+            board.changeBoardRecommend(countingRecommend + 1);
+        }
+        else
+            board.changeBoardRecommend(Math.max(countingRecommend-1,0));
+        return ResponseCountDto.from(boardRepository.save(board));
     }
 
     /* 게시글 수정 */

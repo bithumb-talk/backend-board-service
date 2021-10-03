@@ -1,6 +1,7 @@
 package com.bithumb.board.board.application;
 
-import com.bithumb.board.board.api.dto.CountDto;
+import com.bithumb.board.board.api.dto.RequestCountDto;
+import com.bithumb.board.board.api.dto.ResponseCountDto;
 import com.bithumb.board.board.api.dto.RequestBoardDto;
 import com.bithumb.board.board.api.dto.ResponseBoardDto;
 import com.bithumb.board.board.domain.Board;
@@ -24,7 +25,7 @@ public interface BoardService {
     ResponseBoardDto retrieveBoard(long boardNo);
 
     /* 게시글 추천 */
-    CountDto updateRecommend(long boardNo);
+    ResponseCountDto updateRecommend(long boardNo, RequestCountDto recommend);
 
     /* 게시글 등록 */
     ResponseBoardDto createBoard(RequestBoardDto boardRequestDto, long userNo);

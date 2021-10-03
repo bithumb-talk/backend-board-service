@@ -55,8 +55,8 @@ public class Comment {
         this.commentModifyDate = commentModifyDate;
     }
     public void changeBoard(Board board) { this.board = board; }
-    public void changeRecommend(){
-        this.commentRecommend += 1;
+    public void changeCommentRecommend(long commentRecommend){
+        this.commentRecommend  = commentRecommend;
     }
 
     @ManyToOne(fetch = FetchType.LAZY)

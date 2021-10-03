@@ -1,8 +1,8 @@
 package com.bithumb.board.comment.api;
 
 
-import com.bithumb.board.board.api.dto.ResponseBoardDto;
-import com.bithumb.board.comment.api.dto.CountDto;
+import com.bithumb.board.comment.api.dto.RequestCountDto;
+import com.bithumb.board.comment.api.dto.ResponseCountDto;
 import com.bithumb.board.comment.api.dto.RequestCommentDto;
 import com.bithumb.board.comment.api.dto.ResponseCommentDto;
 import com.bithumb.board.comment.assembler.CommentAssembler;
@@ -27,6 +27,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 
 @Api(tags = {"Comment API"})
 @RestController
@@ -92,12 +93,18 @@ public class CommentController {
     }
 
     /* 댓글 추천 */
-    @ApiOperation(value=" 댓글 추천 ", notes=" 댓글 추천 ")
-    @GetMapping("/boards/{board-no}/comments/{comment-no}/recommend")
-    public ResponseEntity commentRecommend(@ApiParam(value = "boardNo", required = true) @PathVariable(value = "board-no") long boardNo,
-                                           @ApiParam(value = "commentNo", required = true)
-                                           @PathVariable(value = "comment-no") long commentNo) {
-        CountDto countDto = commentService.updateRecommend(boardNo, commentNo);
+    @ApiOperation(value=" 댓글 추천 ", notes=" 댓글 추천 " +
+            "\n 좋아요 버튼 누르면 댓글아이디(commentNo), 좋아요 몇개받았는지 카운팅갯수 응답" +
+            "\n body에는 boolean타입 recommend => true 좋아요, flase 좋아요 취소 ")
+    @PutMapping("/boards/{board-no}/comments/{comment-no}/recommend")
+    public ResponseEntity commentRecommend(
+            @ApiParam(value = "boardNo", required = true)
+            @PathVariable(value = "board-no") long boardNo,
+            @ApiParam(value = "commentNo", required = true)
+            @PathVariable(value = "comment-no") long commentNo,
+            @ApiParam(value = "좋아요 여부", required = true)
+            @Valid @RequestBody RequestCountDto recommend) {
+        ResponseCountDto countDto = commentService.updateRecommend(boardNo, commentNo, recommend);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_UPDATE_SUCCESS.getMessage(), countDto);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
