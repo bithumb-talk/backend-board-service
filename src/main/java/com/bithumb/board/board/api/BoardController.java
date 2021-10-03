@@ -53,8 +53,8 @@ public class BoardController {
 
     /* 게시글 조회 */
     @ApiOperation(value=" 게시글 조회", notes=" 단일 게시글 조회, comments로 응답되는 링크는 해당 게시글에 작성된 댓글리스트를 조회합니다. " +
-            "\n/boards/{board-no}" +
-            "\ncomments로 조회되는거는 게시글에 달린 댓글들 조회할 수 있는 링크입니다 어떻게 쓰실지 몰라서 일단 달아놨어요")
+            "\n /boards/{board-no}" +
+            "\n comments로 조회되는거는 게시글에 달린 댓글들 조회할 수 있는 링크입니다 어떻게 쓰실지 몰라서 일단 달아놨어요")
     @GetMapping("/boards/{board-no}")
     public ResponseEntity retrieveBoard(
             @ApiParam(value = "boardNo", required = true, example = "12")
