@@ -29,7 +29,8 @@ public class ReplyController {
     private final ReplyService replyService;
 
     /* 대댓글 등록 */
-    @ApiOperation(value=" 대댓글 등록 ", notes="board-no의 경우 위의 API들과 통일성때문에 넣었습니다.")
+    @ApiOperation(value=" 대댓글 등록 ", notes="board-no의 경우 위의 API들과 통일성때문에 넣었습니다." +
+            "\n /boards/{board-no}/comments/{comment-no}/replies")
     @PostMapping("/boards/{board-no}/comments/{comment-no}/replies")
     public ResponseEntity createReply( @Valid @RequestBody RequestReplyDto requestReplyDto,
                                        @ApiParam(value = "boardNo", required = false)
