@@ -74,11 +74,14 @@ public class AllBoardController {
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
-    @ApiOperation(value="카테고리 기반 게시판 조회", notes=" 카테고리로 게시판을 조회합니다. ")
     /* 카테고리 기반 게시판 조회 */
-    @GetMapping("/all-boards/category/{category-no}")
-    public ResponseEntity BoardsListCategory(@PathVariable(value="category-no",required = false) long categoryNo, @PageableDefault(size=16,sort="boardCreatedDate", direction =Sort.Direction.DESC )final Pageable pageable) {
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),null);
+    @ApiOperation(value="카테고리 기반 게시판 조회", notes=" 카테고리로 게시판을 조회합니다. ")
+    @GetMapping("/all-boards/category/{boardCategory}")
+    public ResponseEntity BoardsListCategory(@PathVariable(value="boardCategory",required = false) String boardCategory, @PageableDefault(size=16,sort="boardCreatedDate", direction =Sort.Direction.DESC )final Pageable pageable) {
+
+        Page<Board> board = boardService.findBoardByBoardCategory(boardCategory, pageable);
+        PagedModel<BoardModel> collModel = pagedResourcesAssembler.toModel(board,boardAssembler);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),collModel);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 }

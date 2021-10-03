@@ -67,8 +67,9 @@ public class Board {
         this.boardImg = boardImg;
     }
 
-    public void updateBoardContent(String nickname, String boardTitle, String boardContent, String boardImg, LocalDateTime boardModifyDate ){
+    public void updateBoardContent(String nickname,String boardCategory, String boardTitle, String boardContent, String boardImg, LocalDateTime boardModifyDate ){
         this.nickname = nickname;
+        this.boardCategory = boardCategory;
         this.boardTitle = boardTitle;
         this.boardContent = boardContent;
         this.boardImg = boardImg;

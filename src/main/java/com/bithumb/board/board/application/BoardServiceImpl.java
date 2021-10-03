@@ -76,9 +76,10 @@ public class BoardServiceImpl implements BoardService {
         User user = userRepository.findById(userNo).orElseThrow(()-> new NullPointerException(ErrorCode.ID_NOT_EXIST.getMessage()));
         Board board =  boardRepository.findBoardByBoardNoAndUser(boardNo,user).orElseThrow(() -> new NullPointerException(ErrorCode.BOARD_NOT_EXIST.getMessage()));
         board.updateBoardContent(
-                boardRequestDto.getNickname(), boardRequestDto.getBoardTitle(),
+                boardRequestDto.getNickname(), board.getBoardCategory(),boardRequestDto.getBoardTitle(),
                 boardRequestDto.getBoardContent(),boardRequestDto.getBoardImg() == null ? board.getBoardImg() : boardRequestDto.setListToStringUrl(),LocalDateTime.now().withNano(0));
-//        board.builder().nickname( boardRequestDto.getNickname() == null ? board.getNickname() : boardRequestDto.getNickname())
+
+        //        board.builder().nickname( boardRequestDto.getNickname() == null ? board.getNickname() : boardRequestDto.getNickname())
 //                        .boardTitle(boardRequestDto.getBoardTitle() == null ? board.getBoardTitle() : boardRequestDto.getBoardTitle())
 //                                .boardContent(boardRequestDto.getBoardContent() == null ? board.getBoardContent() : boardRequestDto.getBoardContent())
 //                                        .boardImg(boardRequestDto.getBoardImg() == null ? board.getBoardImg(): boardRequestDto.setListToStringUrl())
