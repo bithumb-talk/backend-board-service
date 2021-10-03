@@ -42,7 +42,8 @@ public class AllBoardController {
 
     /* 게시판 조회 */
     @ApiOperation(value=" 게시판 조회", notes="default 0번 페이지부터 시작, 아무값도 입력하지 않으면 첫번째 페이지를 조회합니다." +
-            "/all-boards")
+            "/all-boards" +
+            "그냥 일단 /all-boards 로 조회하면 알아서 링크 다 생성해줘요")
 
     @GetMapping("/all-boards")
     public ResponseEntity BoardsListAll(@PageableDefault(size=16,sort="boardCreatedDate", direction =Sort.Direction.DESC ) final Pageable pageable) {
@@ -56,7 +57,8 @@ public class AllBoardController {
 
     /* 유저기반 게시판 조회 */
     @ApiOperation(value=" 유저 기반 게시판 조회", notes=" 유저가 자신이 쓴 게시물 리스트를 조회합니다. " +
-            "/all-boards/{user-no}")
+            "/all-boards/{user-no}" +
+            "user-no: 현재 로그인한 유저넘버")
     @GetMapping("/all-boards/{user-no}")
     public ResponseEntity BoardsListUser(@PathVariable(value="user-no")
                         long userNo , @PageableDefault(size=16,sort="boardCreatedDate", direction =Sort.Direction.DESC ) final Pageable pageable) {

@@ -52,7 +52,9 @@ public class BoardController {
     private static final Logger LOGGER = LoggerFactory.getLogger(BoardController.class);
 
     /* 게시글 조회 */
-    @ApiOperation(value=" 게시글 조회", notes=" 단일 게시글 조회, comments로 응답되는 링크는 해당 게시글에 작성된 댓글리스트를 조회합니다. ")
+    @ApiOperation(value=" 게시글 조회", notes=" 단일 게시글 조회, comments로 응답되는 링크는 해당 게시글에 작성된 댓글리스트를 조회합니다. " +
+            "\n/boards/{board-no}" +
+            "\ncomments로 조회되는거는 게시글에 달린 댓글들 조회할 수 있는 링크입니다 어떻게 쓰실지 몰라서 일단 달아놨어요")
     @GetMapping("/boards/{board-no}")
     public ResponseEntity retrieveBoard(
             @ApiParam(value = "boardNo", required = true, example = "12")
@@ -69,12 +71,13 @@ public class BoardController {
         EntityModel model =EntityModel.of(responseBoardDto)
                 .add(WebMvcLinkBuilder.linkTo(methodOn(CommentController.class)
                         .retrieveCommentsList(boardNo)).withRel("comments"));
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),responseBoardDto);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),model);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
     /* 게시글 추천 */
-    @ApiOperation(value=" 게시글 추천", notes=" 게시글 추천 버튼")
+    @ApiOperation(value=" 게시글 추천", notes=" 게시글 추천 버튼" +
+            "\n추천버튼 유저쪽이랑 협의 필요")
     @GetMapping("/boards/{board-no}/recommend")
     public ResponseEntity countingBoardRecommend(
             @ApiParam(value = "boardNo", required = true, example = "1")
@@ -85,7 +88,9 @@ public class BoardController {
     }
 
     /* 게시글 등록 */
-    @ApiOperation(value=" 게시글 등록", notes=" 게시글 추천 버튼")
+    @ApiOperation(value=" 게시글 등록", notes=" 게시글 등록" +
+            "/boards/{user-no}" +
+            "\n 현재 로그인된 유저넘버")
     @ApiImplicitParam(
             name = "user-no"
             , value = "유저 넘버"
@@ -109,7 +114,9 @@ public class BoardController {
     }
 
     /* 게시물 수정 */
-    @ApiOperation(value=" 게시글 수정", notes="게시글 수정")
+    @ApiOperation(value=" 게시글 수정", notes="게시글 수정" +
+            "\n /boards/{board-no}/{user-no}" +
+            "\n 보드넘버, 현재 로그인된 유저넘버")
     @PutMapping("/boards/{board-no}/{user-no}")                           // 유저 정보 확인 o
     public ResponseEntity updateBoard(@Valid @RequestBody RequestBoardDto dto,
                                       @ApiParam(value = "boardNo", required = true, example = "1")
@@ -122,7 +129,9 @@ public class BoardController {
     }
 
     /* 게시물 삭제 */
-    @ApiOperation(value=" 게시글 삭제 ", notes="게시글 삭제")
+    @ApiOperation(value=" 게시글 삭제 ", notes="게시글 삭제" +
+            "\n /boards/{board-no}/{user-no}" +
+            "\n 게시글 넘버, 현재 로그인된 유저넘버")
     @DeleteMapping("/boards/{board-no}/{user-no}")                        // 유저 정보 확인 o
     public ResponseEntity deleteBoard(
             @ApiParam(value = "boardNo", required = true, example = "1")

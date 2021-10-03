@@ -39,7 +39,10 @@ public class CommentController {
     PagedResourcesAssembler<Comment> pagedResourcesAssembler;
 
     /* 게시글 기반 댓글 리스트 조회 */
-    @ApiOperation(value=" 게시글에 작성된 댓글 리스트 조회", notes=" 게시글 조회시 링크 ")
+    @ApiOperation(value=" 게시글에 작성된 댓글 리스트 조회", notes=" 게시글 조회시 링크" +
+            "\n 게시글 조회시 링크되는 API" +
+            "\n /boards/{board-no}/comments" +
+            "\n 보드넘버로 조회")
     @GetMapping("/boards/{board-no}/comments")
     public ResponseEntity retrieveCommentsList(
             @ApiParam(value = "boardNo", required = true, example = "1")
