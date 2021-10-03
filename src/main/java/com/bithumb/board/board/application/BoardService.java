@@ -11,6 +11,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 public interface BoardService {
+    /* 게시판 전체 조회 */
+    Page<Board> BoardsListAll(Pageable pageable);
+
+    /* 유저로 전체 조회  */
+    Page<Board> findBoardByUser(User user, Pageable pageable);
+
+    /* 카테고리로 전체 조회 */
+    Page<Board> findBoardByBoardCategory(String boardCategory, Pageable pageable);
+
     /* 게시글 조회 */
     ResponseBoardDto retrieveBoard(long boardNo);
 
@@ -26,10 +35,6 @@ public interface BoardService {
     /* 게시글 삭제 */
     long deleteBoard(long boardNo, long userNo);
 
-
-    Page<Board> BoardsListAll(Pageable pageable);
-    Page<Board> findBoardByBoardCategory(String boardCategory, Pageable pageable);
-    Page<Board> findBoardByUser(User user, Pageable pageable);
     boolean existsById(long id);
     void deleteById(long board_no);
 }

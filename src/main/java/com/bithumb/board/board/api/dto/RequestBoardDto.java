@@ -25,6 +25,8 @@ public class RequestBoardDto {
     @NotBlank(message = "Content empty")
     private String boardContent;
 
+    @NotBlank(message = "Category empty")
+    private String boardCategory;
 
     private LocalDateTime boardCreatedDate;
     private long boardViews = 0;
@@ -55,11 +57,12 @@ public class RequestBoardDto {
     public Board toEntity() {
         return Board.builder()
                 .nickname(this.nickname)
-                .boardRecommend(this.boardRecommend)
                 .boardTitle(this.boardTitle)
+                .boardViews(this.boardViews)
+                .boardCategory(this.boardCategory)
                 .boardContent(this.boardContent)
                 .boardCreatedDate(this.boardCreatedDate)
-                .boardViews(this.boardViews)
+                .boardRecommend(this.boardRecommend)
                 .boardImg(listToString())
                 .build();
     }
