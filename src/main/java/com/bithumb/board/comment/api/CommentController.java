@@ -65,7 +65,14 @@ public class CommentController {
     }
 
     /* 댓글 등록 */
-    @ApiOperation(value=" 댓글 등록 ", notes=" 댓글 등록 ")
+    @ApiOperation(value=" 댓글 등록 ", notes=" 댓글 등록 " +
+            "{\n" +
+            "  \"commentContent\": \"댓글 post test1\",\n" +
+            "  \"nickname\": \"user1\"\n" +
+            "\n}" +
+            "=> commentContent, nickname은 필수데이터, commentCreateDate은 댓글 등록할때 내부에서 생성" +
+            "\n commentModifyDate은 Put으로 댓글 수정할때 내부에서 생성" +
+            "\n Parameters에서 조회되는 commentContend, nickname을 제외한 나머지는 내부에 default값이 있습니다.")
     @PostMapping("/boards/{board-no}/comments")
     public ResponseEntity createComment(@Valid @RequestBody RequestCommentDto requestCommentDto,
                                         @ApiParam(value = "boardNo", required = true, example = "1")
@@ -76,7 +83,8 @@ public class CommentController {
     }
 
     /* 댓글 수정 */
-    @ApiOperation(value=" 댓글 수정 ", notes=" 댓글 수정 ")
+    @ApiOperation(value=" 댓글 수정 ", notes=" 댓글 수정 " +
+            "\n 필수데이터는 댓글 등록과 같습니다.")
     @PutMapping("/boards/{board-no}/comments/{comment-no}")
     public ResponseEntity updateComment(@Valid @RequestBody RequestCommentDto requestCommentDto,
                                         @ApiParam(value = "boardNo", required = true, example = "1")
