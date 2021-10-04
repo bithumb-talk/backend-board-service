@@ -5,6 +5,7 @@ import com.bithumb.board.board.application.BoardService;
 import com.bithumb.board.board.assembler.BoardAssembler;
 import com.bithumb.board.board.domain.Board;
 import com.bithumb.board.board.domain.BoardModel;
+import com.bithumb.board.board.repository.BoardRepository;
 import com.bithumb.board.common.response.ApiResponse;
 import com.bithumb.board.common.response.StatusCode;
 import com.bithumb.board.common.response.SuccessCode;
@@ -16,16 +17,20 @@ import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.data.web.PagedResourcesAssembler;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.PagedModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @Api(tags = {"All-Board API"})
 @RestController
@@ -35,6 +40,7 @@ import org.springframework.web.bind.annotation.*;
 public class AllBoardController {
     private final BoardService boardService;
     private final UserService userService;
+
     @Autowired
     BoardAssembler boardAssembler;
     @Autowired
@@ -80,6 +86,16 @@ public class AllBoardController {
         Page<Board> board = boardService.findBoardByBoardCategory(boardCategory, pageable);
         PagedModel<BoardModel> collModel = pagedResourcesAssembler.toModel(board,boardAssembler);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),collModel);
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
+    }
+
+    /* 베스트 인기글 4개 조회 */
+    @ApiOperation(value="베스트 인기글 4개 조회", notes=" 좋아요 갯수로 인기글 최대 4개를 조회")
+    @GetMapping("/all-boards/ranking")
+    public ResponseEntity BoardsRanking(){
+        List<Board> board = boardService.boardsRanking();
+        CollectionModel<BoardModel> collModel = boardAssembler.toCollectionModel(board);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(), collModel);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 }

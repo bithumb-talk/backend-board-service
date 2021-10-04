@@ -10,6 +10,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public interface BoardService {
     /* 게시판 전체 조회 */
@@ -20,6 +22,9 @@ public interface BoardService {
 
     /* 카테고리로 전체 조회 */
     Page<Board> findBoardByBoardCategory(String boardCategory, Pageable pageable);
+
+    /* 베스트 인기글 4개 조회 */
+    List<Board> boardsRanking();
 
     /* 게시글 조회 */
     ResponseBoardDto retrieveBoard(long boardNo);
