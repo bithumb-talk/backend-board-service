@@ -25,7 +25,7 @@ public class BoardModel extends RepresentationModel<BoardModel> {
     private String nickname;
     private String boardImg;
 
-    public BoardModel(Board entity) {
+    public void toBoardModel(Board entity) {
         this.boardNo = entity.getBoardNo();
         this.boardTitle = entity.getBoardTitle();
         this.boardViews = entity.getBoardViews();

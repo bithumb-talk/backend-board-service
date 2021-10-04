@@ -4,7 +4,10 @@ import com.bithumb.board.board.api.AllBoardController;
 import com.bithumb.board.board.api.BoardController;
 import com.bithumb.board.board.domain.Board;
 import com.bithumb.board.board.domain.BoardModel;
+import com.bithumb.board.comment.domain.Comment;
+import com.bithumb.board.comment.domain.CommentModel;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.server.mvc.RepresentationModelAssemblerSupport;
 import org.springframework.stereotype.Component;
 
@@ -20,32 +23,13 @@ public class BoardAssembler extends RepresentationModelAssemblerSupport<Board, B
     @Override
     public BoardModel toModel(Board entity) {
         BoardModel model = instantiateModel(entity);
-        model.setBoardNo(entity.getBoardNo());
-        model.setBoardTitle(entity.getBoardTitle());
-        model.setBoardCategory(entity.getBoardCategory());
-        model.setBoardContent(entity.getBoardContent());
-        model.setBoardViews(entity.getBoardViews());
-        model.setBoardRecommend(entity.getBoardRecommend());
-        model.setBoardCreatedDate(entity.getBoardCreatedDate());
-        model.setBoardModifyDate(entity.getBoardModifyDate());
-        model.setNickname(entity.getNickname());
-        model.setBoardImg(entity.getBoardImg());
+        model.toBoardModel(entity);
         model.add(linkTo(methodOn(BoardController.class).retrieveBoard(entity.getBoardNo())).withSelfRel());
-
         return model;
     }
-//    @Override
-//    public BoardModel toModel(Board entity) {
-//        return createModelWithId(entity.getBoardNo(), entity);
-//    }
-//    @Override
-//    public CollectionModel<BoardModel> toCollectionModel(Iterable<? extends Board> entities){
-//
-//        return super.toCollectionModel(entities.)
-//
-//                .add(linkTo(methodOn(BoardController.class).hateoasCollection()).withSelfRel())
-//                ;
-//    }
-
-
+    @Override
+    public CollectionModel<BoardModel> toCollectionModel(Iterable<? extends Board> entities){
+        CollectionModel<BoardModel> boardModels = super.toCollectionModel(entities);
+        return boardModels;
+    }
 }
