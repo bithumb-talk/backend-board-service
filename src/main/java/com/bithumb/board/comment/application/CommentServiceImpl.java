@@ -31,13 +31,7 @@ public class CommentServiceImpl implements CommentService {
     /* 게시글 기반 댓글 리스트 조회 */
     @Override
     public Page<Comment> findCommentsByBoard(long boardNo, Pageable pageable){
-        System.out.println("----");
-        System.out.println(boardNo);
-        System.out.println(pageable);
         Board board = boardRepository.findById(boardNo).orElseThrow(() -> new NullPointerException(ErrorCode.BOARD_NOT_EXIST.getMessage()));
-        System.out.println("----");
-        System.out.println(board);
-        System.out.println("------");
         return commentRepository.findCommentsByBoard(board,pageable);
     }
 
@@ -69,7 +63,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     /* 댓글 추천 */
-    public ResponseCountDto updateRecommend(long boardNo, long commentNo, RequestCountDto recommend){
+    public ResponseCountDto updateRecommend( long commentNo, RequestCountDto recommend){
         Comment comment = commentRepository.findById(commentNo).orElseThrow(() -> new NullPointerException(ErrorCode.COMMENT_NOT_EXIST.getMessage()));
         long countingRecommend = comment.getCommentRecommend();
         if(recommend.getCommentRecommend().equals("true"))

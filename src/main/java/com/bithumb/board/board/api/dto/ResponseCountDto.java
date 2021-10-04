@@ -7,14 +7,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 public class ResponseCountDto {
-    private long boardNo;
     private long boardRecommend;
 
-    public ResponseCountDto(long boardNo , long boardRecommend) {
-        this.boardNo = boardNo;
+    public ResponseCountDto( long boardRecommend) {
         this.boardRecommend = boardRecommend;
     }
     public static ResponseCountDto from(Board board) {
-        return new ResponseCountDto( board.getBoardNo(),board.getBoardRecommend());
+        return new ResponseCountDto( board.getBoardRecommend());
     }
 }

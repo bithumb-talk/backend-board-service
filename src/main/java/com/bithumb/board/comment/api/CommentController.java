@@ -100,7 +100,7 @@ public class CommentController {
     @ApiOperation(value=" 댓글 삭제 ", notes=" 댓글 삭제 ")
     @DeleteMapping("/boards/{board-no}/comments/{comment-no}")
     public ResponseEntity deleteComment(
-            @ApiParam(value = "boardNo", required = false)
+            @ApiParam(value = "boardNo", required = true)
             @PathVariable(value = "board-no") long boardNo,
             @ApiParam(value = "commentNo", required = true, example = "1")
             @PathVariable(value = "comment-no") long commentNo) {
@@ -111,9 +111,11 @@ public class CommentController {
 
     /* 댓글 추천 */
     @ApiOperation(value=" 댓글 추천 ", notes=" 댓글 추천 " +
+            "\n 백에서는 API받으면 카운팅만" +
             "\n 좋아요 버튼 누르면 댓글아이디(commentNo), 좋아요 몇개받았는지 카운팅갯수 응답" +
-            "\n body에는 boolean타입 recommend => true 좋아요, flase 좋아요 취소 ")
-    @PutMapping("/boards/{board-no}/comments/{comment-no}/recommend")
+            "\n body에는 recommend => true 좋아요, flase 좋아요 취소 " +
+            "\n boardNo는 API 통일성 때문에 추가했고, 현재 보드넘버 또는 어떤 숫자라도 넣어야합니다! ")
+    @PostMapping("/boards/{board-no}/comments/{comment-no}/recommend")
     public ResponseEntity commentRecommend(
             @ApiParam(value = "boardNo", required = true)
             @PathVariable(value = "board-no") long boardNo,
@@ -121,8 +123,8 @@ public class CommentController {
             @PathVariable(value = "comment-no") long commentNo,
             @ApiParam(value = "좋아요 여부", required = true)
             @Valid @RequestBody RequestCountDto recommend) {
-        ResponseCountDto countDto = commentService.updateRecommend(boardNo, commentNo, recommend);
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_UPDATE_SUCCESS.getMessage(), countDto);
+        ResponseCountDto countDto = commentService.updateRecommend(commentNo, recommend);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_RECOMMEND_SUCCESS.getMessage(), countDto);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 

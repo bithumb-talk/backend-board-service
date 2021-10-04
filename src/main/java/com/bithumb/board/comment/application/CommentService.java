@@ -23,7 +23,7 @@ public interface CommentService {
     void deleteComment(long comment_no);
 
     /* 댓글 추천 */
-    ResponseCountDto updateRecommend(long boardNo, long commentNo, RequestCountDto recommend);
+    ResponseCountDto updateRecommend(long commentNo, RequestCountDto recommend);
 
 
 

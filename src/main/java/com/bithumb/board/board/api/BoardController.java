@@ -67,7 +67,7 @@ public class BoardController {
     /* 게시글 추천 */
     @ApiOperation(value="게시글 좋아요", notes="게시글 좋아요 버튼" +
             "\n 게시글id(게시글 넘버), 현재 좋아요 갯수 응답")
-    @PutMapping("/boards/{board-no}/recommend")
+    @PostMapping("/boards/{board-no}/recommend")
     public ResponseEntity countingBoardRecommend(
             @ApiParam(value = "boardNo", required = true, example = "1")
             @PathVariable(value="board-no") long boardNo,
