@@ -8,8 +8,7 @@ import org.springframework.hateoas.RepresentationModel;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
-@Builder
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -20,16 +19,24 @@ public class CommentModel extends RepresentationModel<CommentModel> {
     private String commentContent;
     private LocalDateTime commentCreatedDate;
     private LocalDateTime commentModifyDate;
-    private String userId;
+    private long commentRecommend;
+    private String nickname;
     private List<Reply> replyList;
 
-    public CommentModel(Comment entity) {
+    public void changeModel(Comment entity) {
         this.commentNo = entity.getCommentNo();
         this.commentContent = entity.getCommentContent();
         this.commentCreatedDate = entity.getCommentCreatedDate();
         this.commentModifyDate = entity.getCommentModifyDate();
-        this.userId = entity.getNickname();
+        this.commentRecommend = entity.getCommentRecommend();
+        this.nickname = entity.getNickname();
         this.replyList = entity.getReply();
+    }
+
+    public CommentModel of(Comment comment){
+        return new CommentModel(comment.getCommentNo(), comment.getCommentContent(),
+                comment.getCommentCreatedDate(), comment.getCommentModifyDate(),
+                comment.getCommentRecommend(), comment.getNickname(), comment.getReply());
     }
 
 }

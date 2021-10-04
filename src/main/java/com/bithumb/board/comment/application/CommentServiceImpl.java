@@ -14,9 +14,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @RequiredArgsConstructor
 @Service
+@Transactional
 public class CommentServiceImpl implements CommentService {
     private final CommentRepository commentRepository;
     private final BoardRepository boardRepository;
@@ -29,7 +31,13 @@ public class CommentServiceImpl implements CommentService {
     /* 게시글 기반 댓글 리스트 조회 */
     @Override
     public Page<Comment> findCommentsByBoard(long boardNo, Pageable pageable){
+        System.out.println("----");
+        System.out.println(boardNo);
+        System.out.println(pageable);
         Board board = boardRepository.findById(boardNo).orElseThrow(() -> new NullPointerException(ErrorCode.BOARD_NOT_EXIST.getMessage()));
+        System.out.println("----");
+        System.out.println(board);
+        System.out.println("------");
         return commentRepository.findCommentsByBoard(board,pageable);
     }
 

@@ -1,6 +1,8 @@
 package com.bithumb.board.comment.api;
 
 
+import com.bithumb.board.board.domain.Board;
+import com.bithumb.board.board.repository.BoardRepository;
 import com.bithumb.board.comment.api.dto.RequestCountDto;
 import com.bithumb.board.comment.api.dto.ResponseCountDto;
 import com.bithumb.board.comment.api.dto.RequestCommentDto;
@@ -8,7 +10,9 @@ import com.bithumb.board.comment.api.dto.ResponseCommentDto;
 import com.bithumb.board.comment.assembler.CommentAssembler;
 import com.bithumb.board.comment.domain.Comment;
 import com.bithumb.board.comment.domain.CommentModel;
+import com.bithumb.board.comment.repository.CommentRepository;
 import com.bithumb.board.common.response.ApiResponse;
+import com.bithumb.board.common.response.ErrorCode;
 import com.bithumb.board.common.response.StatusCode;
 import com.bithumb.board.common.response.SuccessCode;
 import com.bithumb.board.comment.application.CommentService;
@@ -16,6 +20,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -35,8 +40,12 @@ import javax.validation.constraints.NotBlank;
 @CrossOrigin(origins = "*", allowCredentials = "false")
 public class CommentController {
     private final CommentService commentService;
+    private final CommentRepository commentRepository;
+    private final BoardRepository boardRepository;
 
+    @Autowired
     CommentAssembler commentAssembler;
+    @Autowired
     PagedResourcesAssembler<Comment> pagedResourcesAssembler;
 
     /* 게시글 기반 댓글 리스트 조회 */

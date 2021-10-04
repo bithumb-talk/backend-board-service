@@ -12,12 +12,14 @@ import com.bithumb.board.reply.repository.ReplyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
+@Transactional
 public class ReplyServiceImpl implements ReplyService {
     private final ReplyRepository replyRepository;
     private final CommentRepository commentRepository;

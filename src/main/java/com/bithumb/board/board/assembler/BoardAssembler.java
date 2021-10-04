@@ -16,11 +16,8 @@ public class BoardAssembler extends RepresentationModelAssemblerSupport<Board, B
     public BoardAssembler(){
         super(AllBoardController.class, BoardModel.class);
     }
+
     @Override
-    /*
-
-
-     */
     public BoardModel toModel(Board entity) {
         BoardModel model = instantiateModel(entity);
         model.setBoardNo(entity.getBoardNo());

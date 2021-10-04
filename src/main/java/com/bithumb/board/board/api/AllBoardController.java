@@ -51,8 +51,6 @@ public class AllBoardController {
     public ResponseEntity BoardsListAll(@PageableDefault(size=16,sort="boardCreatedDate", direction =Sort.Direction.DESC ) final Pageable pageable) {
         Page<Board> board = boardService.BoardsListAll(pageable);
         PagedModel<BoardModel> collModel = pagedResourcesAssembler.toModel(board,boardAssembler);
-        System.out.println(collModel.getMetadata());
-
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),collModel);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
