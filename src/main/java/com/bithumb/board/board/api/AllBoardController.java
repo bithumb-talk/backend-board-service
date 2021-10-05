@@ -89,7 +89,7 @@ public class AllBoardController {
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 
-    /* 베스트 인기글 4개 조회  */
+    /* 베스트 인기글 4개 조회 */
     @ApiOperation(value="베스트 인기글 4개 조회", notes=" 좋아요 갯수로 인기글 최대 4개를 조회")
     @GetMapping("/all-boards/ranking")
     public ResponseEntity BoardsRanking(){
