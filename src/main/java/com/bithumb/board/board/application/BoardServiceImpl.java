@@ -29,8 +29,6 @@ public class BoardServiceImpl implements BoardService {
 
     private final UserRepository userRepository;
 
-    private final UserService userService;
-
     //생성자 주입 => @RequiredArgsConstructor
 //    public BoardServiceImpl(BoardRepository boardRepository, UserRepository userRepository, UserService userService) {
 //        this.boardRepository = boardRepository;
@@ -81,9 +79,10 @@ public class BoardServiceImpl implements BoardService {
     public ResponseBoardDto updateBoard(RequestBoardDto boardRequestDto, long boardNo, long userNo){
         User user = userRepository.findById(userNo).orElseThrow(()-> new NullPointerException(ErrorCode.ID_NOT_EXIST.getMessage()));
         Board board =  boardRepository.findBoardByBoardNoAndUser(boardNo,user).orElseThrow(() -> new NullPointerException(ErrorCode.BOARD_NOT_EXIST.getMessage()));
+//
         board.updateBoardContent(
-                boardRequestDto.getNickname(), board.getBoardCategory(),boardRequestDto.getBoardTitle(),
-                boardRequestDto.getBoardContent(),boardRequestDto.getBoardImg() == null ? board.getBoardImg() : boardRequestDto.setListToStringUrl(),LocalDateTime.now().withNano(0));
+                boardRequestDto.getNickname(), board.getBoardCategory(),boardRequestDto.getBoardTitle(), boardRequestDto.getBoardContent(),
+                boardRequestDto.getBoardImg() == null ? board.getBoardImg() : boardRequestDto.setListToStringUrl(),LocalDateTime.now().withNano(0));
 
         Board savedBoard = boardRepository.save(board);
         return ResponseBoardDto.of(savedBoard);
@@ -92,6 +91,7 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public long deleteBoard(long boardNo, long userNo){
         User user = userRepository.findById(userNo).orElseThrow(()-> new NullPointerException(ErrorCode.ID_NOT_EXIST.getMessage()));
+
         return boardRepository.deleteBoardByBoardNoAndUser(boardNo, user);
     }
 

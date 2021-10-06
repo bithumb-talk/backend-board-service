@@ -41,6 +41,7 @@ public interface BoardService {
     /* 게시글 삭제 */
     long deleteBoard(long boardNo, long userNo);
 
+
     boolean existsById(long id);
     void deleteById(long board_no);
 }
