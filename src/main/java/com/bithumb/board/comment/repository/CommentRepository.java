@@ -13,4 +13,5 @@ public interface CommentRepository extends JpaRepository<Comment, Long > {
 
     Page<Comment> findCommentsByBoard(Board board, Pageable pageable);
     Comment findCommentByBoardAndCommentNo(Board board, long commentNo);
+
 }

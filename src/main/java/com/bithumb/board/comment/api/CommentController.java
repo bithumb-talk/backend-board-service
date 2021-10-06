@@ -1,6 +1,7 @@
 package com.bithumb.board.comment.api;
 
 
+import com.bithumb.board.board.api.dto.RequestLikeDto;
 import com.bithumb.board.board.domain.Board;
 import com.bithumb.board.board.repository.BoardRepository;
 import com.bithumb.board.comment.api.dto.RequestCountDto;
@@ -127,5 +128,4 @@ public class CommentController {
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_RECOMMEND_SUCCESS.getMessage(), countDto);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
-
 }
