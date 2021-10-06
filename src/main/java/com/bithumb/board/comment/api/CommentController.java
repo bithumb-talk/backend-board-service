@@ -38,11 +38,8 @@ import javax.validation.constraints.NotBlank;
 @Api(tags = {"Comment API"})
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*", allowCredentials = "false")
 public class CommentController {
     private final CommentService commentService;
-    private final CommentRepository commentRepository;
-    private final BoardRepository boardRepository;
 
     @Autowired
     CommentAssembler commentAssembler;
@@ -74,7 +71,7 @@ public class CommentController {
             "=> commentContent, nickname은 필수데이터, commentCreateDate은 댓글 등록할때 내부에서 생성" +
             "\n commentModifyDate은 Put으로 댓글 수정할때 내부에서 생성" +
             "\n Parameters에서 조회되는 commentContend, nickname을 제외한 나머지는 내부에 default값이 있습니다.")
-    @PostMapping("/boards/{board-no}/comments")
+    @PostMapping("/boards/{board-no}/comments/auth")//
     public ResponseEntity createComment(@Valid @RequestBody RequestCommentDto requestCommentDto,
                                         @ApiParam(value = "boardNo", required = true, example = "1")
                                         @PathVariable(value = "board-no") long boardNo) {
@@ -86,7 +83,7 @@ public class CommentController {
     /* 댓글 수정 */
     @ApiOperation(value=" 댓글 수정 ", notes=" 댓글 수정 " +
             "\n 필수데이터는 댓글 등록과 같습니다.")
-    @PutMapping("/boards/{board-no}/comments/{comment-no}")
+    @PutMapping("/boards/{board-no}/comments/{comment-no}/auth")//
     public ResponseEntity updateComment(@Valid @RequestBody RequestCommentDto requestCommentDto,
                                         @ApiParam(value = "boardNo", required = true, example = "1")
                                         @PathVariable(value = "board-no") long boardNo,
@@ -99,7 +96,7 @@ public class CommentController {
 
     /* 댓글 삭제 */
     @ApiOperation(value=" 댓글 삭제 ", notes=" 댓글 삭제 ")
-    @DeleteMapping("/boards/{board-no}/comments/{comment-no}")
+    @DeleteMapping("/boards/{board-no}/comments/{comment-no}/auth") //
     public ResponseEntity deleteComment(
             @ApiParam(value = "boardNo", required = true)
             @PathVariable(value = "board-no") long boardNo,
@@ -116,7 +113,7 @@ public class CommentController {
             "\n 좋아요 버튼 누르면 댓글아이디(commentNo), 좋아요 몇개받았는지 카운팅갯수 응답" +
             "\n body에는 recommend => true 좋아요, flase 좋아요 취소 " +
             "\n boardNo는 API 통일성 때문에 추가했고, 현재 보드넘버 또는 어떤 숫자라도 넣어야합니다! ")
-    @PostMapping("/boards/{board-no}/comments/{comment-no}/recommend")
+    @PostMapping("/boards/{board-no}/comments/{comment-no}/recommend/auth") //
     public ResponseEntity commentRecommend(
             @ApiParam(value = "boardNo", required = true)
             @PathVariable(value = "board-no") long boardNo,
