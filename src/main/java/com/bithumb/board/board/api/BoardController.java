@@ -130,7 +130,7 @@ public class BoardController {
             @PathVariable(value ="board-no") long boardNo,
             @ApiParam(value = "userNo", required = true, example = "1")
                                       @PathVariable(value ="user-no") long userNo) {
-        s3Service.deleteObejct(userNo, boardNo);
+        //s3Service.deleteObejct(userNo, boardNo);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_DELETE_SUCCESS.getMessage(),boardService.deleteBoard(boardNo,userNo));
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
