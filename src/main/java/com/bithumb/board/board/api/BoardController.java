@@ -5,6 +5,7 @@ import com.bithumb.board.board.api.dto.RequestCountDto;
 import com.bithumb.board.board.api.dto.ResponseCountDto;
 import com.bithumb.board.board.api.dto.RequestBoardDto;
 import com.bithumb.board.board.api.dto.ResponseBoardDto;
+import com.bithumb.board.board.application.S3Service;
 import com.bithumb.board.comment.api.CommentController;
 import com.bithumb.board.common.response.ApiResponse;
 import com.bithumb.board.common.response.StatusCode;
@@ -37,7 +38,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @Slf4j
 public class BoardController {
     private final BoardService boardService;
-
+    private final S3Service s3Service;
     private static final Logger LOGGER = LoggerFactory.getLogger(BoardController.class);
 
     /* 게시글 조회 */
@@ -104,7 +105,7 @@ public class BoardController {
     }
 
     /* 게시물 수정 */
-    @ApiOperation(value=" 게시글 수정", notes="게시글 수정" +
+    @ApiOperation(value="게시글 수정", notes="게시글 수정" +
             "\n /boards/{board-no}/{user-no}" +
             "\n 보드넘버, 현재 로그인된 유저넘버" +
             "\n 수정할때 이미지는 추가된이미지만 들어오는게 아니라 게시글에 있는 이미지 url 전부 들어와야합니다!")
@@ -129,7 +130,8 @@ public class BoardController {
             @PathVariable(value ="board-no") long boardNo,
             @ApiParam(value = "userNo", required = true, example = "1")
                                       @PathVariable(value ="user-no") long userNo) {
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_DELETE_SUCCESS.getMessage(),boardService.deleteBoard(boardNo,userNo));
+        s3Service.deleteObejct(userNo, boardNo);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_DELETE_SUCCESS.getMessage(),boardService.deleteBoard(boardNo,userNo););
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 }

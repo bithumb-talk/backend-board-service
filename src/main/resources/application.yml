@@ -44,3 +44,15 @@ server:
 #    fetch-registry: true
 #    service-url:
 #      defaultZone: http://3.38.23.41:6020/eureka
+
+cloud:
+  aws:
+    credentials:
+      accessKey:
+      secretKey:
+    s3:
+      bucket: youngcha-board-service
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
