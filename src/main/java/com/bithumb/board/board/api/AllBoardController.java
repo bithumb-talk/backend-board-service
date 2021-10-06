@@ -1,11 +1,13 @@
 package com.bithumb.board.board.api;
 
 
+import com.bithumb.board.board.api.dto.RequestLikeDto;
 import com.bithumb.board.board.application.BoardService;
 import com.bithumb.board.board.assembler.BoardAssembler;
 import com.bithumb.board.board.domain.Board;
 import com.bithumb.board.board.domain.BoardModel;
 import com.bithumb.board.board.repository.BoardRepository;
+import com.bithumb.board.comment.api.CommentController;
 import com.bithumb.board.common.response.ApiResponse;
 import com.bithumb.board.common.response.StatusCode;
 import com.bithumb.board.common.response.SuccessCode;
@@ -22,13 +24,16 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.Link;
 import org.springframework.hateoas.PagedModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import javax.swing.text.html.parser.Entity;
+import javax.validation.Valid;
+import java.util.*;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
@@ -98,4 +103,27 @@ public class AllBoardController {
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(), collModel);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
+
+    /* 마이페이지 좋아요 기록 게시글 리스트 조회 */
+    @PostMapping("/all-boards/{user-no}/recommend")
+    public ResponseEntity BoardsMyPage(@RequestBody  RequestLikeDto requestLikeDto, @PathVariable(value="user-no") long userNo){
+        List<Link> list = new ArrayList<>();
+        for(long id : requestLikeDto.getContentIdList()){
+            list.add(WebMvcLinkBuilder.linkTo(methodOn(BoardController.class).retrieveBoard(id)).withRel("boardId"+String.valueOf(id)));
+        }
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_LIKE_LIST_SUCCESS.getMessage(), list);
+        return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+

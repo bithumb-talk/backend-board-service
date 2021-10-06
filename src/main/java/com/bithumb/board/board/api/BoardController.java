@@ -95,7 +95,7 @@ public class BoardController {
             @PathVariable(value ="user-no") long userNo){
         ResponseBoardDto responseBoardDto = boardService.createBoard(dto, userNo);
 
-        EntityModel model =EntityModel.of(responseBoardDto)
+        EntityModel model = EntityModel.of(responseBoardDto)
                 .add(WebMvcLinkBuilder.linkTo(methodOn(BoardController.class)
                         .retrieveBoard(responseBoardDto.getBoardNo())).withRel("board"));
 
@@ -131,7 +131,7 @@ public class BoardController {
             @ApiParam(value = "userNo", required = true, example = "1")
                                       @PathVariable(value ="user-no") long userNo) {
         s3Service.deleteObejct(userNo, boardNo);
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_DELETE_SUCCESS.getMessage(),boardService.deleteBoard(boardNo,userNo););
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_DELETE_SUCCESS.getMessage(),boardService.deleteBoard(boardNo,userNo));
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 }
