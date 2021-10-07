@@ -58,7 +58,4 @@ public class ResponseBoardDto {
         return new ResponseBoardDto(board.getBoardNo(), board.getBoardTitle(), board.getBoardViews(), board.getBoardCategory(), board.getBoardContent(), board.getNickname(),
                 board.getBoardCreatedDate(), board.getBoardModifyDate(), board.getBoardRecommend(),board.getBoardImg());
     }
-//    public static ResponseBoardDto ValueOf(Board board){
-//        return new ResponseBoardDto(board.getBoardNo(),board.getBoardTitle(), board.getBoardViews(), board.getBoardCategory(), board.getBoardContent(), board.getNickname(), board.getBoardCreatedDate(), board.getBoardModifyDate(), board.getBoardRecommend());
-//    }
 }

@@ -19,12 +19,13 @@ public class BoardModel extends RepresentationModel<BoardModel> {
     private long boardViews;
     private String boardCategory;
     private String boardContent;
-    private String nickname;
     private LocalDateTime boardCreatedDate;
     private LocalDateTime boardModifyDate;
     private long boardRecommend;
+    private String nickname;
+    private String boardImg;
 
-    public BoardModel(Board entity) {
+    public void toBoardModel(Board entity) {
         this.boardNo = entity.getBoardNo();
         this.boardTitle = entity.getBoardTitle();
         this.boardViews = entity.getBoardViews();
@@ -34,5 +35,6 @@ public class BoardModel extends RepresentationModel<BoardModel> {
         this.boardModifyDate = entity.getBoardModifyDate();
         this.boardRecommend = entity.getBoardRecommend();
         this.nickname = entity.getNickname();
+        this.boardImg =entity.getBoardImg();
     }
 }

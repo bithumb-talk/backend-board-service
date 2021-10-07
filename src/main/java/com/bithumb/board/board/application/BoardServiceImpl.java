@@ -1,7 +1,8 @@
 package com.bithumb.board.board.application;
 
 
-import com.bithumb.board.board.api.dto.CountDto;
+import com.bithumb.board.board.api.dto.RequestCountDto;
+import com.bithumb.board.board.api.dto.ResponseCountDto;
 import com.bithumb.board.board.api.dto.RequestBoardDto;
 import com.bithumb.board.board.api.dto.ResponseBoardDto;
 import com.bithumb.board.board.domain.Board;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -26,8 +28,6 @@ public class BoardServiceImpl implements BoardService {
     private final BoardRepository boardRepository;
 
     private final UserRepository userRepository;
-
-    private final UserService userService;
 
     //생성자 주입 => @RequiredArgsConstructor
 //    public BoardServiceImpl(BoardRepository boardRepository, UserRepository userRepository, UserService userService) {
@@ -63,11 +63,15 @@ public class BoardServiceImpl implements BoardService {
 
     /* 게시글 추천 */
     @Override
-    public CountDto updateRecommend(long boardNo){
+    public ResponseCountDto updateRecommend(long boardNo, RequestCountDto recommend){
         Board board = boardRepository.findById(boardNo).orElseThrow(() -> new NullPointerException(ErrorCode.BOARD_NOT_EXIST.getMessage()));
-        long boardRecommend = board.getBoardRecommend();
-        board.changeBoardRecommend(boardRecommend+1);
-        return CountDto.from(boardRepository.save(board));
+        long countingRecommend = board.getBoardRecommend();
+        if(recommend.getBoardRecommend().equals("true")) {
+            board.changeBoardRecommend(countingRecommend + 1);
+        }
+        else
+            board.changeBoardRecommend(Math.max(countingRecommend-1,0));
+        return ResponseCountDto.from(boardRepository.save(board));
     }
 
     /* 게시글 수정 */
@@ -75,21 +79,11 @@ public class BoardServiceImpl implements BoardService {
     public ResponseBoardDto updateBoard(RequestBoardDto boardRequestDto, long boardNo, long userNo){
         User user = userRepository.findById(userNo).orElseThrow(()-> new NullPointerException(ErrorCode.ID_NOT_EXIST.getMessage()));
         Board board =  boardRepository.findBoardByBoardNoAndUser(boardNo,user).orElseThrow(() -> new NullPointerException(ErrorCode.BOARD_NOT_EXIST.getMessage()));
+//
         board.updateBoardContent(
-                boardRequestDto.getNickname(), boardRequestDto.getBoardTitle(),
-                boardRequestDto.getBoardContent(),boardRequestDto.getBoardImg() == null ? board.getBoardImg() : boardRequestDto.setListToStringUrl(),LocalDateTime.now().withNano(0));
-//        board.builder().nickname( boardRequestDto.getNickname() == null ? board.getNickname() : boardRequestDto.getNickname())
-//                        .boardTitle(boardRequestDto.getBoardTitle() == null ? board.getBoardTitle() : boardRequestDto.getBoardTitle())
-//                                .boardContent(boardRequestDto.getBoardContent() == null ? board.getBoardContent() : boardRequestDto.getBoardContent())
-//                                        .boardImg(boardRequestDto.getBoardImg() == null ? board.getBoardImg(): boardRequestDto.setListToStringUrl())
-//                                                .boardModifyDate(LocalDateTime.now().withNano(0))
-//                                                        .build();
-//        board.builder().nickname(boardRequestDto.getNickname())
-//                  .boardTitle(boardRequestDto.getBoardTitle())
-//                          .boardContent(boardRequestDto.getBoardContent())
-//                                  .boardImg(boardRequestDto.setListToStringUrl() == null ? "" : boardRequestDto.setListToStringUrl())
-//                                          .boardModifyDate(LocalDateTime.now().withNano(0))
-//                                                  .build();
+                boardRequestDto.getNickname(), board.getBoardCategory(),boardRequestDto.getBoardTitle(), boardRequestDto.getBoardContent(),
+                boardRequestDto.getBoardImg() == null ? board.getBoardImg() : boardRequestDto.setListToStringUrl(),LocalDateTime.now().withNano(0));
+
         Board savedBoard = boardRepository.save(board);
         return ResponseBoardDto.of(savedBoard);
     }
@@ -97,6 +91,7 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public long deleteBoard(long boardNo, long userNo){
         User user = userRepository.findById(userNo).orElseThrow(()-> new NullPointerException(ErrorCode.ID_NOT_EXIST.getMessage()));
+
         return boardRepository.deleteBoardByBoardNoAndUser(boardNo, user);
     }
 
@@ -118,6 +113,11 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public Page<Board> findBoardByUser(User user, Pageable pageable){
         return boardRepository.findBoardByUser(user,pageable);
+    }
+
+    @Override
+    public List<Board> boardsRanking(){
+        return boardRepository.findTop4ByOrderByBoardRecommendDesc();
     }
 //
 //    @Override

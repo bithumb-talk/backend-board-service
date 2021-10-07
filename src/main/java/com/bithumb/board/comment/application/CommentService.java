@@ -1,14 +1,12 @@
 package com.bithumb.board.comment.application;
-import com.bithumb.board.board.domain.Board;
-import com.bithumb.board.comment.api.dto.CountDto;
+import com.bithumb.board.comment.api.dto.RequestCountDto;
+import com.bithumb.board.comment.api.dto.ResponseCountDto;
 import com.bithumb.board.comment.api.dto.RequestCommentDto;
 import com.bithumb.board.comment.api.dto.ResponseCommentDto;
 import com.bithumb.board.comment.domain.Comment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
-
-import java.util.Optional;
 
 @Component
 public interface CommentService {
@@ -25,7 +23,7 @@ public interface CommentService {
     void deleteComment(long comment_no);
 
     /* 댓글 추천 */
-    CountDto updateRecommend(long boardNo, long commentNo);
+    ResponseCountDto updateRecommend(long commentNo, RequestCountDto recommend);
 
 
 

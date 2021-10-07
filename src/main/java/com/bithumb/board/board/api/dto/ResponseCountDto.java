@@ -6,13 +6,13 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @Getter
-public class CountDto {
+public class ResponseCountDto {
     private long boardRecommend;
 
-    public CountDto(long boardRecommend) {
+    public ResponseCountDto( long boardRecommend) {
         this.boardRecommend = boardRecommend;
     }
-    public static CountDto from(Board board) {
-        return new CountDto(board.getBoardRecommend());
+    public static ResponseCountDto from(Board board) {
+        return new ResponseCountDto( board.getBoardRecommend());
     }
 }

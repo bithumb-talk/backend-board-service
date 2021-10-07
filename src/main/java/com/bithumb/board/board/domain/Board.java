@@ -56,9 +56,10 @@ public class Board {
 
     @Builder
     public Board(String nickname,String boardTitle,Long boardViews, String boardCategory,String boardContent,
-                 LocalDateTime boardCreatedDate,LocalDateTime boardModifyDate,Long boardRecommend, String boardImg ){
+                 LocalDateTime boardCreatedDate,Long boardRecommend, String boardImg ){
         this.nickname = nickname;
         this.boardTitle =boardTitle;
+        this.boardCategory = boardCategory;
         this.boardViews = boardViews;
         this.boardContent = boardContent;
         this.boardCreatedDate = boardCreatedDate;
@@ -66,8 +67,9 @@ public class Board {
         this.boardImg = boardImg;
     }
 
-    public void updateBoardContent(String nickname, String boardTitle, String boardContent, String boardImg, LocalDateTime boardModifyDate ){
+    public void updateBoardContent(String nickname,String boardCategory, String boardTitle, String boardContent, String boardImg, LocalDateTime boardModifyDate ){
         this.nickname = nickname;
+        this.boardCategory = boardCategory;
         this.boardTitle = boardTitle;
         this.boardContent = boardContent;
         this.boardImg = boardImg;
