@@ -2,7 +2,7 @@ spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     #url: jdbc:mariadb://localhost:5001/bithumb
-    url: jdbc:mariadb://board-service-product.crtppt0lvgk7.ap-northeast-2.rds.amazonaws.com:3306/bithumb
+    url: jdbc:mariadb://youngcha-board.crtppt0lvgk7.ap-northeast-2.rds.amazonaws.com:3306/bithumb
     username: admin
     password: youngcha1008
     sql-script-encoding: UTF-8
