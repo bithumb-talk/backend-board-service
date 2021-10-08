@@ -3,6 +3,7 @@ package com.bithumb.board.board.api;
 
 import com.bithumb.board.board.api.dto.RequestLikeDto;
 import com.bithumb.board.board.api.dto.ResponseBoardDto;
+import com.bithumb.board.board.api.dto.ResponseLikeDto;
 import com.bithumb.board.board.application.BoardService;
 import com.bithumb.board.board.assembler.BoardAssembler;
 import com.bithumb.board.board.domain.Board;
@@ -106,12 +107,9 @@ public class AllBoardController {
 
     /* 마이페이지 게시글 좋아요 기록 게시글 리스트 조회 */
     @PostMapping("/all-boards/auth/{user-no}/recommend") //
-    public ResponseEntity BoardsMyPage(@RequestBody  RequestLikeDto requestLikeDto, @PathVariable(value="user-no") long userNo){
-        List<ResponseBoardDto> boardList = new ArrayList<>();
-        for(long id : requestLikeDto.getContentIdList()){
-            boardList.add(boardService.retrieveBoard(id));
-        }
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_LIKE_LIST_SUCCESS.getMessage(), boardList);
+    public ResponseEntity BoardsMyPage(@RequestBody  RequestLikeDto requestLikeDto,@RequestParam(value="page") long page ,@PathVariable(value="user-no") long userNo){
+        ResponseLikeDto responseLikeDto = boardService.pagingCustomBoardList(requestLikeDto, page);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_LIKE_LIST_SUCCESS.getMessage(), responseLikeDto);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 }

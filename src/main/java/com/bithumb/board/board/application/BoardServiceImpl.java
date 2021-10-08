@@ -1,10 +1,7 @@
 package com.bithumb.board.board.application;
 
 
-import com.bithumb.board.board.api.dto.RequestCountDto;
-import com.bithumb.board.board.api.dto.ResponseCountDto;
-import com.bithumb.board.board.api.dto.RequestBoardDto;
-import com.bithumb.board.board.api.dto.ResponseBoardDto;
+import com.bithumb.board.board.api.dto.*;
 import com.bithumb.board.board.domain.Board;
 import com.bithumb.board.common.response.ErrorCode;
 import com.bithumb.board.user.domain.User;
@@ -18,6 +15,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -119,6 +118,23 @@ public class BoardServiceImpl implements BoardService {
     public List<Board> boardsRanking(){
         return boardRepository.findTop4ByOrderByBoardRecommendDesc();
     }
+
+    @Override
+    public ResponseLikeDto pagingCustomBoardList(RequestLikeDto requestLikeDto, long page){
+        Collections.reverse(requestLikeDto.getContentIdList());
+
+        long size = 16;
+        long totalElements = requestLikeDto.getContentIdList().size();
+        long totalPages = (requestLikeDto.getContentIdList().size() / size) +1 ;
+        long number = page;
+        long offset = page*size;
+        List<ResponseBoardDto> boardList = new ArrayList<>();
+        for(long i = offset; i < Math.min( totalElements, offset+size ); ++i){
+            boardList.add(retrieveBoard(requestLikeDto.getContentIdList().get((int)i)));
+        }
+        return ResponseLikeDto.of(boardList, size, totalElements,totalPages, number);
+    }
+
 //
 //    @Override
 //    public long count() {

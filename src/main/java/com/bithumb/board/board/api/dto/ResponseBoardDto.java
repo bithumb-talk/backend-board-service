@@ -33,8 +33,6 @@ public class ResponseBoardDto {
         return imageList;
     }
 
-
-
     public ResponseBoardDto(long boardNo, String boardTitle, long boardViews, String boardCategory,
                             String boardContent, String nickname, LocalDateTime boardCreatedDate,
                             LocalDateTime boardModifyDate, long boardRecommend, String boardImg) {
