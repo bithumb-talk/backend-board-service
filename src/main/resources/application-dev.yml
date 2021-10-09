@@ -2,4 +2,4 @@ logging:
   level:
     root: info
   file:
-    path: "/home/ubuntu/logging/board"
+    path: "./logging"
