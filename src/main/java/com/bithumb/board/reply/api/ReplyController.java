@@ -23,7 +23,6 @@ import java.util.Optional;
 @Api(tags = {"Reply API"})
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*", allowCredentials = "false")
 public class ReplyController {
 
     private final ReplyService replyService;
@@ -31,7 +30,7 @@ public class ReplyController {
     /* 대댓글 등록 */
     @ApiOperation(value=" 대댓글 등록 ", notes="board-no의 경우 위의 API들과 통일성때문에 넣었습니다." +
             "\n /boards/{board-no}/comments/{comment-no}/replies")
-    @PostMapping("/boards/{board-no}/comments/{comment-no}/replies")
+    @PostMapping("/boards/{board-no}/comments/{comment-no}/replies/auth") //
     public ResponseEntity createReply( @Valid @RequestBody RequestReplyDto requestReplyDto,
                                        @ApiParam(value = "boardNo", required = false)
                                        @PathVariable(value ="board-no") long boardNo,
@@ -44,7 +43,7 @@ public class ReplyController {
 
     /* 대댓글 수정 */
     @ApiOperation(value=" 대댓글 수정 ", notes="board-no의 경우 위의 API들과 통일성때문에 넣었습니다.")
-    @PutMapping("/boards/{board-no}/comments/{comment-no}/replies/{reply-no}")
+    @PutMapping("/boards/{board-no}/comments/{comment-no}/replies/{reply-no}/auth") //
     public ResponseEntity updateReply (@Valid @RequestBody RequestReplyDto requestReplyDto,
                                        @ApiParam(value = "boardNo", required = false)
                                        @PathVariable(value="board-no") long boardNo,
@@ -59,7 +58,7 @@ public class ReplyController {
 
     /* 대댓글 삭제 */
     @ApiOperation(value=" 대댓글 삭제 ", notes="board-no / comment-no 의 경우 위의 API들과 통일성때문에 넣었습니다.")
-    @DeleteMapping("/boards/{board-no}/comments/{comment-no}/replies/{reply-no}")
+    @DeleteMapping("/boards/{board-no}/comments/{comment-no}/replies/{reply-no}/auth") //
     public ResponseEntity deleteReply( @ApiParam(value = "boardNo", required = false)
                                            @PathVariable(value="board-no") long boardNo,
                                        @ApiParam(value = "commentNo", required = false)

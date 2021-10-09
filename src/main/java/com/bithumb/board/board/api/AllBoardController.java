@@ -3,6 +3,7 @@ package com.bithumb.board.board.api;
 
 import com.bithumb.board.board.api.dto.RequestLikeDto;
 import com.bithumb.board.board.api.dto.ResponseBoardDto;
+import com.bithumb.board.board.api.dto.ResponseLikeDto;
 import com.bithumb.board.board.application.BoardService;
 import com.bithumb.board.board.assembler.BoardAssembler;
 import com.bithumb.board.board.domain.Board;
@@ -41,7 +42,6 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @Api(tags = {"All-Board API"})
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins="*", allowCredentials = "false")
 @Slf4j
 public class AllBoardController {
     private final BoardService boardService;
@@ -74,7 +74,7 @@ public class AllBoardController {
             "\n size = 현재 페이지에 조회할 최대 갯수 : default 16으로 해둠" +
             "\n page = 조회할 페이지" +
             "\n sort = 정렬방식, default :  boardCreatedDate, desc ")
-    @GetMapping("/all-boards/{user-no}")
+    @GetMapping("/all-boards/auth/{user-no}") //
     public ResponseEntity BoardsListUser(@PathVariable(value="user-no")
                         long userNo , @PageableDefault(size=16,sort="boardCreatedDate", direction =Sort.Direction.DESC ) final Pageable pageable) {
         User user = userService.findUser(userNo);
@@ -106,13 +106,10 @@ public class AllBoardController {
     }
 
     /* 마이페이지 게시글 좋아요 기록 게시글 리스트 조회 */
-    @PostMapping("/all-boards/{user-no}/recommend")
-    public ResponseEntity BoardsMyPage(@RequestBody  RequestLikeDto requestLikeDto, @PathVariable(value="user-no") long userNo){
-        List<ResponseBoardDto> boardList = new ArrayList<>();
-        for(long id : requestLikeDto.getContentIdList()){
-            boardList.add(boardService.retrieveBoard(id));
-        }
-        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_LIKE_LIST_SUCCESS.getMessage(), boardList);
+    @PostMapping("/all-boards/auth/{user-no}/recommend") //
+    public ResponseEntity BoardsMyPage(@RequestBody  RequestLikeDto requestLikeDto,@RequestParam(value="page") long page ,@PathVariable(value="user-no") long userNo){
+        ResponseLikeDto responseLikeDto = boardService.pagingCustomBoardList(requestLikeDto, page);
+        ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_LIKE_LIST_SUCCESS.getMessage(), responseLikeDto);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
     }
 }

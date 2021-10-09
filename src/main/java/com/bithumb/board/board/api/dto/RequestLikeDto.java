@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 //@Getter
-//@Setter
+
 public class RequestLikeDto {
     private List<Long> contentIdList;
     public List<Long> getContentIdList(){

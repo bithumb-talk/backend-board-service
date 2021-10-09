@@ -1,9 +1,6 @@
 package com.bithumb.board.board.application;
 
-import com.bithumb.board.board.api.dto.RequestCountDto;
-import com.bithumb.board.board.api.dto.ResponseCountDto;
-import com.bithumb.board.board.api.dto.RequestBoardDto;
-import com.bithumb.board.board.api.dto.ResponseBoardDto;
+import com.bithumb.board.board.api.dto.*;
 import com.bithumb.board.board.domain.Board;
 import com.bithumb.board.user.domain.User;
 import org.springframework.data.domain.Page;
@@ -25,6 +22,10 @@ public interface BoardService {
 
     /* 베스트 인기글 4개 조회 */
     List<Board> boardsRanking();
+
+    /* 마이페이지 게시글 좋아요 기록 게시글 리스트 조회 */
+    ResponseLikeDto pagingCustomBoardList(RequestLikeDto requestLikeDto, long page);
+
 
     /* 게시글 조회 */
     ResponseBoardDto retrieveBoard(long boardNo);

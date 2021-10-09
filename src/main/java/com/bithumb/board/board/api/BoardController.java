@@ -34,7 +34,6 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @Api(tags = {"Board API"})
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins="*", allowCredentials = "false")
 @Slf4j
 public class BoardController {
     private final BoardService boardService;
@@ -68,7 +67,7 @@ public class BoardController {
     /* 게시글 추천 */
     @ApiOperation(value="게시글 좋아요", notes="게시글 좋아요 버튼" +
             "\n 게시글id(게시글 넘버), 현재 좋아요 갯수 응답")
-    @PostMapping("/boards/{board-no}/recommend")
+    @PostMapping("/boards/{board-no}/auth/recommend") //
     public ResponseEntity countingBoardRecommend(
             @ApiParam(value = "boardNo", required = true, example = "1")
             @PathVariable(value="board-no") long boardNo,
@@ -80,7 +79,7 @@ public class BoardController {
 
     /* 게시글 등록 */
     @ApiOperation(value=" 게시글 등록", notes=" 게시글 등록" +
-            "/boards/{user-no}" +
+            "/boards/auth/{user-no}" +
             "\n 현재 로그인된 유저넘버")
     @ApiImplicitParam(
             name = "user-no"
@@ -88,7 +87,7 @@ public class BoardController {
             , required = true
             , dataType = "long"
             , defaultValue = "None")
-    @PostMapping("/boards/{user-no}")                                      // 유저 정보 확인 o
+    @PostMapping("/boards/auth/{user-no}") //
     public ResponseEntity createBoard(
             @Valid @RequestBody RequestBoardDto dto,
             @ApiParam(value = "userNo", required = true, example = "1")
@@ -106,10 +105,10 @@ public class BoardController {
 
     /* 게시물 수정 */
     @ApiOperation(value="게시글 수정", notes="게시글 수정" +
-            "\n /boards/{board-no}/{user-no}" +
+            "\n /boards/{board-no}/auth/{user-no}" +
             "\n 보드넘버, 현재 로그인된 유저넘버" +
             "\n 수정할때 이미지는 추가된이미지만 들어오는게 아니라 게시글에 있는 이미지 url 전부 들어와야합니다!")
-    @PutMapping("/boards/{board-no}/{user-no}")                           // 유저 정보 확인 o
+    @PutMapping("/boards/{board-no}/auth/{user-no}")//
     public ResponseEntity updateBoard(@Valid @RequestBody RequestBoardDto dto,
                                       @ApiParam(value = "boardNo", required = true, example = "1")
                                       @PathVariable(value ="board-no") long boardNo,
@@ -124,7 +123,7 @@ public class BoardController {
     @ApiOperation(value=" 게시글 삭제 ", notes="게시글 삭제" +
             "\n /boards/{board-no}/{user-no}" +
             "\n 게시글 넘버, 현재 로그인된 유저넘버")
-    @DeleteMapping("/boards/{board-no}/{user-no}")                        // 유저 정보 확인 o
+    @DeleteMapping("/boards/{board-no}/auth/{user-no}") //
     public ResponseEntity deleteBoard(
             @ApiParam(value = "boardNo", required = true, example = "1")
             @PathVariable(value ="board-no") long boardNo,

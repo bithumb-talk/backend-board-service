@@ -1,10 +1,7 @@
 package com.bithumb.board.board.application;
 
 
-import com.bithumb.board.board.api.dto.RequestCountDto;
-import com.bithumb.board.board.api.dto.ResponseCountDto;
-import com.bithumb.board.board.api.dto.RequestBoardDto;
-import com.bithumb.board.board.api.dto.ResponseBoardDto;
+import com.bithumb.board.board.api.dto.*;
 import com.bithumb.board.board.domain.Board;
 import com.bithumb.board.common.response.ErrorCode;
 import com.bithumb.board.user.domain.User;
@@ -18,6 +15,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -29,16 +28,45 @@ public class BoardServiceImpl implements BoardService {
 
     private final UserRepository userRepository;
 
-    //생성자 주입 => @RequiredArgsConstructor
-//    public BoardServiceImpl(BoardRepository boardRepository, UserRepository userRepository, UserService userService) {
-//        this.boardRepository = boardRepository;
-//        this.userRepository = userRepository;
-//        this.userService = userService;
-//    }
-
+    /* 게시판 전체 조회 */
     @Override
     public Page<Board> BoardsListAll(Pageable pageable){
         return boardRepository.findAll(pageable);
+    }
+
+    /* 유저로 전체 조회  */
+    @Override
+    public Page<Board> findBoardByUser(User user, Pageable pageable){
+        return boardRepository.findBoardByUser(user,pageable);
+    }
+
+    /* 카테고리로 전체 조회 */
+    @Override
+    public Page<Board> findBoardByBoardCategory(String boardCategory, Pageable pageable){
+        return boardRepository.findBoardByBoardCategory(boardCategory, pageable);
+    }
+
+    /* 베스트 인기글 4개 조회 */
+    @Override
+    public List<Board> boardsRanking(){
+        return boardRepository.findTop4ByOrderByBoardRecommendDesc();
+    }
+
+    /* 마이페이지 게시글 좋아요 기록 게시글 리스트 조회 */
+    @Override
+    public ResponseLikeDto pagingCustomBoardList(RequestLikeDto requestLikeDto, long page){
+        Collections.reverse(requestLikeDto.getContentIdList());
+
+        long size = 16;
+        long totalElements = requestLikeDto.getContentIdList().size();
+        long totalPages = (requestLikeDto.getContentIdList().size() / size) +1 ;
+        long number = page;
+        long offset = page*size;
+        List<ResponseBoardDto> boardList = new ArrayList<>();
+        for(long i = offset; i < Math.min( totalElements, offset+size ); ++i){
+            boardList.add(retrieveBoard(requestLikeDto.getContentIdList().get((int)i)));
+        }
+        return ResponseLikeDto.of(boardList, size, totalElements,totalPages, number);
     }
 
     /* 게시글 조회 */
@@ -88,6 +116,7 @@ public class BoardServiceImpl implements BoardService {
         return ResponseBoardDto.of(savedBoard);
     }
 
+    /* 게시글 삭제 */
     @Override
     public long deleteBoard(long boardNo, long userNo){
         User user = userRepository.findById(userNo).orElseThrow(()-> new NullPointerException(ErrorCode.ID_NOT_EXIST.getMessage()));
@@ -106,19 +135,7 @@ public class BoardServiceImpl implements BoardService {
         boardRepository.deleteById(board_no);
     }
 
-    @Override
-    public Page<Board> findBoardByBoardCategory(String boardCategory, Pageable pageable){
-        return boardRepository.findBoardByBoardCategory(boardCategory, pageable);
-    }
-    @Override
-    public Page<Board> findBoardByUser(User user, Pageable pageable){
-        return boardRepository.findBoardByUser(user,pageable);
-    }
 
-    @Override
-    public List<Board> boardsRanking(){
-        return boardRepository.findTop4ByOrderByBoardRecommendDesc();
-    }
 //
 //    @Override
 //    public long count() {
