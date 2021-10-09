@@ -43,7 +43,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://3.38.23.41:6020/eureka
+      defaultZone: http://3.38.23.41:8761/eureka
 
 cloud:
   aws:
