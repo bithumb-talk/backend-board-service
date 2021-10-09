@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 @Entity
@@ -42,10 +43,10 @@ public class Board {
     private String boardContent;
 
     @Column(name="board_created_date")
-    private LocalDateTime boardCreatedDate;
+    private ZonedDateTime boardCreatedDate;
 
     @Column(name="board_modify_date")
-    private LocalDateTime boardModifyDate;
+    private ZonedDateTime boardModifyDate;
 
     @Column(name="board_recommend")
     private long boardRecommend;
@@ -56,7 +57,7 @@ public class Board {
 
     @Builder
     public Board(String nickname,String boardTitle,Long boardViews, String boardCategory,String boardContent,
-                 LocalDateTime boardCreatedDate,Long boardRecommend, String boardImg ){
+                 ZonedDateTime boardCreatedDate,Long boardRecommend, String boardImg ){
         this.nickname = nickname;
         this.boardTitle =boardTitle;
         this.boardCategory = boardCategory;
@@ -67,7 +68,7 @@ public class Board {
         this.boardImg = boardImg;
     }
 
-    public void updateBoardContent(String nickname,String boardCategory, String boardTitle, String boardContent, String boardImg, LocalDateTime boardModifyDate ){
+    public void updateBoardContent(String nickname,String boardCategory, String boardTitle, String boardContent, String boardImg, ZonedDateTime boardModifyDate ){
         this.nickname = nickname;
         this.boardCategory = boardCategory;
         this.boardTitle = boardTitle;

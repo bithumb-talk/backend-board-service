@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +20,8 @@ public class ResponseBoardDto {
     private String boardCategory;
     private String boardContent;
     private String nickname;
-    private LocalDateTime boardCreatedDate;
-    private LocalDateTime boardModifyDate;
+    private ZonedDateTime boardCreatedDate;
+    private ZonedDateTime boardModifyDate;
     private long boardRecommend;
     private List<String> boardImg;
 
@@ -34,8 +35,8 @@ public class ResponseBoardDto {
     }
 
     public ResponseBoardDto(long boardNo, String boardTitle, long boardViews, String boardCategory,
-                            String boardContent, String nickname, LocalDateTime boardCreatedDate,
-                            LocalDateTime boardModifyDate, long boardRecommend, String boardImg) {
+                            String boardContent, String nickname, ZonedDateTime boardCreatedDate,
+                            ZonedDateTime boardModifyDate, long boardRecommend, String boardImg) {
         this.boardNo = boardNo;
         this.boardTitle = boardTitle;
         this.boardViews = boardViews;

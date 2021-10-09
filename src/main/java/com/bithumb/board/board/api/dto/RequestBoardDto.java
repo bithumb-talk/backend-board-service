@@ -8,6 +8,10 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @AllArgsConstructor
@@ -28,13 +32,13 @@ public class RequestBoardDto {
     @NotBlank(message = "Category empty")
     private String boardCategory;
 
-    private LocalDateTime boardCreatedDate;
+    private ZonedDateTime boardCreatedDate;
     private long boardViews = 0;
     private long boardRecommend = 0;
     private List<String> boardImg;
 
     public void setBoardCreateDate(){
-        this.boardCreatedDate = LocalDateTime.now().withNano(0);
+        this.boardCreatedDate = ZonedDateTime.now(ZoneOffset.of("+09:00"));
     }
 
     /* 이미지 url To 이미지 String */

@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -107,10 +109,10 @@ public class BoardServiceImpl implements BoardService {
     public ResponseBoardDto updateBoard(RequestBoardDto boardRequestDto, long boardNo, long userNo){
         User user = userRepository.findById(userNo).orElseThrow(()-> new NullPointerException(ErrorCode.ID_NOT_EXIST.getMessage()));
         Board board =  boardRepository.findBoardByBoardNoAndUser(boardNo,user).orElseThrow(() -> new NullPointerException(ErrorCode.BOARD_NOT_EXIST.getMessage()));
-//
+
         board.updateBoardContent(
                 boardRequestDto.getNickname(), board.getBoardCategory(),boardRequestDto.getBoardTitle(), boardRequestDto.getBoardContent(),
-                boardRequestDto.getBoardImg() == null ? board.getBoardImg() : boardRequestDto.setListToStringUrl(),LocalDateTime.now().withNano(0));
+                boardRequestDto.getBoardImg() == null ? board.getBoardImg() : boardRequestDto.setListToStringUrl(),ZonedDateTime.now(ZoneOffset.of("+09:00")));
 
         Board savedBoard = boardRepository.save(board);
         return ResponseBoardDto.of(savedBoard);
@@ -120,10 +122,8 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public long deleteBoard(long boardNo, long userNo){
         User user = userRepository.findById(userNo).orElseThrow(()-> new NullPointerException(ErrorCode.ID_NOT_EXIST.getMessage()));
-
         return boardRepository.deleteBoardByBoardNoAndUser(boardNo, user);
     }
-
 
     @Override
     public boolean existsById(long id) {

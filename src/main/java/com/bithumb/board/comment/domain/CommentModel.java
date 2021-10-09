@@ -6,6 +6,7 @@ import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
 
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 
@@ -17,12 +18,11 @@ import java.util.List;
 public class CommentModel extends RepresentationModel<CommentModel> {
     private Long commentNo;
     private String commentContent;
-    private LocalDateTime commentCreatedDate;
-    private LocalDateTime commentModifyDate;
+    private ZonedDateTime commentCreatedDate;
+    private ZonedDateTime commentModifyDate;
     private long commentRecommend;
     private String nickname;
     private List<Reply> replyList;
-
     public void changeModel(Comment entity) {
         this.commentNo = entity.getCommentNo();
         this.commentContent = entity.getCommentContent();
@@ -32,11 +32,9 @@ public class CommentModel extends RepresentationModel<CommentModel> {
         this.nickname = entity.getNickname();
         this.replyList = entity.getReply();
     }
-
     public CommentModel of(Comment comment){
         return new CommentModel(comment.getCommentNo(), comment.getCommentContent(),
                 comment.getCommentCreatedDate(), comment.getCommentModifyDate(),
                 comment.getCommentRecommend(), comment.getNickname(), comment.getReply());
     }
-
 }

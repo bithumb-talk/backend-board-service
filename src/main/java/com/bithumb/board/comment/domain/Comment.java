@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 @Entity
@@ -28,10 +29,10 @@ public class Comment {
     private String commentContent;
 
     @Column(name="comment_created_date")
-    private LocalDateTime commentCreatedDate;
+    private ZonedDateTime commentCreatedDate;
 
     @Column(name="comment_modify_date")
-    private LocalDateTime commentModifyDate;
+    private ZonedDateTime commentModifyDate;
 
     @Column(name="comment_recommend")
     private long commentRecommend;
@@ -40,7 +41,7 @@ public class Comment {
     private String nickname;
 
     @Builder
-    public Comment(String commentContent, LocalDateTime commentCreatedDate, LocalDateTime commentModifyDate
+    public Comment(String commentContent, ZonedDateTime commentCreatedDate, ZonedDateTime commentModifyDate
         ,long commentRecommend, String nickname){
         this.commentContent = commentContent;
         this.commentCreatedDate = commentCreatedDate;
@@ -49,7 +50,7 @@ public class Comment {
         this.nickname = nickname;
     }
 
-    public void changeComment(String nickname, String commentContent, LocalDateTime commentModifyDate){
+    public void changeComment(String nickname, String commentContent, ZonedDateTime commentModifyDate){
         this.nickname = nickname;
         this.commentContent = commentContent;
         this.commentModifyDate = commentModifyDate;

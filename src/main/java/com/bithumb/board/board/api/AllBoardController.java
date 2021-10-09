@@ -35,6 +35,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.swing.text.html.parser.Entity;
 import javax.validation.Valid;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
@@ -62,6 +65,13 @@ public class AllBoardController {
     @GetMapping("/all-boards")
     public ResponseEntity BoardsListAll(@PageableDefault(size=16,sort="boardCreatedDate", direction =Sort.Direction.DESC ) final Pageable pageable) {
         Page<Board> board = boardService.BoardsListAll(pageable);
+
+
+        //ZoneOffset seoulZoneOffset = ZoneOffset.of("+09:00");
+        //ZonedDateTime now = ZonedDateTime.now(seoulZoneOffset);
+        //System.out.println(now);
+
+
         PagedModel<BoardModel> collModel = pagedResourcesAssembler.toModel(board,boardAssembler);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_FIND_SUCCESS.getMessage(),collModel);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);

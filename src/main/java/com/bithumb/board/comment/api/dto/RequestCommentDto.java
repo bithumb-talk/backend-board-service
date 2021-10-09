@@ -10,6 +10,8 @@ import org.apache.tomcat.jni.Local;
 
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,14 +26,14 @@ public class RequestCommentDto {
 
     private long commentRecommend=0;
 
-    private LocalDateTime commentCreateDate;
-    private LocalDateTime commentModifyDate;
+    private ZonedDateTime commentCreateDate;
+    private ZonedDateTime commentModifyDate;
 
 
     public void setCommentCreateDate(){
-        this.commentCreateDate = LocalDateTime.now().withNano(0);
+        this.commentCreateDate = ZonedDateTime.now(ZoneOffset.of("+09:00"));
     }
-    public void setCommentModifyDate() { this.commentModifyDate = LocalDateTime.now().withNano(0);}
+    public void setCommentModifyDate() { this.commentModifyDate = ZonedDateTime.now(ZoneOffset.of("+09:00"));}
 
     public Comment toEntity(){
         return Comment.builder().commentContent(this.commentContent)

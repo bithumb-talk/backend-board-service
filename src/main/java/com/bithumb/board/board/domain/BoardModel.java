@@ -5,6 +5,7 @@ import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
 
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 @Data
 @Builder
@@ -19,8 +20,8 @@ public class BoardModel extends RepresentationModel<BoardModel> {
     private long boardViews;
     private String boardCategory;
     private String boardContent;
-    private LocalDateTime boardCreatedDate;
-    private LocalDateTime boardModifyDate;
+    private ZonedDateTime boardCreatedDate;
+    private ZonedDateTime boardModifyDate;
     private long boardRecommend;
     private String nickname;
     private String boardImg;
