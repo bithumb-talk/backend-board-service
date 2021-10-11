@@ -41,5 +41,5 @@ dependencies {
 }
 
 test {
-//	useJUnitPlatform()
+	useJUnitPlatform()
 }

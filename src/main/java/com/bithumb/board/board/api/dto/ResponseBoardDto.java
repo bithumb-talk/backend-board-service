@@ -2,6 +2,8 @@ package com.bithumb.board.board.api.dto;
 
 
 import com.bithumb.board.board.domain.Board;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +15,7 @@ import java.util.List;
 //게시글 조회
 @NoArgsConstructor
 @Getter
+@EqualsAndHashCode
 public class ResponseBoardDto {
     private long boardNo;
     private String boardTitle;

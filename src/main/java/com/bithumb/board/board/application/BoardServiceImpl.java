@@ -22,7 +22,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
+@RequiredArgsConstructor //이거 쓰는애들 전부 Mock
 @Transactional
 public class BoardServiceImpl implements BoardService {
 

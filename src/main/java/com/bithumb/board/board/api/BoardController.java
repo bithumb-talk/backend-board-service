@@ -52,7 +52,7 @@ public class BoardController {
         ResponseBoardDto responseBoardDto = boardService.retrieveBoard(boardNo);
 
 
-        LOGGER.info("조회한 게시물 넘버 {}.", boardNo);
+        LOGGER.info("조회한 게시물 넘버 {}.", boardNo);                             //로그
 
 
         EntityModel model =EntityModel.of(responseBoardDto)
@@ -70,7 +70,7 @@ public class BoardController {
             @ApiParam(value = "boardNo", required = true, example = "1")
             @PathVariable(value="board-no") long boardNo,
             @Valid @RequestBody RequestCountDto recommend) {
-        LOGGER.info("좋아요한 게시물 넘버 {}.", boardNo);
+        LOGGER.info("좋아요한 게시물 넘버 {}.", boardNo);                            //로그
         ResponseCountDto countDto = boardService.updateRecommend(boardNo, recommend);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_RECOMMEND_SUCCESS.getMessage(),countDto);
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);
@@ -96,7 +96,7 @@ public class BoardController {
         EntityModel model = EntityModel.of(responseBoardDto)
                 .add(WebMvcLinkBuilder.linkTo(methodOn(BoardController.class)
                         .retrieveBoard(responseBoardDto.getBoardNo())).withRel("board"));
-        LOGGER.info("회원넘버 {}, 작성 카테고리 {}.", userNo, responseBoardDto.getBoardCategory());
+        LOGGER.info("회원넘버 {}, 작성 카테고리 {}.", userNo, responseBoardDto.getBoardCategory()); //로그
 
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS,
                 SuccessCode.BOARD_REGISTER_SUCCESS.getMessage(),model);
@@ -130,7 +130,7 @@ public class BoardController {
             @ApiParam(value = "userNo", required = true, example = "1")
                                       @PathVariable(value ="user-no") long userNo) {
         //s3Service.deleteObejct(userNo, boardNo);
-        LOGGER.info("회원넘버 {}, 삭제한 게시글 넘버 {}", userNo,boardNo);
+        LOGGER.info("회원넘버 {}, 삭제한 게시글 넘버 {}", userNo,boardNo);                  //로그
 
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.BOARD_DELETE_SUCCESS.getMessage(),boardService.deleteBoard(boardNo,userNo));
         return ResponseEntity.status(HttpStatus.OK).body(apiResponse);

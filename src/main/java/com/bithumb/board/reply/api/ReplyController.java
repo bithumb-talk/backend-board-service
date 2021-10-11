@@ -1,6 +1,7 @@
 
 package com.bithumb.board.reply.api;
 
+import com.bithumb.board.comment.api.CommentController;
 import com.bithumb.board.reply.api.dto.RequestReplyDto;
 import com.bithumb.board.reply.api.dto.ResponseReplyDto;
 import com.bithumb.board.reply.domain.Reply;
@@ -12,6 +13,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +27,7 @@ import java.util.Optional;
 @RestController
 @RequiredArgsConstructor
 public class ReplyController {
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(ReplyController.class);
     private final ReplyService replyService;
 
     /* 대댓글 등록 */

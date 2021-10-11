@@ -1,6 +1,7 @@
 package com.bithumb.board.comment.api;
 
 
+import com.bithumb.board.board.api.BoardController;
 import com.bithumb.board.board.api.dto.RequestLikeDto;
 import com.bithumb.board.board.domain.Board;
 import com.bithumb.board.board.repository.BoardRepository;
@@ -21,6 +22,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -39,6 +42,7 @@ import javax.validation.constraints.NotBlank;
 @RestController
 @RequiredArgsConstructor
 public class CommentController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(CommentController.class);
     private final CommentService commentService;
 
     @Autowired
