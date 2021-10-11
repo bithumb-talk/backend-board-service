@@ -1,0 +1,6 @@
+projectKey=fe9d14a4152094dac090416f00d0931e16023c67
+serverUrl=http://13.125.199.174:9000
+serverVersion=7.7.0.23042
+dashboardUrl=http://13.125.199.174:9000/dashboard?id=fe9d14a4152094dac090416f00d0931e16023c67
+ceTaskId=AXxwa_sx25hwMOUxbE0K
+ceTaskUrl=http://13.125.199.174:9000/api/ce/task?id=AXxwa_sx25hwMOUxbE0K
