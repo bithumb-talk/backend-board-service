@@ -4,5 +4,6 @@ ARG JAR_FILE=./build/libs/board-0.0.1-SNAPSHOT.jar
 ADD ${JAR_FILE} board-service.jar
 COPY ./elastic-apm-agent-*.jar /elastic-apm-agent.jar
 EXPOSE 7000
-ENTRYPOINT ["java", "${JAVA_OPTIONS}","-jar", "board-service.jar"]
+ENTRYPOINT java -server ${JAVA_OPTIONS} -jar board-service.jar
+#ENTRYPOINT ["java", "${JAVA_OPTIONS}","-jar", "board-service.jar"]
 
