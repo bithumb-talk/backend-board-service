@@ -59,7 +59,7 @@ public class CommentController {
     public ResponseEntity retrieveCommentsList(
             @ApiParam(value = "boardNo", required = true, example = "1")
             @PathVariable(value = "board-no") long boardNo) {
-        Pageable paging = PageRequest.of(0, 10, Sort.Direction.DESC, "commentCreatedDate");
+        Pageable paging = PageRequest.of(0, 10, Sort.Direction.ASC, "commentCreatedDate");
         Page<Comment> comment = commentService.findCommentsByBoard(boardNo, paging);
         PagedModel<CommentModel> collModel = pagedResourcesAssembler.toModel(comment, commentAssembler);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS, SuccessCode.COMMENT_FIND_SUCCESS.getMessage(), collModel);
